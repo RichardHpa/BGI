@@ -16,5 +16,11 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout')->middleware('auth');
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('admin')->group(function () {
+    Route::get('/', 'AdminController@index')->middleware(['web', 'auth']);
+    Route::get('/{sub}', 'AdminController@index')->middleware(['web', 'auth']);
+    Route::get('/{sub}/{action}', 'AdminController@index')->middleware(['web', 'auth']);
+});
