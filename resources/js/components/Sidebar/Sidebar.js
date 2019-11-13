@@ -43,8 +43,8 @@ class Sidebar extends Component {
                     />
         }, this);
         return(
-            <nav className="col-md-2 d-none d-md-block bg-dark sidebar">
-                <div className="sidebar-sticky">
+            <nav className="col-md-2 bg-dark sidebar">
+                <div id="navbarSidebar" className="sidebar-sticky collapse show">
                     <ul className="nav flex-column">
                         {tabs}
                     </ul>

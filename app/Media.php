@@ -9,5 +9,5 @@ class Media extends Model
 
     protected $table = 'media';
 
-    protected $fillable = ['media_name'];
+    protected $fillable = ['media_name', 'media_type'];
 }

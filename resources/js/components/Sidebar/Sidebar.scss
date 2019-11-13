@@ -4,11 +4,13 @@
     color: white;
     position: fixed;
     top: 0;
-    bottom: 0;
     left: 0;
     z-index: 100; /* Behind the navbar */
     padding: 0;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    @media screen and (min-width: 768px){
+        bottom: 0;
+    }
 }
 
 .sidebar-sticky {
@@ -16,9 +18,12 @@
     position: sticky; */
     position: relative;
     top: 55px; /* Height of navbar */
-    height: calc(100vh - 55px);
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    @media screen and (min-width: 768px){
+        height: calc(100vh - 55px);
+        display: block !important;
+    }
 }
 
 
@@ -57,6 +62,10 @@
 
 .sidebar-sticky ul.nav .nav-item{
     background-color: #3E464D;
+    width: 100%;
+    @media screen and (min-width: 768px){
+        width: auto;
+    }
 }
 .sidebar-sticky ul.nav .nav-item.active{
     background-color: $bgi;

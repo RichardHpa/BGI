@@ -6439,7 +6439,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".sidebar {\n  color: white;\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 100;\n  /* Behind the navbar */\n  padding: 0;\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.sidebar-sticky {\n  /* position: -webkit-sticky;\n  position: sticky; */\n  position: relative;\n  top: 55px;\n  /* Height of navbar */\n  height: calc(100vh - 55px);\n  overflow-x: hidden;\n  overflow-y: auto;\n  /* Scrollable contents if viewport is shorter than content. */\n}\n\n.sidebar .nav-link {\n  font-weight: 500;\n  color: #333;\n}\n\n.sidebar .nav-link .feather {\n  margin-right: 4px;\n  color: #999;\n}\n\n.sidebar .nav-link.active {\n  color: #37598D;\n}\n\n.sidebar .nav-link:hover .feather,\n.sidebar .nav-link.active .feather {\n  color: inherit;\n}\n\n.sidebar-heading {\n  font-size: 0.75rem;\n  text-transform: uppercase;\n}\n\n.sidebar {\n  color: white;\n}\n\n.sidenav-header img {\n  width: 100px;\n  height: 100px;\n}\n\n.sidebar-sticky ul.nav .nav-item {\n  background-color: #3E464D;\n}\n\n.sidebar-sticky ul.nav .nav-item.active {\n  background-color: #37598D;\n}\n\n.sidebar-sticky ul.nav .nav-item a {\n  color: white;\n}\n\n.content {\n  white-space: pre-wrap;\n}", ""]);
+exports.push([module.i, ".sidebar {\n  color: white;\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 100;\n  /* Behind the navbar */\n  padding: 0;\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n@media screen and (min-width: 768px) {\n  .sidebar {\n    bottom: 0;\n  }\n}\n\n.sidebar-sticky {\n  /* position: -webkit-sticky;\n  position: sticky; */\n  position: relative;\n  top: 55px;\n  /* Height of navbar */\n  overflow-x: hidden;\n  overflow-y: auto;\n  /* Scrollable contents if viewport is shorter than content. */\n}\n@media screen and (min-width: 768px) {\n  .sidebar-sticky {\n    height: calc(100vh - 55px);\n    display: block !important;\n  }\n}\n\n.sidebar .nav-link {\n  font-weight: 500;\n  color: #333;\n}\n\n.sidebar .nav-link .feather {\n  margin-right: 4px;\n  color: #999;\n}\n\n.sidebar .nav-link.active {\n  color: #37598D;\n}\n\n.sidebar .nav-link:hover .feather,\n.sidebar .nav-link.active .feather {\n  color: inherit;\n}\n\n.sidebar-heading {\n  font-size: 0.75rem;\n  text-transform: uppercase;\n}\n\n.sidebar {\n  color: white;\n}\n\n.sidenav-header img {\n  width: 100px;\n  height: 100px;\n}\n\n.sidebar-sticky ul.nav .nav-item {\n  background-color: #3E464D;\n  width: 100%;\n}\n@media screen and (min-width: 768px) {\n  .sidebar-sticky ul.nav .nav-item {\n    width: auto;\n  }\n}\n\n.sidebar-sticky ul.nav .nav-item.active {\n  background-color: #37598D;\n}\n\n.sidebar-sticky ul.nav .nav-item a {\n  color: white;\n}\n\n.content {\n  white-space: pre-wrap;\n}", ""]);
 
 // exports
 
@@ -76081,7 +76081,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_image_crop__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_image_crop__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_image_crop_dist_ReactCrop_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-image-crop/dist/ReactCrop.css */ "./node_modules/react-image-crop/dist/ReactCrop.css");
 /* harmony import */ var react_image_crop_dist_ReactCrop_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_image_crop_dist_ReactCrop_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _ReusableUtils_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ReusableUtils.js */ "./resources/js/components/Media/ReusableUtils.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _ReusableUtils_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ReusableUtils.js */ "./resources/js/components/Media/ReusableUtils.js");
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -76103,6 +76105,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -76181,7 +76184,8 @@ function (_Component) {
 
             _this.setState({
               src: myResult,
-              imgSrcExt: Object(_ReusableUtils_js__WEBPACK_IMPORTED_MODULE_6__["extractImageFileExtensionFromBase64"])(myResult)
+              imageType: currentFile.type,
+              extention: currentFile.path.split('.').pop()
             });
           }, false);
           myFileItemReader.readAsDataURL(currentFile);
@@ -76203,9 +76207,51 @@ function (_Component) {
       });
     };
 
+    _this.cancelCrop = function (e) {
+      e.preventDefault();
+
+      _this.setState({
+        src: null,
+        croppedImageUrl: null,
+        imageType: null,
+        hovering: false
+      });
+    };
+
+    _this.cropImage = function (e) {
+      e.preventDefault();
+      var _this$state = _this.state,
+          croppedImageUrl = _this$state.croppedImageUrl,
+          src = _this$state.src,
+          imageType = _this$state.imageType,
+          media = _this$state.media;
+      var form = new FormData();
+      var extention = Object(_ReusableUtils_js__WEBPACK_IMPORTED_MODULE_7__["extractImageFileExtensionFromBase64"])(src);
+      var fileName = "previewFile" + extention;
+      var newCroppedFile = Object(_ReusableUtils_js__WEBPACK_IMPORTED_MODULE_7__["base64StringtoFile"])(croppedImageUrl, fileName);
+      form.append('file', newCroppedFile);
+      form.append('type', imageType);
+      form.append('extention', extention);
+      axios__WEBPACK_IMPORTED_MODULE_6___default.a.post('/api/media', form, {
+        headers: {
+          'accept': 'application/json',
+          'Accept-Language': 'en-US,en;q=0.8',
+          'Content-Type': "multipart/form-data; boundary=".concat(form._boundary)
+        }
+      }).then(function (response) {
+        // this.props.selectedImage();
+        media.push(response.data.mediaInfo);
+
+        _this.setState({
+          uploader: false,
+          media: media
+        });
+      });
+    };
+
     _this.state = {
       media: [],
-      uploader: true,
+      uploader: false,
       hovering: false,
       src: null,
       crop: {
@@ -76218,6 +76264,17 @@ function (_Component) {
   }
 
   _createClass(Gallery, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_6___default.a.get('/api/media').then(function (response) {
+        _this2.setState({
+          media: response.data
+        });
+      });
+    }
+  }, {
     key: "makeClientCrop",
     value: function makeClientCrop(crop) {
       var croppedImageUrl;
@@ -76249,7 +76306,6 @@ function (_Component) {
   }, {
     key: "getCroppedImg",
     value: function getCroppedImg(image, crop, fileName) {
-      console.log(crop);
       var canvas = document.createElement('canvas');
       var scaleX = image.naturalWidth / image.width;
       var scaleY = image.naturalHeight / image.height;
@@ -76264,14 +76320,13 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$state = this.state,
-          uploader = _this$state.uploader,
-          hovering = _this$state.hovering,
-          croppedURL = _this$state.croppedURL,
-          crop = _this$state.crop;
       var _this$state2 = this.state,
+          uploader = _this$state2.uploader,
+          hovering = _this$state2.hovering,
+          crop = _this$state2.crop,
           croppedImageUrl = _this$state2.croppedImageUrl,
-          src = _this$state2.src;
+          src = _this$state2.src,
+          media = _this$state2.media;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "nav nav-tabs mb-3"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
@@ -76317,7 +76372,7 @@ function (_Component) {
         onClick: this.cropImage
       }, "Crop Image"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         className: "btn mt-3",
-        onClick: this.cropImage
+        onClick: this.cancelCrop
       }, "Cancel Crop"))))) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_dropzone__WEBPACK_IMPORTED_MODULE_3__["default"], {
         onDrop: this.handleDrop,
         accept: acceptedFileTypes,
@@ -76337,7 +76392,17 @@ function (_Component) {
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", getInputProps()), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           className: "btn btn-theme-color"
         }, "Drag 'n' drop some files here, or click to select files")));
-      }) : 'List all of the media');
+      }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row"
+      }, media.map(function (mediaItem, i) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "col-6 col-sm-4 col-md-2 mt-2",
+          key: i
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: "/images/uploads/square/".concat(mediaItem.media_name),
+          className: "img-fluid thumbImg"
+        }));
+      })));
     }
   }]);
 
@@ -76601,9 +76666,10 @@ function (_Component) {
         });
       }, this);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        className: "col-md-2 d-none d-md-block bg-dark sidebar"
+        className: "col-md-2 bg-dark sidebar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sidebar-sticky"
+        id: "navbarSidebar",
+        className: "sidebar-sticky collapse show"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "nav flex-column"
       }, tabs)));

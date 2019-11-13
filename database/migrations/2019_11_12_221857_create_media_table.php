@@ -16,6 +16,7 @@ class CreateMediaTable extends Migration
         Schema::create('media', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('media_name');
+            $table->string('media_type');
             $table->timestamps();
         });
     }

@@ -3,6 +3,7 @@ import './Modal.scss';
 import Dropzone from 'react-dropzone';
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
+import axios from 'axios';
 
 import {image64toCanvasRef, downloadBase64File, extractImageFileExtensionFromBase64, base64StringtoFile} from './ReusableUtils.js';
 
@@ -14,7 +15,7 @@ class Gallery extends Component {
         super(props);
         this.state = {
             media: [],
-            uploader: true,
+            uploader: false,
             hovering: false,
             src: null,
             crop: {
@@ -23,6 +24,14 @@ class Gallery extends Component {
                 height: 40
             },
         }
+    }
+
+    componentDidMount () {
+        axios.get('/api/media').then(response => {
+            this.setState({
+                media: response.data
+            })
+        })
     }
 
     toggleTabs = (e) => {
@@ -69,13 +78,14 @@ class Gallery extends Component {
         if (files && files.length > 0){
             const isVerified = this.verifyFile(files)
             if (isVerified){
-                const currentFile = files[0]
+                const currentFile = files[0];
                 const myFileItemReader = new FileReader()
-                myFileItemReader.addEventListener('load', () =>{
+                myFileItemReader.addEventListener('load', () => {
                     const myResult = myFileItemReader.result;
                     this.setState({
                         src: myResult,
-                        imgSrcExt: extractImageFileExtensionFromBase64(myResult)
+                        imageType: currentFile.type,
+                        extention: currentFile.path.split('.').pop()
                     })
                 }, false)
 
@@ -108,7 +118,6 @@ class Gallery extends Component {
     }
 
     getCroppedImg(image, crop, fileName) {
-        console.log(crop);
         const canvas = document.createElement('canvas');
         const scaleX = image.naturalWidth / image.width;
         const scaleY = image.naturalHeight / image.height;
@@ -133,9 +142,45 @@ class Gallery extends Component {
         });
     }
 
+    cancelCrop = (e) => {
+        e.preventDefault();
+        this.setState({
+            src: null,
+            croppedImageUrl: null,
+            imageType: null,
+            hovering: false
+        });
+    }
+
+    cropImage = (e) => {
+        e.preventDefault();
+        const {croppedImageUrl, src, imageType, media} = this.state;
+        let form = new FormData();
+        const extention = extractImageFileExtensionFromBase64(src);
+        const fileName = "previewFile"+ extention;
+        const newCroppedFile = base64StringtoFile(croppedImageUrl, fileName);
+        form.append('file', newCroppedFile);
+        form.append('type', imageType);
+        form.append('extention', extention);
+        axios.post('/api/media', form, {
+            headers: {
+              'accept': 'application/json',
+              'Accept-Language': 'en-US,en;q=0.8',
+              'Content-Type': `multipart/form-data; boundary=${form._boundary}`,
+            }
+        })
+        .then((response) => {
+            // this.props.selectedImage();
+            media.push(response.data.mediaInfo)
+            this.setState({
+                uploader: false,
+                media: media
+            })
+        });
+    }
+
     render () {
-        const { uploader, hovering, croppedURL, crop} = this.state;
-        const { croppedImageUrl, src } = this.state;
+        const { uploader, hovering, crop, croppedImageUrl, src, media } = this.state;
         return (
             <div>
                 <ul className="nav nav-tabs mb-3">
@@ -165,7 +210,7 @@ class Gallery extends Component {
                                             </div>
                                             <div className="card-footer bg-white border-0">
                                                 <button className="btn btn-bgi mt-3" onClick={this.cropImage}>Crop Image</button>
-                                                <button className="btn mt-3" onClick={this.cropImage}>Cancel Crop</button>
+                                                <button className="btn mt-3" onClick={this.cancelCrop}>Cancel Crop</button>
                                             </div>
                                         </div>
                                     </div>
@@ -190,7 +235,18 @@ class Gallery extends Component {
                                 )}
                             </Dropzone>
                         :
-                            'List all of the media'
+                        <div className="row">
+                            {
+                                media.map((mediaItem, i) => (
+                                    <div className="col-6 col-sm-4 col-md-2 mt-2" key={i}>
+                                        <img
+                                            src={`/images/uploads/square/${mediaItem.media_name}`}
+                                            className="img-fluid thumbImg"
+                                        />
+                                    </div>
+                                ))
+                            }
+                        </div>
                 }
             </div>
         );
