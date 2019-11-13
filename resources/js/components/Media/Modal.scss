@@ -1,0 +1,16 @@
+#dropzoneSection{
+    display: inline;
+    #dropzone{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 30vh;
+        height: 100%;
+        width: 100%;
+        border: 1px dashed grey;
+        &.hovering{
+            border: 1px dashed rgba(255,0,0,0.5);
+            color: rgba(255,0,0,0.5);
+        }
+    }
+}

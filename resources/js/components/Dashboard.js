@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
+import Media from './Media/Media';
 
 const pages = [
     { 'id': 1, 'name': 'Dashboard', 'url': '/admin','icon': 'chart-pie' },
@@ -45,7 +46,7 @@ class Dashboard extends Component {
                             </div>
                         </div>
                         <Switch>
-
+                            <Route exact path='/admin/media' component={Media} />
                         </Switch>
                         </main>
                     </div>

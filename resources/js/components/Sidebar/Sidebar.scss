@@ -1,3 +1,5 @@
+@import '../../../sass/variables';
+
 .sidebar {
     color: white;
     position: fixed;
@@ -13,9 +15,8 @@
     /* position: -webkit-sticky;
     position: sticky; */
     position: relative;
-    top: 48px; /* Height of navbar */
-    height: calc(100vh - 48px);
-    padding-top: .5rem;
+    top: 55px; /* Height of navbar */
+    height: calc(100vh - 55px);
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
@@ -32,7 +33,7 @@
 }
 
 .sidebar .nav-link.active {
-  color: #007bff;
+  color: $bgi;
 }
 
 .sidebar .nav-link:hover .feather,
@@ -53,15 +54,12 @@
     width: 100px;
     height: 100px;
 }
-.sidebar-sticky ul.nav{
-    margin-top: 1em;
-}
 
 .sidebar-sticky ul.nav .nav-item{
     background-color: #3E464D;
 }
 .sidebar-sticky ul.nav .nav-item.active{
-    background-color: #D16666;
+    background-color: $bgi;
 }
 
 .sidebar-sticky ul.nav .nav-item a {
