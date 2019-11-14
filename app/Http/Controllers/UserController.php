@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 use App\User;
+use App\Role;
 
 class UserController extends Controller
 {
@@ -15,16 +17,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        // $users = User::all();
-        // return $users->toJson();
         $users = User::all();
         foreach($users as $user){
-            $role = $user->getRole();
-            // var_dump($role[0]);
-            // $user['role']= $role[0];
+            $role = $user->getRole($user);
+            $user['role']= $role;
         }
         return $users->toJson();
-        // var_dump($users;
     }
 
     /**
@@ -45,7 +43,24 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // return $request;
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:4|confirmed',
+        ]);
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        $user
+        ->roles()
+        ->attach(Role::where('role', 'user')->first());
+
+        return response()->json($user);
     }
 
     /**

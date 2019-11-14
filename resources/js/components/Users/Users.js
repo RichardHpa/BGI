@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import './Users.scss';
-import Button from '../Buttons/Button';
 
+import Button from '../Buttons/Button';
+import AddUsers from './AddUsers';
 import axios from 'axios';
 
 class Users extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            users: []
+            users: [],
+            add: false
         }
     }
 
@@ -17,12 +19,27 @@ class Users extends Component {
             this.setState({
                 users: response.data
             })
-            console.log(response.data);
         })
     }
 
+    openModal = () => {
+        this.setState({
+            add: !this.state.add
+        })
+    }
+
+    handleFormSuccess = () => {
+        axios.get('/api/users').then(response => {
+            this.setState({
+                users: response.data,
+                add: false
+            })
+        })
+    }
+
+
     render () {
-        const { users } = this.state;
+        const { users, add } = this.state;
         return (
             <section>
                 <div className="row">
@@ -44,7 +61,7 @@ class Users extends Component {
                                                 <i className="fas fa-user-circle fa-3x pr-2"></i> {user['name']}
                                             </td>
                                             <td className="align-middle">{user['email']}</td>
-                                            <td className="align-middle">{user['roles'][0]['role']}</td>
+                                            <td className="align-middle">{user['role']}</td>
 
                                             <td className="align-middle">
                                                 <a href="#"><i className="fas fa-cog fa-lg pr-2"></i></a>
@@ -59,7 +76,8 @@ class Users extends Component {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <Button btnText="Add New User"/>
+                        <Button btnText="Add New User" btnClicked={this.openModal}/>
+                        {add && <AddUsers formSuccess={this.handleFormSuccess}/>}
                     </div>
                 </div>
             </section>

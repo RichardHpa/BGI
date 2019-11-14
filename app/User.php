@@ -71,8 +71,9 @@ class User extends Authenticatable
       return null !== $this->roles()->where('role', $role)->first();
     }
 
-    public function getRole(){
-        // return null !== $this->roles();
-        return $this->roles->pluck('role');
+    public function getRole($user){
+        foreach ($user->roles as $role) {
+            return $role->role;
+        }
     }
 }

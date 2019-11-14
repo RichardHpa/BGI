@@ -9,8 +9,7 @@ class Button extends Component {
         }
     }
 
-    clickButton = () => {
-        // console.log('button has been clicked');
+    clickButton = (e) => {
         if(this.props.btnClicked){
             this.props.btnClicked();
         }
@@ -18,7 +17,7 @@ class Button extends Component {
 
     render () {
         return (
-            <button className={`btn btn-bgi ${this.props.btnClass}`}>{this.props.btnText}</button>
+            <button className={`btn btn-bgi`} onClick={this.clickButton}>{this.props.btnText}</button>
         )
     }
 }
