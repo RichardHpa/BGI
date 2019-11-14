@@ -2,15 +2,27 @@ import React, { Component } from 'react';
 import './Users.scss';
 import Button from '../Buttons/Button';
 
+import axios from 'axios';
+
 class Users extends Component {
     constructor (props) {
         super(props)
         this.state = {
-
+            users: []
         }
     }
 
+    componentDidMount () {
+        axios.get('/api/users').then(response => {
+            this.setState({
+                users: response.data
+            })
+            console.log(response.data);
+        })
+    }
+
     render () {
+        const { users } = this.state;
         return (
             <section>
                 <div className="row">
@@ -18,41 +30,29 @@ class Users extends Component {
                         <table className="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>Name</th>
-            						<th>Date Created</th>
+            						<th>Email</th>
             						<th>Role</th>
-                                    <th>Status</th>
-            						<th>Action</th>
+            						<th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                <td className="align-middle">1</td>
-                                    <td className="align-middle d-flex align-items-center">
-                                        <i className="fas fa-user-circle fa-3x pr-2"></i> Richard Hpa
-                                    </td>
-                                    <td className="align-middle">04/10/2013</td>
-                                    <td className="align-middle">Super Admin</td>
-            						<td className="align-middle"><span className="status text-success">•</span> Active</td>
-            						<td className="align-middle">
-            							<a href="#"><i className="fas fa-cog fa-lg pr-2"></i></a>
-            							<a href="#"><i className="fas fa-times-circle text-danger fa-lg"></i></a>
-            						</td>
-                                </tr>
-                                <tr>
-                                <td className="align-middle">1</td>
-                                    <td className="align-middle d-flex align-items-center">
-                                        <i className="fas fa-user-circle fa-3x pr-2"></i> Casey James
-                                    </td>
-                                    <td className="align-middle">04/10/2013</td>
-                                    <td className="align-middle">Admin</td>
-                                    <td className="align-middle"><span className="status text-success">•</span> Active</td>
-                                    <td className="align-middle">
-                                        <a href="#"><i className="fas fa-cog fa-lg pr-2"></i></a>
-                                        <a href="#"><i className="fas fa-times-circle text-danger fa-lg"></i></a>
-                                    </td>
-                                </tr>
+                                {
+                                    users.map((user, i) => (
+                                        <tr key={i}>
+                                            <td className="align-middle d-flex align-items-center">
+                                                <i className="fas fa-user-circle fa-3x pr-2"></i> {user['name']}
+                                            </td>
+                                            <td className="align-middle">{user['email']}</td>
+                                            <td className="align-middle">{user['roles'][0]['role']}</td>
+
+                                            <td className="align-middle">
+                                                <a href="#"><i className="fas fa-cog fa-lg pr-2"></i></a>
+                                                <a href="#"><i className="fas fa-times-circle text-danger fa-lg"></i></a>
+                                            </td>
+                                        </tr>
+                                    ))
+                                }
                             </tbody>
                         </table>
                     </div>

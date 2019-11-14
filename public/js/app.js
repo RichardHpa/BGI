@@ -76919,6 +76919,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Users_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Users.scss */ "./resources/js/components/Users/Users.scss");
 /* harmony import */ var _Users_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_scss__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Buttons_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Buttons/Button */ "./resources/js/components/Buttons/Button.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -76941,6 +76943,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Users =
 /*#__PURE__*/
 function (_Component) {
@@ -76952,68 +76955,58 @@ function (_Component) {
     _classCallCheck(this, Users);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Users).call(this, props));
-    _this.state = {};
+    _this.state = {
+      users: []
+    };
     return _this;
   }
 
   _createClass(Users, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/api/users').then(function (response) {
+        _this2.setState({
+          users: response.data
+        });
+
+        console.log(response.data);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var users = this.state.users;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "table table-striped table-hover"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "#"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Date Created"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Role"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Status"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "align-middle"
-      }, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "align-middle d-flex align-items-center"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-user-circle fa-3x pr-2"
-      }), " Richard Hpa"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "align-middle"
-      }, "04/10/2013"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "align-middle"
-      }, "Super Admin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "align-middle"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "status text-success"
-      }, "\u2022"), " Active"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "align-middle"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-cog fa-lg pr-2"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-times-circle text-danger fa-lg"
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "align-middle"
-      }, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "align-middle d-flex align-items-center"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-user-circle fa-3x pr-2"
-      }), " Casey James"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "align-middle"
-      }, "04/10/2013"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "align-middle"
-      }, "Admin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "align-middle"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "status text-success"
-      }, "\u2022"), " Active"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "align-middle"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-cog fa-lg pr-2"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-times-circle text-danger fa-lg"
-      })))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Role"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Actions"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, users.map(function (user, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+          key: i
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "align-middle d-flex align-items-center"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-user-circle fa-3x pr-2"
+        }), " ", user['name']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "align-middle"
+        }, user['email']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "align-middle"
+        }, user['roles'][0]['role']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "align-middle"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-cog fa-lg pr-2"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-times-circle text-danger fa-lg"
+        }))));
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col"
