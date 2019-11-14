@@ -170,7 +170,9 @@ class Gallery extends Component {
             }
         })
         .then((response) => {
-            // this.props.selectedImage();
+            if(this.props.selectedImage){
+                this.props.selectedImage();
+            }
             media.push(response.data.mediaInfo)
             this.setState({
                 uploader: false,

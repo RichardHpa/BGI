@@ -5,11 +5,14 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 import Media from './Media/Media';
+import Users from './Users/Users';
 
 const pages = [
     { 'id': 1, 'name': 'Dashboard', 'url': '/admin','icon': 'chart-pie' },
     { 'id': 2, 'name': 'Users', 'url': '/admin/users','icon': 'users' },
     { 'id': 3, 'name': 'Media', 'url': '/admin/media','icon': 'photo-video' },
+    { 'id': 4, 'name': 'Pages', 'url': '/admin/pages','icon': 'file' },
+    { 'id': 5, 'name': 'Staff', 'url': '/admin/staff','icon': 'people-carry' },
 ];
 
 class Dashboard extends Component {
@@ -47,6 +50,7 @@ class Dashboard extends Component {
                         </div>
                         <Switch>
                             <Route exact path='/admin/media' component={Media} />
+                            <Route exact path='/admin/users' component={Users} />
                         </Switch>
                         </main>
                     </div>
