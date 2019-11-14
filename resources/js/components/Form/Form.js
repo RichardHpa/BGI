@@ -15,13 +15,16 @@ class Form extends Component {
     componentDidMount(){
         const {children} = this.props;
         let inputs = []
-        children.map(child => {
-            inputs.push({
-                name: child.props.name,
-                value: '',
-                valid: child.props.validation? false: true
-            })
-        });
+        if(children){
+            children.map(child => {
+                inputs.push({
+                    name: child.props.name,
+                    value: '',
+                    valid: child.props.validation? false: true
+                })
+            });
+        }
+
         this.setState({
             inputs: inputs
         })
@@ -64,10 +67,15 @@ class Form extends Component {
         })
     }
 
-    closeError = () =>{
+    closeError = () => {
         this.setState({
             valid: true
         })
+    }
+
+    cancel = (e) => {
+        e.preventDefault();
+        this.props.cancelForm();
     }
 
     render(){
@@ -85,6 +93,7 @@ class Form extends Component {
                 }
                 { this.renderChildren() }
             <button type="submit" className="btn btn-bgi">{this.props.btnText? this.props.btnText: 'Submit'}</button>
+            <button onClick={this.cancel} className="btn">Cancel</button>
         </form>
     )
 }

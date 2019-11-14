@@ -3,6 +3,7 @@ import './Users.scss';
 
 import Button from '../Buttons/Button';
 import AddUsers from './AddUsers';
+import DeleteUsers from './DeleteUsers';
 import axios from 'axios';
 
 class Users extends Component {
@@ -10,7 +11,8 @@ class Users extends Component {
         super(props)
         this.state = {
             users: [],
-            add: false
+            add: false,
+            deleting: false
         }
     }
 
@@ -32,14 +34,20 @@ class Users extends Component {
         axios.get('/api/users').then(response => {
             this.setState({
                 users: response.data,
-                add: false
+                add: false,
+                deleting: null
             })
         })
     }
 
+    toggleDelete = (user) => {
+        this.setState({
+            deleting: user
+        })
+    }
 
     render () {
-        const { users, add } = this.state;
+        const { users, add, deleting } = this.state;
         return (
             <section>
                 <div className="row">
@@ -62,10 +70,9 @@ class Users extends Component {
                                             </td>
                                             <td className="align-middle">{user['email']}</td>
                                             <td className="align-middle">{user['role']}</td>
-
                                             <td className="align-middle">
                                                 <a href="#"><i className="fas fa-cog fa-lg pr-2"></i></a>
-                                                <a href="#"><i className="fas fa-times-circle text-danger fa-lg"></i></a>
+                                                <a href="#" onClick={this.toggleDelete.bind(this, user)}><i className="fas fa-times-circle text-danger fa-lg"></i></a>
                                             </td>
                                         </tr>
                                     ))
@@ -77,9 +84,10 @@ class Users extends Component {
                 <div className="row">
                     <div className="col">
                         <Button btnText="Add New User" btnClicked={this.openModal}/>
-                        {add && <AddUsers formSuccess={this.handleFormSuccess}/>}
                     </div>
                 </div>
+                {add && <AddUsers formSuccess={this.handleFormSuccess}/>}
+                {deleting && <DeleteUsers user={deleting} formSuccess={this.handleFormSuccess}/>}
             </section>
         )
     }

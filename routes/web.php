@@ -25,3 +25,5 @@ Route::prefix('admin')->group(function () {
     Route::get('/{sub}', 'AdminController@index')->middleware(['web', 'auth']);
     Route::get('/{sub}/{action}', 'AdminController@index')->middleware(['web', 'auth']);
 });
+
+Route::delete('users/delete/{id}', 'UserController@destroy');

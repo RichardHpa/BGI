@@ -3,7 +3,7 @@ import './Users.scss';
 import axios from 'axios';
 import FormData from 'form-data';
 
-import {Form, Input} from '../Form/Form';
+import { Form, Input } from '../Form/Form';
 
 class AddUsers extends Component {
     constructor (props) {
@@ -14,7 +14,6 @@ class AddUsers extends Component {
     }
 
     handleSendForm = (values) => {
-        console.log(values);
         let form = new FormData();
         for (let i = 0; i < values.length; i++) {
             form.append(values[i].name, values[i].value);
@@ -29,6 +28,10 @@ class AddUsers extends Component {
         });
     }
 
+    handleCancelForm = () => {
+        this.props.formSuccess();
+    }
+
     render () {
         return (
             <div className="modalForm">
@@ -37,6 +40,7 @@ class AddUsers extends Component {
                         method="post"
                         sendForm={this.handleSendForm}
                         heading="Add a New User"
+                        cancelForm={this.handleCancelForm}
                     >
                         <Input
                             label="Name"

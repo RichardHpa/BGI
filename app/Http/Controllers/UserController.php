@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 
 use App\User;
 use App\Role;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -57,8 +58,8 @@ class UserController extends Controller
         ]);
 
         $user
-        ->roles()
-        ->attach(Role::where('role', 'user')->first());
+            ->roles()
+            ->attach(Role::where('role', 'user')->first());
 
         return response()->json($user);
     }
@@ -105,6 +106,18 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(Auth::check()){
+            $currentLoggedUser = Auth::user();
+            if($currentLoggedUser->hasAnyRole(['Super Admin', 'Admin'])){
+                $user = User::findOrFail($id);
+                $user->delete();
+                return response('success');
+            } else {
+                return response('they cant delete');
+            }
+
+        } else {
+            return response('401');
+        }
     }
 }

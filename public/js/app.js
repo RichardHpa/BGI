@@ -76224,6 +76224,12 @@ function (_Component) {
       });
     };
 
+    _this.cancel = function (e) {
+      e.preventDefault();
+
+      _this.props.cancelForm();
+    };
+
     _this.state = {
       inputs: [],
       valid: true
@@ -76236,13 +76242,17 @@ function (_Component) {
     value: function componentDidMount() {
       var children = this.props.children;
       var inputs = [];
-      children.map(function (child) {
-        inputs.push({
-          name: child.props.name,
-          value: '',
-          valid: child.props.validation ? false : true
+
+      if (children) {
+        children.map(function (child) {
+          inputs.push({
+            name: child.props.name,
+            value: '',
+            valid: child.props.validation ? false : true
+          });
         });
-      });
+      }
+
       this.setState({
         inputs: inputs
       });
@@ -76284,7 +76294,10 @@ function (_Component) {
       }, "\xD7"))), this.renderChildren(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
         className: "btn btn-bgi"
-      }, this.props.btnText ? this.props.btnText : 'Submit'));
+      }, this.props.btnText ? this.props.btnText : 'Submit'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.cancel,
+        className: "btn"
+      }, "Cancel"));
     }
   }]);
 
@@ -76521,7 +76534,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "navbar-brand",
         href: "/"
-      }, "Hey, "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Hey, ", window.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "navbar-toggler",
         type: "button",
         "data-toggle": "collapse",
@@ -77321,7 +77334,6 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(AddUsers).call(this, props));
 
     _this.handleSendForm = function (values) {
-      console.log(values);
       var form = new form_data__WEBPACK_IMPORTED_MODULE_3___default.a();
 
       for (var i = 0; i < values.length; i++) {
@@ -77335,6 +77347,10 @@ function (_Component) {
       })["catch"](function (error) {
         console.log('error');
       });
+    };
+
+    _this.handleCancelForm = function () {
+      _this.props.formSuccess();
     };
 
     _this.state = {};
@@ -77351,7 +77367,8 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form_Form__WEBPACK_IMPORTED_MODULE_4__["Form"], {
         method: "post",
         sendForm: this.handleSendForm,
-        heading: "Add a New User"
+        heading: "Add a New User",
+        cancelForm: this.handleCancelForm
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form_Form__WEBPACK_IMPORTED_MODULE_4__["Input"], {
         label: "Name",
         name: "name",
@@ -77382,10 +77399,10 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Users/Users.js":
-/*!************************************************!*\
-  !*** ./resources/js/components/Users/Users.js ***!
-  \************************************************/
+/***/ "./resources/js/components/Users/DeleteUsers.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Users/DeleteUsers.js ***!
+  \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -77395,10 +77412,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Users_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Users.scss */ "./resources/js/components/Users/Users.scss");
 /* harmony import */ var _Users_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Buttons_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Buttons/Button */ "./resources/js/components/Buttons/Button.js");
-/* harmony import */ var _AddUsers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AddUsers */ "./resources/js/components/Users/AddUsers.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Form_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Form/Form */ "./resources/js/components/Form/Form.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -77416,6 +77432,102 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var DeleteUsers =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(DeleteUsers, _Component);
+
+  function DeleteUsers(props) {
+    var _this;
+
+    _classCallCheck(this, DeleteUsers);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(DeleteUsers).call(this, props));
+
+    _this.handleSendForm = function () {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/users/delete/".concat(_this.props.user.id)).then(function (response) {
+        if (response.data == 'success') {
+          _this.props.formSuccess();
+        }
+      })["catch"](function (error) {
+        console.log('error');
+      });
+    };
+
+    _this.handleCancelForm = function () {
+      _this.props.formSuccess();
+    };
+
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(DeleteUsers, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modalForm"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form_Form__WEBPACK_IMPORTED_MODULE_3__["Form"], {
+        method: "post",
+        sendForm: this.handleSendForm,
+        heading: "Are you sure you want to delete ".concat(this.props.user.name),
+        btnText: "Confirm",
+        cancelForm: this.handleCancelForm
+      })));
+    }
+  }]);
+
+  return DeleteUsers;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (DeleteUsers);
+
+/***/ }),
+
+/***/ "./resources/js/components/Users/Users.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/Users/Users.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Users_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Users.scss */ "./resources/js/components/Users/Users.scss");
+/* harmony import */ var _Users_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Buttons_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Buttons/Button */ "./resources/js/components/Buttons/Button.js");
+/* harmony import */ var _AddUsers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AddUsers */ "./resources/js/components/Users/AddUsers.js");
+/* harmony import */ var _DeleteUsers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./DeleteUsers */ "./resources/js/components/Users/DeleteUsers.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -77442,17 +77554,25 @@ function (_Component) {
     };
 
     _this.handleFormSuccess = function () {
-      axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('/api/users').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('/api/users').then(function (response) {
         _this.setState({
           users: response.data,
-          add: false
+          add: false,
+          deleting: null
         });
+      });
+    };
+
+    _this.toggleDelete = function (user) {
+      _this.setState({
+        deleting: user
       });
     };
 
     _this.state = {
       users: [],
-      add: false
+      add: false,
+      deleting: false
     };
     return _this;
   }
@@ -77462,7 +77582,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('/api/users').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('/api/users').then(function (response) {
         _this2.setState({
           users: response.data
         });
@@ -77471,9 +77591,12 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var _this$state = this.state,
           users = _this$state.users,
-          add = _this$state.add;
+          add = _this$state.add,
+          deleting = _this$state.deleting;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -77498,7 +77621,8 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-cog fa-lg pr-2"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
+          href: "#",
+          onClick: _this3.toggleDelete.bind(_this3, user)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-times-circle text-danger fa-lg"
         }))));
@@ -77509,9 +77633,12 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Buttons_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
         btnText: "Add New User",
         btnClicked: this.openModal
-      }), add && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddUsers__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }))), add && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddUsers__WEBPACK_IMPORTED_MODULE_3__["default"], {
         formSuccess: this.handleFormSuccess
-      }))));
+      }), deleting && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DeleteUsers__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        user: deleting,
+        formSuccess: this.handleFormSuccess
+      }));
     }
   }]);
 
