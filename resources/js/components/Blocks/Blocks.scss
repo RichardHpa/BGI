@@ -1,0 +1,47 @@
+.blockEditor{
+    width: 100%;
+
+    .blockList{
+        display: flex;
+        .blockContent{
+            width: 95%;
+            float: left;
+        }
+        .blockControls{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 5%;
+            float: left;
+        }
+        &::after{
+            clear: both;
+            content: '';
+            display: block;
+        }
+    }
+    .block{
+        padding: 10px 0;
+    }
+    .blockSelector{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid #ced4da;
+        padding-top: 10px;
+        .blockIcon{
+            padding: 10px;
+            margin: 0 10px;
+            border: 1px solid #ced4da;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            &:hover{
+                cursor: pointer;
+                border: 1px solid #95a5a6;
+            }
+        }
+    }
+}

@@ -6,3 +6,16 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.btn-placeholder{
+    height: calc(1.6em + 0.75rem + 2px);
+    border: 1px dashed #ced4da;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        cursor: pointer;
+        border-color: $bgi;
+        color: $bgi;
+    }
+}

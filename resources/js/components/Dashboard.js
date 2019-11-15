@@ -6,6 +6,8 @@ import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 import Media from './Media/Media';
 import Users from './Users/Users';
+import Pages from './Pages/Pages';
+import AddPage from './Pages/AddPage';
 
 const pages = [
     { 'id': 1, 'name': 'Dashboard', 'url': '/admin','icon': 'chart-pie' },
@@ -13,6 +15,8 @@ const pages = [
     { 'id': 3, 'name': 'Media', 'url': '/admin/media','icon': 'photo-video' },
     { 'id': 4, 'name': 'Pages', 'url': '/admin/pages','icon': 'file' },
     { 'id': 5, 'name': 'Staff', 'url': '/admin/staff','icon': 'people-carry' },
+    { 'id': 6, 'name': 'Programmes', 'url': '/admin/programmes','icon': 'chalkboard-teacher' },
+    { 'id': 7, 'name': 'Navigation', 'url': '/admin/navigation','icon': 'sitemap' },
 ];
 
 class Dashboard extends Component {
@@ -51,6 +55,8 @@ class Dashboard extends Component {
                         <Switch>
                             <Route exact path='/admin/media' component={Media} />
                             <Route exact path='/admin/users' component={Users} />
+                            <Route exact path='/admin/pages' component={Pages} />
+                            <Route exact path='/admin/add-page' component={AddPage} />
                         </Switch>
                         </main>
                     </div>

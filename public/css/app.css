@@ -11006,3 +11006,20 @@ a.text-bgi:focus {
   }
 }
 
+.btn-placeholder {
+  height: calc(1.6em + 0.75rem + 2px);
+  border: 1px dashed #ced4da;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.btn-placeholder:hover {
+  cursor: pointer;
+  border-color: #37598D;
+  color: #37598D;
+}
+

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Gallery from './Gallery';
 
-
 class Media extends Component {
     constructor (props) {
         super(props)
@@ -9,7 +8,6 @@ class Media extends Component {
 
         }
     }
-
 
     render () {
         return (
