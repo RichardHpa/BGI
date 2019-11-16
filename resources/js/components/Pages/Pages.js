@@ -15,11 +15,15 @@ class Pages extends Component {
     }
 
     componentDidMount () {
-
+        axios.get('/api/pages').then(response => {
+            this.setState({
+                pages: response.data
+            })
+        })
     }
 
     render () {
-        const { users, add, deleting } = this.state;
+        const { pages } = this.state;
         return (
             <section>
                 <div className="row">
@@ -28,19 +32,32 @@ class Pages extends Component {
                             <thead>
                                 <tr>
                                     <th>Title</th>
-            						<th>Author</th>
+                                    <th>Url</th>
             						<th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-
+                            {
+                                pages.map((page, i) => (
+                                    <tr key={i}>
+                                        <td className="align-middle d-flex align-items-center">
+                                            {page['page_title']}
+                                        </td>
+                                        <td className="align-middle">/{page['page_url']}</td>
+                                        <td className="align-middle">
+                                            <a href="#"><i className="fas fa-cog fa-lg pr-2"></i></a>
+                                            <a href="#"><i className="fas fa-times-circle text-danger fa-lg"></i></a>
+                                        </td>
+                                    </tr>
+                                ))
+                            }
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col">
-                        <Link className="btn btn-bgi" to='./add-page'>Add New Page</Link>
+                        <Link className="btn btn-bgi" to='./pages/add-page'>Add New Page</Link>
                     </div>
                 </div>
             </section>

@@ -17,8 +17,8 @@ class CreatePagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('page_title', 255);
             $table->string('page_url')->unique();
-            $table->string('template', 100);
-            $table->boolean('protected');
+            $table->string('template', 255)->default('standard');
+            $table->boolean('protected')->default(0);
             $table->bigInteger('featured_image')->unsigned()->index()->nullable();
             $table->foreign('featured_image')->references('id')->on('media');
             $table->timestamps();

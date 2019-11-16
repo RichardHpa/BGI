@@ -81,7 +81,7 @@ class ImageBlock extends Component {
 
     render () {
         const { media } = this.state;
-        console.log(media);
+        // console.log(media);
         return (
             <div className="block">
             {

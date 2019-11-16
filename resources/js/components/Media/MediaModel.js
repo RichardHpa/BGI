@@ -21,7 +21,6 @@ class MediaModel extends Component {
 
     render () {
         const {modalOpen} = this.state;
-        console.log(modalOpen);
         if(!modalOpen){
             return(
                 <button className="btn btn-block btn-placeholder" onClick={this.toggleModal}>Select an Image</button>

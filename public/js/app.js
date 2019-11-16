@@ -76080,8 +76080,8 @@ function (_Component2) {
   _createClass(ImageBlock, [{
     key: "render",
     value: function render() {
-      var media = this.state.media;
-      console.log(media);
+      var media = this.state.media; // console.log(media);
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "block"
       }, media === null ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Media_MediaModel__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -76400,7 +76400,7 @@ function (_Component) {
         component: _Pages_Pages__WEBPACK_IMPORTED_MODULE_7__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
-        path: "/admin/add-page",
+        path: "/admin/pages/add-page",
         component: _Pages_AddPage__WEBPACK_IMPORTED_MODULE_8__["default"]
       }))))));
     }
@@ -76522,13 +76522,21 @@ function (_Component) {
       var inputs = [];
 
       if (children) {
-        children.map(function (child) {
-          inputs.push({
-            name: child.props.name,
-            value: '',
-            valid: child.props.validation ? false : true
+        if (Array.isArray(children)) {
+          children.map(function (child) {
+            inputs.push({
+              name: child.props.name,
+              value: '',
+              valid: child.props.validation ? false : true
+            });
           });
-        });
+        } else {
+          inputs.push({
+            name: children.props.name,
+            value: '',
+            valid: children.props.validation ? false : true
+          });
+        }
       }
 
       this.setState({
@@ -76644,14 +76652,15 @@ function (_Component2) {
           validFeedback = _this$state.validFeedback;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, this.props.label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.props.label && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, this.props.label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control ".concat(validFeedback ? 'is-invalid' : ''),
         type: this.props.type ? this.props.type : 'text',
         name: this.props.name,
         autoComplete: "new-password",
         onBlur: this.onBlur,
         onChange: this.onChange,
-        value: this.state.value
+        value: this.state.value,
+        placeholder: this.props.placeholder ? this.props.placeholder : ''
       }), !valid ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "invalid-feedback"
       }, this.props.label, " ", validFeedback) : '');
@@ -77418,7 +77427,6 @@ function (_Component) {
     key: "render",
     value: function render() {
       var modalOpen = this.state.modalOpen;
-      console.log(modalOpen);
 
       if (!modalOpen) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -77588,7 +77596,27 @@ function (_Component) {
       var blocks = _this.state.blocks;
     };
 
-    _this.state = {};
+    _this.changeTitle = function (e) {
+      _this.setState({
+        title: e.target.value
+      });
+    };
+
+    _this.sendForm = function (e) {
+      e.preventDefault();
+      var title = _this.state.title;
+      var form = new FormData();
+      form.append('page_title', title);
+      axios.post('/api/pages/add', form).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {
+        console.log('error');
+      });
+    };
+
+    _this.state = {
+      title: ''
+    };
     return _this;
   }
 
@@ -77598,20 +77626,32 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-md-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control form-control-lg",
         type: "text",
-        placeholder: "Page Title"
+        placeholder: "Page Title",
+        onChange: this.changeTitle
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12 d-flex justify-content-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Blocks_Blocks__WEBPACK_IMPORTED_MODULE_2__["default"], {
         addBlock: this.handleAddBlock
-      }))));
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-md"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card p-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-bgi btn-block",
+        onClick: this.sendForm
+      }, "Save Page")))));
     }
   }]);
 
@@ -77682,27 +77722,50 @@ function (_Component) {
 
   _createClass(Pages, [{
     key: "componentDidMount",
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('/api/pages').then(function (response) {
+        _this2.setState({
+          pages: response.data
+        });
+      });
+    }
   }, {
     key: "render",
     value: function render() {
-      var _this$state = this.state,
-          users = _this$state.users,
-          add = _this$state.add,
-          deleting = _this$state.deleting;
+      var pages = this.state.pages;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "table table-striped table-hover"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Author"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Actions"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Url"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Actions"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, pages.map(function (page, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+          key: i
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "align-middle d-flex align-items-center"
+        }, page['page_title']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "align-middle"
+        }, "/", page['page_url']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "align-middle"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-cog fa-lg pr-2"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "#"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-times-circle text-danger fa-lg"
+        }))));
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "btn btn-bgi",
-        to: "./add-page"
+        to: "./pages/add-page"
       }, "Add New Page"))));
     }
   }]);

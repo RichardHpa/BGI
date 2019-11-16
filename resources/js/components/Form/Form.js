@@ -15,14 +15,26 @@ class Form extends Component {
     componentDidMount(){
         const {children} = this.props;
         let inputs = []
+
+
         if(children){
-            children.map(child => {
+            if(Array.isArray(children)){
+                children.map(child => {
+                    inputs.push({
+                        name: child.props.name,
+                        value: '',
+                        valid: child.props.validation? false: true
+                    })
+                });
+            } else {
                 inputs.push({
-                    name: child.props.name,
+                    name: children.props.name,
                     value: '',
-                    valid: child.props.validation? false: true
+                    valid: children.props.validation? false: true
                 })
-            });
+            }
+
+
         }
 
         this.setState({
@@ -147,7 +159,7 @@ class Input extends Component {
         const { valid, validFeedback} = this.state;
         return(
             <div className="form-group">
-            <label>{this.props.label}</label>
+            {this.props.label && <label>{this.props.label}</label> }
             <input
                 className={`form-control ${validFeedback ? 'is-invalid': '' }`}
                 type={this.props.type? this.props.type: 'text'}
@@ -156,6 +168,7 @@ class Input extends Component {
                 onBlur={this.onBlur}
                 onChange={this.onChange}
                 value={this.state.value}
+                placeholder={this.props.placeholder? this.props.placeholder: ''}
             />
             {
                 !valid?

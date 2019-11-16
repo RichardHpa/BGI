@@ -56,7 +56,7 @@ class Dashboard extends Component {
                             <Route exact path='/admin/media' component={Media} />
                             <Route exact path='/admin/users' component={Users} />
                             <Route exact path='/admin/pages' component={Pages} />
-                            <Route exact path='/admin/add-page' component={AddPage} />
+                            <Route exact path='/admin/pages/add-page' component={AddPage} />
                         </Switch>
                         </main>
                     </div>
