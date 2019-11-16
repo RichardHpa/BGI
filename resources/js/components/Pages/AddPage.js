@@ -22,22 +22,22 @@ class AddPage extends Component {
 
     sendForm = (e) => {
         e.preventDefault();
-        const { title } = this.state;
-        let form = new FormData();
-        form.append('page_title', title);
-        axios.post('/api/pages/add', form)
-        .then((response) => {
-            console.log(response);
-        }).catch((error) => {
-            console.log('error');
-        });
+        // const { title } = this.state;
+        // let form = new FormData();
+        // form.append('page_title', title);
+        // axios.post('/api/pages/add', form)
+        // .then((response) => {
+        //     console.log(response);
+        // }).catch((error) => {
+        //     console.log('error');
+        // });
     }
 
     render () {
         return (
             <section>
                 <div className="row">
-                    <div className="col-12 col-md-9">
+                    <div className="col-12 col-md-7">
                         <div className="row">
                             <div className="col-12">
                                 <div className="form-group">

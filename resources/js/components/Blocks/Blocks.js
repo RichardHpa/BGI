@@ -4,13 +4,15 @@ import './Blocks.scss';
 import Button from '../Buttons/Button';
 import MediaModel from '../Media/MediaModel';
 
+import CustomEditor from './EditorBlock';
+
 class BlockEditor extends Component {
     constructor (props) {
         super(props)
         this.state = {
             blocks: [{
                 id: 1,
-                type: 'imageBlock'
+                type: 'textBlock'
             }]
         }
     }
@@ -38,7 +40,7 @@ class BlockEditor extends Component {
                                 {(() => {
                                   switch (singleBlock.type) {
                                     case 'imageBlock':   return <ImageBlock/>;
-                                    case 'textBlock': return <TextBlock/>;
+                                    case 'textBlock': return <CustomEditor/>;
                                   }
                                 })()}
                             </div>
@@ -81,34 +83,37 @@ class ImageBlock extends Component {
 
     render () {
         const { media } = this.state;
-        // console.log(media);
         return (
             <div className="block">
-            {
-                media === null?
-                    <MediaModel sendImage={this.handleSendImage}/>
-                :
-                <img className="img-fluid" src={`/images/uploads/originals/${media.media_name}`} />
-            }
-
+                {
+                    media === null?
+                        <MediaModel sendImage={this.handleSendImage}/>
+                    :
+                    <img className="img-fluid" src={`/images/uploads/originals/${media.media_name}`} />
+                }
             </div>
         )
     }
 }
 
-class TextBlock extends Component {
-    constructor (props) {
-        super(props)
-        this.state = {
-            text: []
-        }
-    }
-
-    render () {
-        return (
-            <div className="block">
-                <h2>Text Block</h2>
-            </div>
-        )
-    }
-}
+//
+// import { Editor, EditorState , RichUtils, convertFromRaw, convertToRaw} from 'draft-js';
+// import {stateToHTML} from 'draft-js-export-html';
+//
+// class TextBlock extends Component {
+//
+//     constructor (props) {
+//         super(props)
+//         this.state = {
+//             text: []
+//         }
+//     }
+//
+//     render () {
+//         return (
+//             <div className="block">
+//                 <h2>Text Block</h2>
+//             </div>
+//         )
+//     }
+// }

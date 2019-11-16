@@ -29,6 +29,9 @@
         "form-data": "^3.0.0",
         "react-dropzone": "^10.1.10",
         "react-router-dom": "^5.1.2",
-        "react-image-crop": "^6.0.18"
+        "react-image-crop": "^6.0.18",
+        "draft-js": "^0.11.1",
+        "draft-js-export-html": "^1.4.1",
+        "draft-js-utils": "^1.4.0"
     }
 }
