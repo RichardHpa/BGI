@@ -6477,7 +6477,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#dropzoneSection {\n  display: inline;\n}\n#dropzoneSection #dropzone {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n  min-height: 30vh;\n  height: 100%;\n  width: 100%;\n  border: 1px dashed grey;\n}\n#dropzoneSection #dropzone.hovering {\n  border: 1px dashed rgba(255, 0, 0, 0.5);\n  color: rgba(255, 0, 0, 0.5);\n}", ""]);
+exports.push([module.i, "#dropzoneSection {\n  display: inline;\n}\n#dropzoneSection #dropzone {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n  min-height: 30vh;\n  height: 100%;\n  width: 100%;\n  border: 1px dashed grey;\n}\n#dropzoneSection #dropzone.hovering {\n  border: 1px dashed rgba(255, 0, 0, 0.5);\n  color: rgba(255, 0, 0, 0.5);\n}\n\n.gallery {\n  width: 100%;\n}\n\n#uploader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: 100vh;\n  background-color: rgba(0, 0, 0, 0.5);\n  z-index: 1000000;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n}\n#uploader .uploaderCard {\n  position: relative;\n  background-color: white;\n  width: 90vw;\n  height: 80vh;\n  min-height: 50vh;\n  max-height: 80vh;\n  padding: 20px;\n}", ""]);
 
 // exports
 
@@ -6553,7 +6553,7 @@ exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base
 
 
 // module
-exports.push([module.i, ".ReactCrop {\n  position: relative;\n  display: inline-block;\n  cursor: crosshair;\n  overflow: hidden;\n  max-width: 100%;\n  background-color: #000; }\n  .ReactCrop:focus {\n    outline: none; }\n  .ReactCrop--disabled, .ReactCrop--locked {\n    cursor: inherit; }\n  .ReactCrop__image {\n    display: block;\n    max-width: 100%;\n    touch-action: manipulation; }\n  .ReactCrop--crop-invisible .ReactCrop__image {\n    opacity: 0.5; }\n  .ReactCrop__crop-selection {\n    position: absolute;\n    top: 0;\n    left: 0;\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n    box-sizing: border-box;\n    cursor: move;\n    box-shadow: 0 0 0 9999em rgba(0, 0, 0, 0.5);\n    touch-action: manipulation;\n    border: 1px solid;\n    border-image-source: url(\"data:image/gif;base64,R0lGODlhCgAKAJECAAAAAP///////wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OEI5RDc5MTFDNkE2MTFFM0JCMDZEODI2QTI4MzJBOTIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OEI5RDc5MTBDNkE2MTFFM0JCMDZEODI2QTI4MzJBOTIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuZGlkOjAyODAxMTc0MDcyMDY4MTE4MDgzQzNDMjA5MzREQ0ZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjAyODAxMTc0MDcyMDY4MTE4MDgzQzNDMjA5MzREQ0ZDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEBQoAAgAsAAAAAAoACgAAAhWEERkn7W3ei7KlagMWF/dKgYeyGAUAIfkEBQoAAgAsAAAAAAoACgAAAg+UYwLJ7RnQm7QmsCyVKhUAIfkEBQoAAgAsAAAAAAoACgAAAhCUYgLJHdiinNSAVfOEKoUCACH5BAUKAAIALAAAAAAKAAoAAAIRVISAdusPo3RAzYtjaMIaUQAAIfkEBQoAAgAsAAAAAAoACgAAAg+MDiem7Q8bSLFaG5il6xQAIfkEBQoAAgAsAAAAAAoACgAAAg+UYRLJ7QnQm7SmsCyVKhUAIfkEBQoAAgAsAAAAAAoACgAAAhCUYBLJDdiinNSEVfOEKoECACH5BAUKAAIALAAAAAAKAAoAAAIRFISBdusPo3RBzYsjaMIaUQAAOw==\");\n    border-image-slice: 1;\n    border-image-repeat: repeat; }\n    .ReactCrop--disabled .ReactCrop__crop-selection {\n      cursor: inherit; }\n    .ReactCrop--circular-crop .ReactCrop__crop-selection {\n      border-radius: 50%;\n      box-shadow: 0px 0px 1px 1px white, 0 0 0 9999em rgba(0, 0, 0, 0.5); }\n  .ReactCrop__rule-of-thirds-vt::before, .ReactCrop__rule-of-thirds-vt::after, .ReactCrop__rule-of-thirds-hz::before, .ReactCrop__rule-of-thirds-hz::after {\n    content: '';\n    display: block;\n    position: absolute;\n    background-color: rgba(255, 255, 255, 0.4); }\n  .ReactCrop__rule-of-thirds-vt::before, .ReactCrop__rule-of-thirds-vt::after {\n    width: 1px;\n    height: 100%; }\n  .ReactCrop__rule-of-thirds-vt::before {\n    left: 33.3333%;\n    left: calc(100% / 3); }\n  .ReactCrop__rule-of-thirds-vt::after {\n    left: 66.6666%;\n    left: calc(100% / 3 * 2); }\n  .ReactCrop__rule-of-thirds-hz::before, .ReactCrop__rule-of-thirds-hz::after {\n    width: 100%;\n    height: 1px; }\n  .ReactCrop__rule-of-thirds-hz::before {\n    top: 33.3333%;\n    top: calc(100% / 3); }\n  .ReactCrop__rule-of-thirds-hz::after {\n    top: 66.6666%;\n    top: calc(100% / 3 * 2); }\n  .ReactCrop__drag-handle {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    background-color: rgba(0, 0, 0, 0.2);\n    border: 1px solid rgba(255, 255, 255, 0.7);\n    box-sizing: border-box;\n    outline: 1px solid transparent; }\n  .ReactCrop .ord-nw {\n    top: 0;\n    left: 0;\n    margin-top: -5px;\n    margin-left: -5px;\n    cursor: nw-resize; }\n  .ReactCrop .ord-n {\n    top: 0;\n    left: 50%;\n    margin-top: -5px;\n    margin-left: -5px;\n    cursor: n-resize; }\n  .ReactCrop .ord-ne {\n    top: 0;\n    right: 0;\n    margin-top: -5px;\n    margin-right: -5px;\n    cursor: ne-resize; }\n  .ReactCrop .ord-e {\n    top: 50%;\n    right: 0;\n    margin-top: -5px;\n    margin-right: -5px;\n    cursor: e-resize; }\n  .ReactCrop .ord-se {\n    bottom: 0;\n    right: 0;\n    margin-bottom: -5px;\n    margin-right: -5px;\n    cursor: se-resize; }\n  .ReactCrop .ord-s {\n    bottom: 0;\n    left: 50%;\n    margin-bottom: -5px;\n    margin-left: -5px;\n    cursor: s-resize; }\n  .ReactCrop .ord-sw {\n    bottom: 0;\n    left: 0;\n    margin-bottom: -5px;\n    margin-left: -5px;\n    cursor: sw-resize; }\n  .ReactCrop .ord-w {\n    top: 50%;\n    left: 0;\n    margin-top: -5px;\n    margin-left: -5px;\n    cursor: w-resize; }\n  .ReactCrop__disabled .ReactCrop__drag-handle {\n    cursor: inherit; }\n  .ReactCrop__drag-bar {\n    position: absolute; }\n    .ReactCrop__drag-bar.ord-n {\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 6px;\n      margin-top: -3px; }\n    .ReactCrop__drag-bar.ord-e {\n      right: 0;\n      top: 0;\n      width: 6px;\n      height: 100%;\n      margin-right: -3px; }\n    .ReactCrop__drag-bar.ord-s {\n      bottom: 0;\n      left: 0;\n      width: 100%;\n      height: 6px;\n      margin-bottom: -3px; }\n    .ReactCrop__drag-bar.ord-w {\n      top: 0;\n      left: 0;\n      width: 6px;\n      height: 100%;\n      margin-left: -3px; }\n  .ReactCrop--new-crop .ReactCrop__drag-bar,\n  .ReactCrop--new-crop .ReactCrop__drag-handle,\n  .ReactCrop--fixed-aspect .ReactCrop__drag-bar {\n    display: none; }\n  .ReactCrop--fixed-aspect .ReactCrop__drag-handle.ord-n,\n  .ReactCrop--fixed-aspect .ReactCrop__drag-handle.ord-e,\n  .ReactCrop--fixed-aspect .ReactCrop__drag-handle.ord-s,\n  .ReactCrop--fixed-aspect .ReactCrop__drag-handle.ord-w {\n    display: none; }\n  @media (pointer: coarse) {\n    .ReactCrop__drag-handle {\n      width: 34px;\n      height: 34px; }\n    .ReactCrop__drag-bar {\n      display: none; }\n    .ReactCrop .ord-nw,\n    .ReactCrop .ord-n,\n    .ReactCrop .ord-ne,\n    .ReactCrop .ord-e,\n    .ReactCrop .ord-s,\n    .ReactCrop .ord-sw,\n    .ReactCrop .ord-w {\n      display: none; }\n    .ReactCrop .ord-se {\n      margin-bottom: -1px;\n      margin-right: -1px; } }\n", ""]);
+exports.push([module.i, ".ReactCrop {\n  position: relative;\n  display: inline-block;\n  cursor: crosshair;\n  overflow: hidden;\n  max-width: 100%;\n  background-color: #000; }\n  .ReactCrop:focus {\n    outline: none; }\n  .ReactCrop--disabled, .ReactCrop--locked {\n    cursor: inherit; }\n  .ReactCrop__image {\n    /* autoprefixer: off */\n    display: block;\n    max-width: 100%;\n    max-height: -webkit-fill-available;\n    max-height: -moz-available;\n    max-height: fill-available; }\n  .ReactCrop--crop-invisible .ReactCrop__image {\n    opacity: 0.5; }\n  .ReactCrop__crop-selection {\n    position: absolute;\n    top: 0;\n    left: 0;\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n    box-sizing: border-box;\n    cursor: move;\n    box-shadow: 0 0 0 9999em rgba(0, 0, 0, 0.5);\n    border: 1px solid;\n    border-image-source: url(\"data:image/gif;base64,R0lGODlhCgAKAJECAAAAAP///////wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OEI5RDc5MTFDNkE2MTFFM0JCMDZEODI2QTI4MzJBOTIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OEI5RDc5MTBDNkE2MTFFM0JCMDZEODI2QTI4MzJBOTIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuZGlkOjAyODAxMTc0MDcyMDY4MTE4MDgzQzNDMjA5MzREQ0ZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjAyODAxMTc0MDcyMDY4MTE4MDgzQzNDMjA5MzREQ0ZDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEBQoAAgAsAAAAAAoACgAAAhWEERkn7W3ei7KlagMWF/dKgYeyGAUAIfkEBQoAAgAsAAAAAAoACgAAAg+UYwLJ7RnQm7QmsCyVKhUAIfkEBQoAAgAsAAAAAAoACgAAAhCUYgLJHdiinNSAVfOEKoUCACH5BAUKAAIALAAAAAAKAAoAAAIRVISAdusPo3RAzYtjaMIaUQAAIfkEBQoAAgAsAAAAAAoACgAAAg+MDiem7Q8bSLFaG5il6xQAIfkEBQoAAgAsAAAAAAoACgAAAg+UYRLJ7QnQm7SmsCyVKhUAIfkEBQoAAgAsAAAAAAoACgAAAhCUYBLJDdiinNSEVfOEKoECACH5BAUKAAIALAAAAAAKAAoAAAIRFISBdusPo3RBzYsjaMIaUQAAOw==\");\n    border-image-slice: 1;\n    border-image-repeat: repeat; }\n    .ReactCrop--disabled .ReactCrop__crop-selection {\n      cursor: inherit; }\n  .ReactCrop__drag-handle {\n    position: absolute;\n    width: 9px;\n    height: 9px;\n    background-color: rgba(0, 0, 0, 0.2);\n    border: 1px solid rgba(255, 255, 255, 0.7);\n    box-sizing: border-box;\n    outline: 1px solid transparent; }\n  .ReactCrop .ord-nw {\n    top: 0;\n    left: 0;\n    margin-top: -5px;\n    margin-left: -5px;\n    cursor: nw-resize; }\n  .ReactCrop .ord-n {\n    top: 0;\n    left: 50%;\n    margin-top: -5px;\n    margin-left: -5px;\n    cursor: n-resize; }\n  .ReactCrop .ord-ne {\n    top: 0;\n    right: 0;\n    margin-top: -5px;\n    margin-right: -5px;\n    cursor: ne-resize; }\n  .ReactCrop .ord-e {\n    top: 50%;\n    right: 0;\n    margin-top: -5px;\n    margin-right: -5px;\n    cursor: e-resize; }\n  .ReactCrop .ord-se {\n    bottom: 0;\n    right: 0;\n    margin-bottom: -5px;\n    margin-right: -5px;\n    cursor: se-resize; }\n  .ReactCrop .ord-s {\n    bottom: 0;\n    left: 50%;\n    margin-bottom: -5px;\n    margin-left: -5px;\n    cursor: s-resize; }\n  .ReactCrop .ord-sw {\n    bottom: 0;\n    left: 0;\n    margin-bottom: -5px;\n    margin-left: -5px;\n    cursor: sw-resize; }\n  .ReactCrop .ord-w {\n    top: 50%;\n    left: 0;\n    margin-top: -5px;\n    margin-left: -5px;\n    cursor: w-resize; }\n  .ReactCrop__disabled .ReactCrop__drag-handle {\n    cursor: inherit; }\n  .ReactCrop__drag-bar {\n    position: absolute; }\n    .ReactCrop__drag-bar.ord-n {\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 6px;\n      margin-top: -3px; }\n    .ReactCrop__drag-bar.ord-e {\n      right: 0;\n      top: 0;\n      width: 6px;\n      height: 100%;\n      margin-right: -3px; }\n    .ReactCrop__drag-bar.ord-s {\n      bottom: 0;\n      left: 0;\n      width: 100%;\n      height: 6px;\n      margin-bottom: -3px; }\n    .ReactCrop__drag-bar.ord-w {\n      top: 0;\n      left: 0;\n      width: 6px;\n      height: 100%;\n      margin-left: -3px; }\n  .ReactCrop--new-crop .ReactCrop__drag-bar,\n  .ReactCrop--new-crop .ReactCrop__drag-handle,\n  .ReactCrop--fixed-aspect .ReactCrop__drag-bar {\n    display: none; }\n  .ReactCrop--fixed-aspect .ReactCrop__drag-handle.ord-n,\n  .ReactCrop--fixed-aspect .ReactCrop__drag-handle.ord-e,\n  .ReactCrop--fixed-aspect .ReactCrop__drag-handle.ord-s,\n  .ReactCrop--fixed-aspect .ReactCrop__drag-handle.ord-w {\n    display: none; }\n  @media (max-width: 768px), (pointer: coarse) {\n    .ReactCrop__drag-handle {\n      width: 17px;\n      height: 17px; }\n    .ReactCrop .ord-nw {\n      margin-top: -9px;\n      margin-left: -9px; }\n    .ReactCrop .ord-n {\n      margin-top: -9px;\n      margin-left: -9px; }\n    .ReactCrop .ord-ne {\n      margin-top: -9px;\n      margin-right: -9px; }\n    .ReactCrop .ord-e {\n      margin-top: -9px;\n      margin-right: -9px; }\n    .ReactCrop .ord-se {\n      margin-bottom: -9px;\n      margin-right: -9px; }\n    .ReactCrop .ord-s {\n      margin-bottom: -9px;\n      margin-left: -9px; }\n    .ReactCrop .ord-sw {\n      margin-bottom: -9px;\n      margin-left: -9px; }\n    .ReactCrop .ord-w {\n      margin-top: -9px;\n      margin-left: -9px; }\n    .ReactCrop__drag-bar.ord-n {\n      height: 14px;\n      margin-top: -7px; }\n    .ReactCrop__drag-bar.ord-e {\n      width: 14px;\n      margin-right: -7px; }\n    .ReactCrop__drag-bar.ord-s {\n      height: 14px;\n      margin-bottom: -7px; }\n    .ReactCrop__drag-bar.ord-w {\n      width: 14px;\n      margin-left: -7px; } }\n", ""]);
 
 // exports
 
@@ -68393,7 +68393,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-!function(e,t){ true?module.exports=t(__webpack_require__(/*! react */ "./node_modules/react/index.js")):undefined}(this,(function(e){return function(e){var t={};function r(o){if(t[o])return t[o].exports;var n=t[o]={i:o,l:!1,exports:{}};return e[o].call(n.exports,n,n.exports,r),n.l=!0,n.exports}return r.m=e,r.c=t,r.d=function(e,t,o){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(r.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)r.d(o,n,function(t){return e[t]}.bind(null,n));return o},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="",r(r.s=4)}([function(e,t,r){e.exports=r(2)()},function(t,r){t.exports=e},function(e,t,r){"use strict";var o=r(3);function n(){}function i(){}i.resetWarningCache=n,e.exports=function(){function e(e,t,r,n,i,a){if(a!==o){var c=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw c.name="Invariant Violation",c}}function t(){return e}e.isRequired=e;var r={array:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:t,element:e,elementType:e,instanceOf:t,node:e,objectOf:t,oneOf:t,oneOfType:t,shape:t,exact:t,checkPropTypes:i,resetWarningCache:n};return r.PropTypes=r,r}},function(e,t,r){"use strict";e.exports="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED"},function(e,t,r){"use strict";r.r(t);var o=r(1),n=r.n(o),i=r(0),a=r.n(i);function c(e){var t,r,o="";if(e)if("object"==typeof e)if(e.push)for(t=0;t<e.length;t++)e[t]&&(r=c(e[t]))&&(o&&(o+=" "),o+=r);else for(t in e)e[t]&&(r=c(t))&&(o&&(o+=" "),o+=r);else"boolean"==typeof e||e.call||(o&&(o+=" "),o+=e);return o}function s(e){return(s="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function h(e,t){for(var r=0;r<t.length;r++){var o=t[r];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}function d(e){return(d=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function p(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function u(e,t){return(u=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function f(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);t&&(o=o.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),r.push.apply(r,o)}return r}function l(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{};t%2?f(r,!0).forEach((function(t){m(e,t,r[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):f(r).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(r,t))}))}return e}function m(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function v(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){if(!(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e)))return;var r=[],o=!0,n=!1,i=void 0;try{for(var a,c=e[Symbol.iterator]();!(o=(a=c.next()).done)&&(r.push(a.value),!t||r.length!==t);o=!0);}catch(e){n=!0,i=e}finally{try{o||null==c.return||c.return()}finally{if(n)throw i}}return r}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}r.d(t,"default",(function(){return R})),r.d(t,"Component",(function(){return R})),r.d(t,"makeAspectCrop",(function(){return x})),r.d(t,"containCrop",(function(){return E}));var g=!1;try{window.addEventListener("test",null,Object.defineProperty({},"passive",{get:function(){return g=!0,!0}}))}catch(e){}function y(e){var t,r;if(e.touches){var o=v(e.touches,1)[0];t=o.pageX,r=o.pageY}else t=e.pageX,r=e.pageY;return{x:t,y:r}}function w(e,t,r){return Math.min(Math.max(e,t),r)}function C(e){return e&&e.width&&e.height&&!isNaN(e.width)&&!isNaN(e.height)}function O(e){return"n"===e?"s":"ne"===e?"sw":"e"===e?"w":"se"===e?"nw":"s"===e?"n":"sw"===e?"ne":"w"===e?"e":"nw"===e?"se":e}function x(e,t,r){if(isNaN(e.aspect))return console.warn("`crop.aspect` should be a number in order to make an aspect crop",e),e;var o=l({unit:"px",x:0,y:0},e);return e.width&&(o.height=o.width/e.aspect),e.height&&(o.width=o.height*e.aspect),o.y+o.height>r&&(o.height=r-o.y,o.width=o.height*e.aspect),o.x+o.width>t&&(o.width=t-o.x,o.height=o.width/e.aspect),o}function b(e,t,r){return"%"===e.unit?e:{unit:"%",aspect:e.aspect,x:e.x/t*100,y:e.y/r*100,width:e.width/t*100,height:e.height/r*100}}function S(e,t,r){return e.unit?"px"===e.unit?e:{unit:"px",aspect:e.aspect,x:e.x*t/100,y:e.y*r/100,width:e.width*t/100,height:e.height*r/100}:l({},e,{unit:"px"})}function D(e,t,r){if(!e)return e;var o=e,n=e.x+e.width>t,i=e.y+e.height>r;return n&&i?o={unit:"px",x:0,y:0,width:t>e.width?e.width:t,height:r>e.height?e.height:r}:n?o=l({},e,{x:0,width:t>e.width?e.width:t}):i&&(o=l({},e,{y:0,height:r>e.height?e.height:r})),o.aspect&&function(e,t,r){return!!(!e.width&&e.height||e.width&&!e.height)||(e.y+e.height>r||e.x+e.width>t||(e.width/e.aspect<e.height-1||e.width/e.aspect>e.height+1||(e.height*e.aspect<e.width-1||e.height*e.aspect>e.width+1)))}(o,t,r)?x(o,t,r):o}function E(e,t,r,o){var n=S(t,r,o),i=S(e,r,o),a=l({},n);if(!n.aspect)return n.x<0?(a.x=0,a.width+=n.x):n.x+n.width>r&&(a.width=r-n.x),n.y+n.height>o&&(a.height=o-n.y),a;var c=!1;n.x<0?(a.x=0,a.width+=n.x,a.height=a.width/n.aspect,c=!0):n.x+n.width>r&&(a.width=r-n.x,a.height=a.width/n.aspect,c=!0),c&&i.y>a.y&&(a.y=n.y+(n.height-a.height));var s=!1;return a.y+a.height>o&&(a.height=o-n.y,a.width=a.height*n.aspect,s=!0),s&&i.x>a.x&&(a.x=n.x+(n.width-a.width)),a}var R=function(e){function t(){var e,r,o,n;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);for(var i=arguments.length,a=new Array(i),c=0;c<i;c++)a[c]=arguments[c];return o=this,n=(e=d(t)).call.apply(e,[this].concat(a)),r=!n||"object"!==s(n)&&"function"!=typeof n?p(o):n,m(p(r),"window","undefined"!=typeof window?window:{}),m(p(r),"document","undefined"!=typeof document?document:{}),m(p(r),"state",{}),m(p(r),"onCropMouseTouchDown",(function(e){var t=r.props,o=t.crop,n=t.disabled,i=r.componentDimensions,a=S(o,i.width,i.height);if(!n){e.preventDefault();var c=y(e);r.componentRef.setActive?r.componentRef.setActive({preventScroll:!0}):r.componentRef.focus({preventScroll:!0});var s,h=e.target.dataset.ord,d="nw"===h||"w"===h||"sw"===h,p="nw"===h||"n"===h||"ne"===h;a.aspect&&(s=r.getElementOffset(r.cropSelectRef)),r.evData={clientStartX:c.x,clientStartY:c.y,cropStartWidth:a.width,cropStartHeight:a.height,cropStartX:d?a.x+a.width:a.x,cropStartY:p?a.y+a.height:a.y,xInversed:d,yInversed:p,xCrossOver:d,yCrossOver:p,startXCrossOver:d,startYCrossOver:p,isResize:e.target.dataset.ord,ord:h,cropOffset:s},r.mouseDownOnCrop=!0,r.setState({cropIsActive:!0})}})),m(p(r),"onComponentMouseTouchDown",(function(e){var t=r.props,o=t.crop,n=t.disabled,i=t.locked,a=t.keepSelection,c=t.onChange,s=r.mediaWrapperRef.firstChild;if(e.target===s&&s.contains(e.target)&&!(n||i||a&&C(o))){e.preventDefault();var h=y(e);r.componentRef.setActive?r.componentRef.setActive({preventScroll:!0}):r.componentRef.focus({preventScroll:!0});var d=r.getElementOffset(r.componentRef),p=h.x-d.left,u=h.y-d.top,f={unit:"px",aspect:o?o.aspect:void 0,x:p,y:u,width:0,height:0};r.evData={clientStartX:h.x,clientStartY:h.y,cropStartWidth:f.width,cropStartHeight:f.height,cropStartX:f.x,cropStartY:f.y,xInversed:!1,yInversed:!1,xCrossOver:!1,yCrossOver:!1,startXCrossOver:!1,startYCrossOver:!1,isResize:!0,ord:"nw"},r.mouseDownOnCrop=!0;var l=r.componentDimensions,m=l.width,v=l.height;c(S(f,m,v),b(f,m,v)),r.setState({cropIsActive:!0,newCropIsBeingDrawn:!0})}})),m(p(r),"onDocMouseTouchMove",(function(e){var t=r.props,o=t.crop,n=t.disabled,i=t.onChange,a=t.onDragStart;if(!n&&r.mouseDownOnCrop){e.preventDefault(),r.dragStarted||(r.dragStarted=!0,a(e));var c,s=p(r).evData,h=y(e);if(s.isResize&&o.aspect&&s.cropOffset&&(h.y=r.straightenYPath(h.x)),s.xDiff=h.x-s.clientStartX,s.yDiff=h.y-s.clientStartY,(c=s.isResize?r.resizeCrop():r.dragCrop())!==o){var d=r.componentDimensions,u=d.width,f=d.height;i(S(c,u,f),b(c,u,f))}}})),m(p(r),"onComponentKeyDown",(function(e){var o=r.props,n=o.crop,i=o.disabled,a=o.onChange,c=o.onComplete;if(!i){var s=e.key,h=!1;if(C(n)){var d=r.makeNewCrop(),p=e.shiftKey?t.nudgeStepLarge:t.nudgeStep;if("ArrowLeft"===s?(d.x-=p,h=!0):"ArrowRight"===s?(d.x+=p,h=!0):"ArrowUp"===s?(d.y-=p,h=!0):"ArrowDown"===s&&(d.y+=p,h=!0),h){e.preventDefault();var u=r.componentDimensions,f=u.width,l=u.height;d.x=w(d.x,0,f-d.width),d.y=w(d.y,0,l-d.height);var m=S(d,f,l),v=b(d,f,l);a(m,v),c(m,v)}}}})),m(p(r),"onDocMouseTouchEnd",(function(e){var t=r.props,o=t.crop,n=t.disabled,i=t.onComplete,a=t.onDragEnd;if(!n&&r.mouseDownOnCrop){r.mouseDownOnCrop=!1,r.dragStarted=!1;var c=r.componentDimensions,s=c.width,h=c.height;a(e),i(S(o,s,h),b(o,s,h)),r.setState({cropIsActive:!1,newCropIsBeingDrawn:!1})}})),r}var r,o,i;return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&u(e,t)}(t,e),r=t,(o=[{key:"componentDidMount",value:function(){if(this.document.addEventListener){var e=!!g&&{passive:!1};this.document.addEventListener("mousemove",this.onDocMouseTouchMove,e),this.document.addEventListener("touchmove",this.onDocMouseTouchMove,e),this.document.addEventListener("mouseup",this.onDocMouseTouchEnd,e),this.document.addEventListener("touchend",this.onDocMouseTouchEnd,e),this.document.addEventListener("touchcancel",this.onDocMouseTouchEnd,e)}}},{key:"componentWillUnmount",value:function(){this.document.removeEventListener&&(this.document.removeEventListener("mousemove",this.onDocMouseTouchMove),this.document.removeEventListener("touchmove",this.onDocMouseTouchMove),this.document.removeEventListener("mouseup",this.onDocMouseTouchEnd),this.document.removeEventListener("touchend",this.onDocMouseTouchEnd),this.document.removeEventListener("touchcancel",this.onDocMouseTouchEnd))}},{key:"componentDidUpdate",value:function(e){if(e.crop!==this.props.crop&&this.imageRef){var t=this.imageRef,r=t.width,o=t.height,n=this.makeNewCrop(),i=D(n,r,o);if(n!==i){var a=S(i,r,o),c=b(i,r,o);this.props.onChange(a,c),this.props.onComplete(a,c)}}}},{key:"onImageLoad",value:function(e){var t=this.props,r=t.onComplete,o=t.onChange,n=t.onImageLoaded,i=D(this.makeNewCrop(),e.width,e.height);if(!1!==n(e)){var a=S(i,e.width,e.height),c=b(i,e.width,e.height);o(a,c),r(a,c)}}},{key:"getDocumentOffset",value:function(){var e=this.document.documentElement||{},t=e.clientTop,r=void 0===t?0:t,o=e.clientLeft;return{clientTop:r,clientLeft:void 0===o?0:o}}},{key:"getWindowOffset",value:function(){var e=this.window,t=e.pageYOffset,r=void 0===t?0:t,o=e.pageXOffset;return{pageYOffset:r,pageXOffset:void 0===o?0:o}}},{key:"getElementOffset",value:function(e){var t=e.getBoundingClientRect(),r=this.getDocumentOffset(),o=this.getWindowOffset();return{top:t.top+o.pageYOffset-r.clientTop,left:t.left+o.pageXOffset-r.clientLeft}}},{key:"getCropStyle",value:function(){var e=this.makeNewCrop(this.props.crop?this.props.crop.unit:"px");return{top:"".concat(e.y).concat(e.unit),left:"".concat(e.x).concat(e.unit),width:"".concat(e.width).concat(e.unit),height:"".concat(e.height).concat(e.unit)}}},{key:"getNewSize",value:function(){var e,t=this.props,r=t.crop,o=t.minWidth,n=t.maxWidth,i=t.minHeight,a=t.maxHeight,c=this.evData,s=this.componentDimensions,h=s.width,d=s.height,p=c.cropStartWidth+c.xDiff;return c.xCrossOver&&(p=Math.abs(p)),p=w(p,o,n||h),e=r.aspect?p/r.aspect:c.cropStartHeight+c.yDiff,c.yCrossOver&&(e=Math.min(Math.abs(e),c.cropStartY)),e=w(e,i,a||d),r.aspect&&(p=w(e*r.aspect,0,h)),{width:p,height:e}}},{key:"dragCrop",value:function(){var e=this.makeNewCrop(),t=this.evData,r=this.componentDimensions,o=r.width,n=r.height;return e.x=w(t.cropStartX+t.xDiff,0,o-e.width),e.y=w(t.cropStartY+t.yDiff,0,n-e.height),e}},{key:"resizeCrop",value:function(){var e=this.evData,r=this.makeNewCrop(),o=e.ord;e.xInversed&&(e.xDiff-=2*e.cropStartWidth,e.xDiffPc-=2*e.cropStartWidth),e.yInversed&&(e.yDiff-=2*e.cropStartHeight,e.yDiffPc-=2*e.cropStartHeight);var n=this.getNewSize(),i=e.cropStartX,a=e.cropStartY;e.xCrossOver&&(i=r.x+(r.width-n.width)),e.yCrossOver&&(a=!1===e.lastYCrossover?r.y-n.height:r.y+(r.height-n.height));var c=this.componentDimensions,s=c.width,h=c.height,d=E(this.props.crop,{unit:r.unit,x:i,y:a,width:n.width,height:n.height,aspect:r.aspect},s,h);return r.aspect||t.xyOrds.indexOf(o)>-1?(r.x=d.x,r.y=d.y,r.width=d.width,r.height=d.height):t.xOrds.indexOf(o)>-1?(r.x=d.x,r.width=d.width):t.yOrds.indexOf(o)>-1&&(r.y=d.y,r.height=d.height),e.lastYCrossover=e.yCrossOver,this.crossOverCheck(),r}},{key:"straightenYPath",value:function(e){var t,r,o=this.evData,n=o.ord,i=o.cropOffset,a=o.cropStartWidth,c=o.cropStartHeight;return"nw"===n||"se"===n?(t=c/a,r=i.top-i.left*t):(t=-c/a,r=i.top+(c-i.left*t)),t*e+r}},{key:"createCropSelection",value:function(){var e=this,t=this.props,r=t.disabled,o=t.locked,i=t.renderSelectionAddon,a=t.ruleOfThirds,c=this.getCropStyle();return n.a.createElement("div",{ref:function(t){return e.cropSelectRef=t},style:c,className:"ReactCrop__crop-selection",onMouseDown:this.onCropMouseTouchDown,onTouchStart:this.onCropMouseTouchDown,role:"presentation"},!r&&!o&&n.a.createElement("div",{className:"ReactCrop__drag-elements"},n.a.createElement("div",{className:"ReactCrop__drag-bar ord-n","data-ord":"n"}),n.a.createElement("div",{className:"ReactCrop__drag-bar ord-e","data-ord":"e"}),n.a.createElement("div",{className:"ReactCrop__drag-bar ord-s","data-ord":"s"}),n.a.createElement("div",{className:"ReactCrop__drag-bar ord-w","data-ord":"w"}),n.a.createElement("div",{className:"ReactCrop__drag-handle ord-nw","data-ord":"nw"}),n.a.createElement("div",{className:"ReactCrop__drag-handle ord-n","data-ord":"n"}),n.a.createElement("div",{className:"ReactCrop__drag-handle ord-ne","data-ord":"ne"}),n.a.createElement("div",{className:"ReactCrop__drag-handle ord-e","data-ord":"e"}),n.a.createElement("div",{className:"ReactCrop__drag-handle ord-se","data-ord":"se"}),n.a.createElement("div",{className:"ReactCrop__drag-handle ord-s","data-ord":"s"}),n.a.createElement("div",{className:"ReactCrop__drag-handle ord-sw","data-ord":"sw"}),n.a.createElement("div",{className:"ReactCrop__drag-handle ord-w","data-ord":"w"})),i&&i(this.state),a&&n.a.createElement(n.a.Fragment,null,n.a.createElement("div",{className:"ReactCrop__rule-of-thirds-hz"}),n.a.createElement("div",{className:"ReactCrop__rule-of-thirds-vt"})))}},{key:"makeNewCrop",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"px",r=l({},t.defaultCrop,{},this.props.crop),o=this.componentDimensions,n=o.width,i=o.height;return"px"===e?S(r,n,i):b(r,n,i)}},{key:"crossOverCheck",value:function(){var e=this.evData,t=this.props,r=t.minWidth,o=t.minHeight;!r&&(!e.xCrossOver&&-Math.abs(e.cropStartWidth)-e.xDiff>=0||e.xCrossOver&&-Math.abs(e.cropStartWidth)-e.xDiff<=0)&&(e.xCrossOver=!e.xCrossOver),!o&&(!e.yCrossOver&&-Math.abs(e.cropStartHeight)-e.yDiff>=0||e.yCrossOver&&-Math.abs(e.cropStartHeight)-e.yDiff<=0)&&(e.yCrossOver=!e.yCrossOver);var n=e.xCrossOver!==e.startXCrossOver,i=e.yCrossOver!==e.startYCrossOver;e.inversedXOrd=!!n&&O(e.ord),e.inversedYOrd=!!i&&O(e.ord)}},{key:"render",value:function(){var e=this,t=this.props,r=t.children,o=t.circularCrop,i=t.className,a=t.crossorigin,s=t.crop,h=t.disabled,d=t.locked,p=t.imageAlt,u=t.onImageError,f=t.renderComponent,l=t.src,m=t.style,v=t.imageStyle,g=t.ruleOfThirds,y=this.state,w=y.cropIsActive,O=y.newCropIsBeingDrawn,x=C(s)&&this.componentRef?this.createCropSelection():null,b=function(){for(var e,t=0,r="";t<arguments.length;)(e=c(arguments[t++]))&&(r&&(r+=" "),r+=e);return r}("ReactCrop",i,{"ReactCrop--active":w,"ReactCrop--disabled":h,"ReactCrop--locked":d,"ReactCrop--new-crop":O,"ReactCrop--fixed-aspect":s&&s.aspect,"ReactCrop--crop-invisible":s&&w&&(!s.width||!s.height),"ReactCrop--circular-crop":s&&o,"ReactCrop--rule-of-thirds":s&&g});return n.a.createElement("div",{ref:function(t){e.componentRef=t},className:b,style:m,onTouchStart:this.onComponentMouseTouchDown,onMouseDown:this.onComponentMouseTouchDown,role:"presentation",tabIndex:1,onKeyDown:this.onComponentKeyDown},n.a.createElement("div",{ref:function(t){e.mediaWrapperRef=t}},f||n.a.createElement("img",{ref:function(t){return e.imageRef=t},crossOrigin:a,className:"ReactCrop__image",style:v,src:l,onLoad:function(t){return e.onImageLoad(t.target)},onError:u,alt:p})),r,x)}},{key:"componentDimensions",get:function(){var e=this.componentRef;return{width:e.clientWidth,height:e.clientHeight}}}])&&h(r.prototype,o),i&&h(r,i),t}(o.PureComponent);R.xOrds=["e","w"],R.yOrds=["n","s"],R.xyOrds=["nw","ne","se","sw"],R.nudgeStep=.2,R.nudgeStepLarge=2,R.defaultCrop={x:0,y:0,width:0,height:0,unit:"px"},R.propTypes={className:a.a.string,children:a.a.oneOfType([a.a.arrayOf(a.a.node),a.a.node]),circularCrop:a.a.bool,crop:a.a.shape({aspect:a.a.number,x:a.a.number,y:a.a.number,width:a.a.number,height:a.a.number,unit:a.a.oneOf(["px","%"])}),crossorigin:a.a.string,disabled:a.a.bool,locked:a.a.bool,imageAlt:a.a.string,imageStyle:a.a.shape({}),keepSelection:a.a.bool,minWidth:a.a.number,minHeight:a.a.number,maxWidth:a.a.number,maxHeight:a.a.number,onChange:a.a.func.isRequired,onImageError:a.a.func,onComplete:a.a.func,onImageLoaded:a.a.func,onDragStart:a.a.func,onDragEnd:a.a.func,src:a.a.string.isRequired,style:a.a.shape({}),renderComponent:a.a.node,renderSelectionAddon:a.a.func,ruleOfThirds:a.a.bool},R.defaultProps={circularCrop:!1,className:void 0,crop:void 0,crossorigin:void 0,disabled:!1,locked:!1,imageAlt:"",maxWidth:void 0,maxHeight:void 0,minWidth:0,minHeight:0,keepSelection:!1,onComplete:function(){},onImageError:function(){},onImageLoaded:function(){},onDragStart:function(){},onDragEnd:function(){},children:void 0,style:void 0,renderComponent:void 0,imageStyle:void 0,renderSelectionAddon:void 0,ruleOfThirds:!1}}])}));
+!function(e,t){ true?module.exports=t(__webpack_require__(/*! react */ "./node_modules/react/index.js"),__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js")):undefined}("undefined"!=typeof self?self:this,function(e,t){return function(e){function t(o){if(r[o])return r[o].exports;var a=r[o]={i:o,l:!1,exports:{}};return e[o].call(a.exports,a,a.exports,t),a.l=!0,a.exports}var r={};return t.m=e,t.c=r,t.d=function(e,r,o){t.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:o})},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=0)}([function(e,t,r){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}function a(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function s(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}function d(e){var t=void 0,r=void 0;if(e.touches){var o=w(e.touches,1),a=o[0];t=a.pageX,r=a.pageY}else t=e.pageX,r=e.pageY;return{x:t,y:r}}function c(e,t,r){return Math.min(Math.max(e,t),r)}function h(e){return e&&e.width&&e.height&&!isNaN(e.width)&&!isNaN(e.height)}function u(e){var t=void 0;return"n"===e?t="s":"ne"===e?t="sw":"e"===e?t="w":"se"===e?t="nw":"s"===e?t="n":"sw"===e?t="ne":"w"===e?t="e":"nw"===e&&(t="se"),t}function p(e,t){if(isNaN(e.aspect)||isNaN(t))return console.warn("`crop.aspect` and `imageAspect` need to be numbers in order to make an aspect crop",e),e;var r=y({x:0,y:0},e);return e.width&&(r.height=e.width/e.aspect*t),e.height&&(r.width=(r.height||e.height)*(e.aspect/t)),e.y+(r.height||e.height)>100&&(r.height=100-e.y,r.width=r.height*e.aspect/t),e.x+(r.width||e.width)>100&&(r.width=100-e.x,r.height=r.width/e.aspect*t),r}function l(e,t,r){return!!(!e.width&&e.height||e.width&&!e.height)||!(!e.width||!e.height||Math.round(r*(e.height/100)*e.aspect)===Math.round(t*(e.width/100)))}function f(e,t){return e&&e.aspect&&l(e,t.naturalWidth,t.naturalHeight)?p(e,t.naturalWidth/t.naturalHeight):e}function g(e,t){var r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];if(!e||!t)return null;var o=r?e.naturalWidth:e.width,a=r?e.naturalHeight:e.height,n=Math.round(o*(t.x/100)),i=Math.round(a*(t.y/100)),s=Math.round(o*(t.width/100)),d=Math.round(a*(t.height/100));return{x:n,y:i,width:c(s,0,o-n),height:c(d,0,a-i)}}function m(e,t,r){var o=y({},t);t.aspect&&e.x>t.x&&t.height+t.y>=100&&(o.x=e.x);var a=!1;o.x+o.width>100?(o.width=t.width+(100-(t.x+t.width)),o.x=t.x+(100-(t.x+o.width)),a=!0):o.x<0&&(o.width=t.x+t.width,o.x=0,a=!0),a&&t.aspect&&(o.height=o.width/t.aspect*r,e.y>o.y&&(o.y=t.y+(t.height-o.height)));var n=!1;return o.y+o.height>100?(o.height=t.height+(100-(t.y+t.height)),o.y=t.y+(100-(t.y+o.height)),n=!0):o.y<0&&(o.height=t.y+t.height,o.y=0,n=!0),n&&t.aspect&&(o.width=o.height*t.aspect/r,o.x<t.x&&(o.x=t.x+(t.width-o.width))),o}Object.defineProperty(t,"__esModule",{value:!0}),t.containCrop=t.makeAspectCrop=t.getPixelCrop=t.Component=t.default=void 0;var v=function(){function e(e,t){for(var r=0;r<t.length;r++){var o=t[r];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,r,o){return r&&e(t.prototype,r),o&&e(t,o),t}}(),y=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var o in r)Object.prototype.hasOwnProperty.call(r,o)&&(e[o]=r[o])}return e},w=function(){function e(e,t){var r=[],o=!0,a=!1,n=void 0;try{for(var i,s=e[Symbol.iterator]();!(o=(i=s.next()).done)&&(r.push(i.value),!t||r.length!==t);o=!0);}catch(e){a=!0,n=e}finally{try{!o&&s.return&&s.return()}finally{if(a)throw n}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),C=r(1),x=o(C),O=r(2),b=o(O),S=!1;try{window.addEventListener("test",null,Object.defineProperty({},"passive",{get:function(){return S=!0,!0}}))}catch(e){}var D=function(e){function t(){var e,r,o,a;n(this,t);for(var s=arguments.length,u=Array(s),p=0;p<s;p++)u[p]=arguments[p];return r=o=i(this,(e=t.__proto__||Object.getPrototypeOf(t)).call.apply(e,[this].concat(u))),o.window=window,o.document=document,o.state={},o.onCropMouseTouchDown=function(e){var t=o.props,r=t.crop;if(!t.disabled){e.preventDefault();var a=d(e);o.componentRef.focus({preventScroll:!0});var n=e.target.dataset.ord,i="nw"===n||"w"===n||"sw"===n,s="nw"===n||"n"===n||"ne"===n,c=void 0;r.aspect&&(c=o.getElementOffset(o.cropSelectRef)),o.evData={clientStartX:a.x,clientStartY:a.y,cropStartWidth:r.width,cropStartHeight:r.height,cropStartX:i?r.x+r.width:r.x,cropStartY:s?r.y+r.height:r.y,xInversed:i,yInversed:s,xCrossOver:i,yCrossOver:s,startXCrossOver:i,startYCrossOver:s,isResize:e.target.dataset.ord,ord:n,cropOffset:c},o.mouseDownOnCrop=!0,o.setState({cropIsActive:!0})}},o.onComponentMouseTouchDown=function(e){var t=o.props,r=t.crop,a=t.disabled,n=t.locked,i=t.keepSelection,s=t.onChange,c=t.useNaturalImageDimensions;if(e.target===o.imageRef&&!(a||n||i&&h(r))){e.preventDefault();var u=d(e);o.componentRef.focus({preventScroll:!0});var p=o.getElementOffset(o.imageRef),l=(u.x-p.left)/o.imageRef.width*100,f=(u.y-p.top)/o.imageRef.height*100,m={aspect:r?r.aspect:void 0,x:l,y:f,width:0,height:0};o.evData={clientStartX:u.x,clientStartY:u.y,cropStartWidth:m.width,cropStartHeight:m.height,cropStartX:m.x,cropStartY:m.y,xInversed:!1,yInversed:!1,xCrossOver:!1,yCrossOver:!1,startXCrossOver:!1,startYCrossOver:!1,isResize:!0,ord:"nw"},o.mouseDownOnCrop=!0,s(m,g(o.imageRef,m,c)),o.setState({cropIsActive:!0})}},o.onDocMouseTouchMove=function(e){var t=o.props,r=t.crop,a=t.disabled,n=t.onChange,i=t.onDragStart;if(!a&&o.mouseDownOnCrop){e.preventDefault(),o.dragStarted||(o.dragStarted=!0,i());var s=o,c=s.evData,h=d(e);c.isResize&&r.aspect&&c.cropOffset&&(h.y=o.straightenYPath(h.x));var u=h.x-c.clientStartX;c.xDiffPc=u/o.imageRef.width*100;var p=h.y-c.clientStartY;c.yDiffPc=p/o.imageRef.height*100;var l=void 0;l=c.isResize?o.resizeCrop():o.dragCrop(),l!==r&&n(l,g(o.imageRef,l))}},o.onComponentKeyDown=function(e){var r=o.props,a=r.crop,n=r.disabled,i=r.onChange,s=r.onComplete,d=r.useNaturalImageDimensions;if(!n){var u=e.which,p=!1;if(h(a)){var l=o.makeNewCrop();u===t.arrowKey.left?(l.x-=t.nudgeStep,p=!0):u===t.arrowKey.right?(l.x+=t.nudgeStep,p=!0):u===t.arrowKey.up?(l.y-=t.nudgeStep,p=!0):u===t.arrowKey.down&&(l.y+=t.nudgeStep,p=!0),p&&(e.preventDefault(),l.x=c(l.x,0,100-l.width),l.y=c(l.y,0,100-l.height),i(l,g(o.imageRef,l,d)),s(l,g(o.imageRef,l,d)))}}},o.onDocMouseTouchEnd=function(){var e=o.props,t=e.crop,r=e.disabled,a=e.onComplete,n=e.onDragEnd,i=e.useNaturalImageDimensions;r||o.mouseDownOnCrop&&(o.mouseDownOnCrop=!1,o.dragStarted=!1,n(),a(t,g(o.imageRef,t,i)),o.setState({cropIsActive:!1}))},a=r,i(o,a)}return s(t,e),v(t,[{key:"componentDidMount",value:function(){var e=!!S&&{passive:!1};if(this.document.addEventListener("mousemove",this.onDocMouseTouchMove,e),this.document.addEventListener("touchmove",this.onDocMouseTouchMove,e),this.document.addEventListener("mouseup",this.onDocMouseTouchEnd,e),this.document.addEventListener("touchend",this.onDocMouseTouchEnd,e),this.document.addEventListener("touchcancel",this.onDocMouseTouchEnd,e),this.imageRef.complete||this.imageRef.readyState)if(0===this.imageRef.naturalWidth){var t=this.imageRef.src;this.imageRef.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",this.imageRef.src=t}else this.onImageLoad(this.imageRef)}},{key:"componentWillUnmount",value:function(){this.document.removeEventListener("mousemove",this.onDocMouseTouchMove),this.document.removeEventListener("touchmove",this.onDocMouseTouchMove),this.document.removeEventListener("mouseup",this.onDocMouseTouchEnd),this.document.removeEventListener("touchend",this.onDocMouseTouchEnd),this.document.removeEventListener("touchcancel",this.onDocMouseTouchEnd)}},{key:"onImageLoad",value:function(e){var t=this.props,r=t.crop,o=t.onComplete,a=t.onChange,n=t.onImageLoaded,i=t.useNaturalImageDimensions,s=f(r,e);!1!==n(e,g(e,s,i))&&s!==r&&(a(s,g(e,s,i)),o(s,g(e,s,i)))}},{key:"getElementOffset",value:function(e){var t=e.getBoundingClientRect(),r=this.document.documentElement;return{top:t.top+this.window.pageYOffset-r.clientTop,left:t.left+this.window.pageXOffset-r.clientLeft}}},{key:"getCropStyle",value:function(){var e=this.props.crop;return{top:e.y+"%",left:e.x+"%",width:e.width+"%",height:e.height+"%"}}},{key:"getNewSize",value:function(){var e=this.props,t=e.crop,r=e.minWidth,o=e.maxWidth,a=e.minHeight,n=e.maxHeight,i=this.evData,s=this.imageRef.width/this.imageRef.height,d=i.cropStartWidth+i.xDiffPc;i.xCrossOver&&(d=Math.abs(d)),d=c(d,r,o);var h=void 0;return h=t.aspect?d/t.aspect*s:i.cropStartHeight+i.yDiffPc,i.yCrossOver&&(h=Math.min(Math.abs(h),i.cropStartY)),h=c(h,a,n),t.aspect&&(d=c(h*t.aspect/s,0,100)),{width:d,height:h}}},{key:"dragCrop",value:function(){var e=this.makeNewCrop(),t=this.evData;return e.x=c(t.cropStartX+t.xDiffPc,0,100-e.width),e.y=c(t.cropStartY+t.yDiffPc,0,100-e.height),e}},{key:"resizeCrop",value:function(){var e=this.makeNewCrop(),r=this.evData,o=this.props,a=o.crop,n=o.minWidth,i=o.minHeight,s=r.ord,d=this.imageRef.width/this.imageRef.height;r.xInversed&&(r.xDiffPc-=2*r.cropStartWidth),r.yInversed&&(r.yDiffPc-=2*r.cropStartHeight);var c=this.getNewSize(),h=r.cropStartX,u=r.cropStartY;r.xCrossOver&&(h=e.x+(e.width-c.width)),r.yCrossOver&&(u=!1===r.lastYCrossover?e.y-c.height:e.y+(e.height-c.height));var p=m(this.props.crop,{x:h,y:u,width:c.width,height:c.height,aspect:e.aspect},d);return e.aspect||t.xyOrds.indexOf(s)>-1?(e.x=p.x,e.y=p.y,e.width=p.width,e.height=p.height):t.xOrds.indexOf(s)>-1?(e.x=p.x,e.width=p.width):t.yOrds.indexOf(s)>-1&&(e.y=p.y,e.height=p.height),r.lastYCrossover=r.yCrossOver,this.crossOverCheck(),n&&e.width<n?a:i&&e.height<i?a:e}},{key:"straightenYPath",value:function(e){var t=this.evData,r=t.ord,o=t.cropOffset,a=t.cropStartWidth/100*this.imageRef.width,n=t.cropStartHeight/100*this.imageRef.height,i=void 0,s=void 0;return"nw"===r||"se"===r?(i=n/a,s=o.top-o.left*i):(i=-n/a,s=o.top+(n-o.left*i)),i*e+s}},{key:"createCropSelection",value:function(){var e=this,t=this.props,r=t.disabled,o=t.locked,a=t.renderSelectionAddon,n=this.getCropStyle();return x.default.createElement("div",{ref:function(t){e.cropSelectRef=t},style:n,className:"ReactCrop__crop-selection",onMouseDown:this.onCropMouseTouchDown,onTouchStart:this.onCropMouseTouchDown,role:"presentation"},!r&&!o&&x.default.createElement("div",{className:"ReactCrop__drag-elements"},x.default.createElement("div",{className:"ReactCrop__drag-bar ord-n","data-ord":"n"}),x.default.createElement("div",{className:"ReactCrop__drag-bar ord-e","data-ord":"e"}),x.default.createElement("div",{className:"ReactCrop__drag-bar ord-s","data-ord":"s"}),x.default.createElement("div",{className:"ReactCrop__drag-bar ord-w","data-ord":"w"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-nw","data-ord":"nw"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-n","data-ord":"n"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-ne","data-ord":"ne"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-e","data-ord":"e"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-se","data-ord":"se"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-s","data-ord":"s"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-sw","data-ord":"sw"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-w","data-ord":"w"})),a&&a(this.state))}},{key:"makeNewCrop",value:function(){return y({},t.defaultCrop,this.props.crop)}},{key:"crossOverCheck",value:function(){var e=this.evData;(!e.xCrossOver&&-Math.abs(e.cropStartWidth)-e.xDiffPc>=0||e.xCrossOver&&-Math.abs(e.cropStartWidth)-e.xDiffPc<=0)&&(e.xCrossOver=!e.xCrossOver),(!e.yCrossOver&&-Math.abs(e.cropStartHeight)-e.yDiffPc>=0||e.yCrossOver&&-Math.abs(e.cropStartHeight)-e.yDiffPc<=0)&&(e.yCrossOver=!e.yCrossOver);var t=e.xCrossOver!==e.startXCrossOver,r=e.yCrossOver!==e.startYCrossOver;e.inversedXOrd=!!t&&u(e.ord),e.inversedYOrd=!!r&&u(e.ord)}},{key:"render",value:function(){var e=this,t=this.props,r=t.children,o=t.className,n=t.crossorigin,i=t.crop,s=t.disabled,d=t.locked,c=t.imageAlt,u=t.onImageError,p=t.src,l=t.style,f=t.imageStyle,g=this.state.cropIsActive,m=void 0;h(i)&&(m=this.createCropSelection());var v=["ReactCrop"];return g&&v.push("ReactCrop--active"),i&&(i.aspect&&v.push("ReactCrop--fixed-aspect"),!g||i.width&&i.height||v.push("ReactCrop--crop-invisible")),s&&v.push("ReactCrop--disabled"),d&&v.push("ReactCrop--locked"),o&&v.push.apply(v,a(o.split(" "))),x.default.createElement("div",{ref:function(t){e.componentRef=t},className:v.join(" "),style:l,onTouchStart:this.onComponentMouseTouchDown,onMouseDown:this.onComponentMouseTouchDown,role:"presentation",tabIndex:1,onKeyDown:this.onComponentKeyDown},x.default.createElement("img",{ref:function(t){e.imageRef=t},crossOrigin:n,className:"ReactCrop__image",style:f,src:p,onLoad:function(t){return e.onImageLoad(t.target)},onError:u,alt:c}),r,m)}}]),t}(C.PureComponent);D.xOrds=["e","w"],D.yOrds=["n","s"],D.xyOrds=["nw","ne","se","sw"],D.arrowKey={left:37,up:38,right:39,down:40},D.nudgeStep=.2,D.defaultCrop={x:0,y:0,width:0,height:0},D.propTypes={className:b.default.string,crossorigin:b.default.string,children:b.default.oneOfType([b.default.arrayOf(b.default.node),b.default.node]),crop:b.default.shape({aspect:b.default.number,x:b.default.number,y:b.default.number,width:b.default.number,height:b.default.number}),disabled:b.default.bool,locked:b.default.bool,imageAlt:b.default.string,imageStyle:b.default.shape({}),keepSelection:b.default.bool,minWidth:b.default.number,minHeight:b.default.number,maxWidth:b.default.number,maxHeight:b.default.number,onChange:b.default.func.isRequired,onImageError:b.default.func,onComplete:b.default.func,onImageLoaded:b.default.func,onDragStart:b.default.func,onDragEnd:b.default.func,src:b.default.string.isRequired,style:b.default.shape({}),renderSelectionAddon:b.default.func},D.defaultProps={className:void 0,crop:void 0,crossorigin:void 0,disabled:!1,locked:!1,imageAlt:"",maxWidth:100,maxHeight:100,minWidth:0,minHeight:0,keepSelection:!1,onComplete:function(){},onImageError:function(){},onImageLoaded:function(){},onDragStart:function(){},onDragEnd:function(){},children:void 0,style:void 0,imageStyle:void 0,renderSelectionAddon:void 0,useNaturalImageDimensions:!0},t.default=D,t.Component=D,t.getPixelCrop=g,t.makeAspectCrop=p,t.containCrop=m},function(t,r){t.exports=e},function(e,r){e.exports=t}])});
 
 /***/ }),
 
@@ -76064,8 +76064,15 @@ function (_Component2) {
     _classCallCheck(this, ImageBlock);
 
     _this2 = _possibleConstructorReturn(this, _getPrototypeOf(ImageBlock).call(this, props));
+
+    _this2.handleSendImage = function (image) {
+      _this2.setState({
+        media: image
+      });
+    };
+
     _this2.state = {
-      mediaID: []
+      media: null
     };
     return _this2;
   }
@@ -76073,11 +76080,16 @@ function (_Component2) {
   _createClass(ImageBlock, [{
     key: "render",
     value: function render() {
+      var media = this.state.media;
+      console.log(media);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "block"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Media_MediaModel__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
+      }, media === null ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Media_MediaModel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        sendImage: this.handleSendImage
+      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "img-fluid",
+        src: "/images/uploads/originals/".concat(media.media_name)
+      }));
     }
   }]);
 
@@ -76871,21 +76883,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Modal_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Modal.scss */ "./resources/js/components/Media/Modal.scss");
-/* harmony import */ var _Modal_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Modal_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_dropzone__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dropzone */ "./node_modules/react-dropzone/dist/es/index.js");
-/* harmony import */ var react_image_crop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-image-crop */ "./node_modules/react-image-crop/dist/ReactCrop.min.js");
-/* harmony import */ var react_image_crop__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_image_crop__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_image_crop_dist_ReactCrop_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-image-crop/dist/ReactCrop.css */ "./node_modules/react-image-crop/dist/ReactCrop.css");
-/* harmony import */ var react_image_crop_dist_ReactCrop_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_image_crop_dist_ReactCrop_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_dropzone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dropzone */ "./node_modules/react-dropzone/dist/es/index.js");
+/* harmony import */ var react_image_crop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-image-crop */ "./node_modules/react-image-crop/dist/ReactCrop.min.js");
+/* harmony import */ var react_image_crop__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_image_crop__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_image_crop_dist_ReactCrop_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-image-crop/dist/ReactCrop.css */ "./node_modules/react-image-crop/dist/ReactCrop.css");
+/* harmony import */ var react_image_crop_dist_ReactCrop_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_image_crop_dist_ReactCrop_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Modal_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Modal.scss */ "./resources/js/components/Media/Modal.scss");
+/* harmony import */ var _Modal_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Modal_scss__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _ReusableUtils_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ReusableUtils.js */ "./resources/js/components/Media/ReusableUtils.js");
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -76895,9 +76913,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -76945,7 +76963,62 @@ function (_Component) {
       });
     };
 
-    _this.verifyFile = function (files) {
+    _this.handleSelectImage = function (media) {
+      _this.setState({
+        uploader: false
+      });
+
+      _this.props.selectedImage(media);
+    };
+
+    _this.cancelCrop = function (e) {
+      e.preventDefault();
+
+      _this.setState({
+        src: null,
+        croppedImageUrl: null,
+        imageType: null,
+        hovering: false
+      });
+    };
+
+    _this.state = {
+      media: [],
+      uploader: false,
+      hovering: false,
+      imgSrc: null,
+      croppedURL: null,
+      crop: {
+        x: 20,
+        y: 10,
+        width: 40,
+        height: 40
+      }
+    };
+    _this.handleDrop = _this.handleDrop.bind(_assertThisInitialized(_this));
+    _this.hover = _this.hover.bind(_assertThisInitialized(_this));
+    _this.handleDragLeave = _this.handleDragLeave.bind(_assertThisInitialized(_this));
+    _this.onCropChange = _this.onCropChange.bind(_assertThisInitialized(_this));
+    _this.onImageLoaded = _this.onImageLoaded.bind(_assertThisInitialized(_this));
+    _this.onCropComplete = _this.onCropComplete.bind(_assertThisInitialized(_this));
+    _this.cropImage = _this.cropImage.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Gallery, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('/api/media').then(function (response) {
+        _this2.setState({
+          media: response.data
+        });
+      });
+    }
+  }, {
+    key: "verifyFile",
+    value: function verifyFile(files) {
       if (files && files.length > 0) {
         var currentFile = files[0];
         var currentFileType = currentFile.type;
@@ -76963,121 +77036,80 @@ function (_Component) {
 
         return true;
       }
-    };
+    }
+  }, {
+    key: "handleDrop",
+    value: function handleDrop(files, rejectedFiles) {
+      var _this3 = this;
 
-    _this.handleDrop = function (files, rejectedFiles) {
       if (rejectedFiles && rejectedFiles.length > 0) {
-        _this.verifyFile(rejectedFiles);
+        this.verifyFile(rejectedFiles);
       }
 
       if (files && files.length > 0) {
-        var isVerified = _this.verifyFile(files);
+        var isVerified = this.verifyFile(files);
 
         if (isVerified) {
           var currentFile = files[0];
           var myFileItemReader = new FileReader();
-          myFileItemReader.addEventListener('load', function () {
+          myFileItemReader.addEventListener("load", function () {
             var myResult = myFileItemReader.result;
 
-            _this.setState({
-              src: myResult,
-              imageType: currentFile.type,
-              extention: currentFile.path.split('.').pop()
+            _this3.setState({
+              imgSrc: myResult,
+              imageType: currentFile.type
             });
           }, false);
           myFileItemReader.readAsDataURL(currentFile);
         }
       }
-    };
-
-    _this.onImageLoaded = function (image) {
-      _this.imageRef = image;
-    };
-
-    _this.onCropComplete = function (crop) {
-      _this.makeClientCrop(crop);
-    };
-
-    _this.onCropChange = function (crop, percentCrop) {
-      _this.setState({
-        crop: crop
-      });
-    };
-
-    _this.cancelCrop = function (e) {
-      e.preventDefault();
-
-      _this.setState({
-        src: null,
-        croppedImageUrl: null,
-        imageType: null,
-        hovering: false
-      });
-    };
-
-    _this.cropImage = function (e) {
-      e.preventDefault();
-      var _this$state = _this.state,
-          croppedImageUrl = _this$state.croppedImageUrl,
-          src = _this$state.src,
-          imageType = _this$state.imageType,
-          media = _this$state.media;
-      var form = new FormData();
-      var extention = Object(_ReusableUtils_js__WEBPACK_IMPORTED_MODULE_7__["extractImageFileExtensionFromBase64"])(src);
-      var fileName = "previewFile" + extention;
-      var newCroppedFile = Object(_ReusableUtils_js__WEBPACK_IMPORTED_MODULE_7__["base64StringtoFile"])(croppedImageUrl, fileName);
-      form.append('file', newCroppedFile);
-      form.append('type', imageType);
-      form.append('extention', extention);
-      axios__WEBPACK_IMPORTED_MODULE_6___default.a.post('/api/media', form, {
-        headers: {
-          'accept': 'application/json',
-          'Accept-Language': 'en-US,en;q=0.8',
-          'Content-Type': "multipart/form-data; boundary=".concat(form._boundary)
-        }
-      }).then(function (response) {
-        if (_this.props.selectedImage) {
-          _this.props.selectedImage();
-        }
-
-        media.push(response.data.mediaInfo);
-
-        _this.setState({
-          uploader: false,
-          media: media
-        });
-      });
-    };
-
-    _this.state = {
-      media: [],
-      uploader: false,
-      hovering: false,
-      src: null,
-      crop: {
-        unit: '%',
-        width: 40,
-        height: 40
-      }
-    };
-    return _this;
-  }
-
-  _createClass(Gallery, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_6___default.a.get('/api/media').then(function (response) {
-        _this2.setState({
-          media: response.data
-        });
+    }
+  }, {
+    key: "hover",
+    value: function hover() {
+      this.setState({
+        hovering: true
       });
     }
   }, {
+    key: "handleDragLeave",
+    value: function handleDragLeave() {
+      this.setState({
+        hovering: false
+      });
+    }
+  }, {
+    key: "onCropChange",
+    value: function onCropChange(crop) {
+      this.setState({
+        crop: crop
+      });
+    }
+  }, {
+    key: "onImageLoaded",
+    value: function onImageLoaded(image, pixelCrop) {
+      this.imageRef = image;
+      var crop = this.state.crop;
+
+      if (crop.aspect && crop.height && crop.width) {
+        this.setState({
+          crop: _objectSpread({}, crop, {
+            height: null
+          })
+        });
+      } else {
+        this.makeClientCrop(crop, pixelCrop);
+      }
+    }
+  }, {
+    key: "onCropComplete",
+    value: function onCropComplete(crop, pixelCrop) {
+      this.makeClientCrop(crop, pixelCrop);
+    }
+  }, {
     key: "makeClientCrop",
-    value: function makeClientCrop(crop) {
-      var croppedImageUrl;
+    value: function makeClientCrop(crop, pixelCrop) {
+      var croppedURL;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function makeClientCrop$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -77088,12 +77120,12 @@ function (_Component) {
               }
 
               _context.next = 3;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(this.getCroppedImg(this.imageRef, crop, 'newFile.jpeg'));
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(this.getCroppedImg(this.imageRef, pixelCrop, 'newFile.jpeg'));
 
             case 3:
-              croppedImageUrl = _context.sent;
+              croppedURL = _context.sent;
               this.setState({
-                croppedImageUrl: croppedImageUrl
+                croppedURL: croppedURL
               });
 
             case 5:
@@ -77105,29 +77137,70 @@ function (_Component) {
     }
   }, {
     key: "getCroppedImg",
-    value: function getCroppedImg(image, crop, fileName) {
+    value: function getCroppedImg(image, pixelCrop, fileName) {
       var canvas = document.createElement('canvas');
-      var scaleX = image.naturalWidth / image.width;
-      var scaleY = image.naturalHeight / image.height;
-      canvas.width = crop.width;
-      canvas.height = crop.height;
+      canvas.width = pixelCrop.width;
+      canvas.height = pixelCrop.height;
       var ctx = canvas.getContext('2d');
-      ctx.drawImage(image, crop.x * scaleX, crop.y * scaleY, crop.width * scaleX, crop.height * scaleY, 0, 0, crop.width, crop.height);
+      ctx.drawImage(image, pixelCrop.x, pixelCrop.y, pixelCrop.width, pixelCrop.height, 0, 0, pixelCrop.width, pixelCrop.height);
       return new Promise(function (resolve, reject) {
         resolve(canvas.toDataURL());
       });
     }
   }, {
+    key: "cropImage",
+    value: function cropImage(e) {
+      var _this4 = this;
+
+      e.preventDefault();
+      var _this$state = this.state,
+          croppedURL = _this$state.croppedURL,
+          imgSrc = _this$state.imgSrc,
+          imageType = _this$state.imageType,
+          media = _this$state.media;
+      var form = new FormData();
+      var extention = Object(_ReusableUtils_js__WEBPACK_IMPORTED_MODULE_7__["extractImageFileExtensionFromBase64"])(imgSrc);
+      var fileName = "previewFile" + extention;
+      var newCroppedFile = Object(_ReusableUtils_js__WEBPACK_IMPORTED_MODULE_7__["base64StringtoFile"])(croppedURL, fileName);
+      form.append('file', newCroppedFile);
+      form.append('type', imageType);
+      form.append('extention', extention);
+      axios__WEBPACK_IMPORTED_MODULE_5___default.a.post('/api/media', form, {
+        headers: {
+          'accept': 'application/json',
+          'Accept-Language': 'en-US,en;q=0.8',
+          'Content-Type': "multipart/form-data; boundary=".concat(form._boundary)
+        }
+      }).then(function (response) {
+        if (_this4.props.selectedImage) {
+          _this4.props.selectedImage(response.data.mediaInfo);
+        }
+
+        media.push(response.data.mediaInfo);
+
+        _this4.setState({
+          media: media,
+          uploader: false,
+          imgSrc: null,
+          croppedURL: null
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this5 = this;
+
       var _this$state2 = this.state,
-          uploader = _this$state2.uploader,
+          imgSrc = _this$state2.imgSrc,
           hovering = _this$state2.hovering,
-          crop = _this$state2.crop,
-          croppedImageUrl = _this$state2.croppedImageUrl,
-          src = _this$state2.src,
-          media = _this$state2.media;
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+          croppedURL = _this$state2.croppedURL,
+          uploader = _this$state2.uploader,
+          media = _this$state2.media,
+          crop = _this$state2.crop;
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "gallery"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "nav nav-tabs mb-3"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "nav-item"
@@ -77135,23 +77208,23 @@ function (_Component) {
         className: "nav-link ".concat(uploader ? '' : 'active'),
         onClick: this.toggleTabs,
         href: "#"
-      }, "Select Image")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      }, "Select Media")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "nav-link ".concat(uploader ? 'active' : ''),
         onClick: this.toggleTabs,
         href: "#"
-      }, "Upload"))), uploader ? src !== null ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Upload"))), uploader ? imgSrc !== null ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row"
-      }, src && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, imgSrc && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-12 col-md-8"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_image_crop__WEBPACK_IMPORTED_MODULE_4___default.a, {
-        src: src,
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_image_crop__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        src: imgSrc,
         crop: crop,
         onImageLoaded: this.onImageLoaded,
         onComplete: this.onCropComplete,
         onChange: this.onCropChange
-      })), croppedImageUrl && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      })), croppedURL && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-md-4"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card bg-light h-100"
@@ -77164,7 +77237,7 @@ function (_Component) {
         style: {
           maxWidth: '100%'
         },
-        src: croppedImageUrl
+        src: croppedURL
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-footer bg-white border-0"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
@@ -77173,7 +77246,7 @@ function (_Component) {
       }, "Crop Image"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         className: "btn mt-3",
         onClick: this.cancelCrop
-      }, "Cancel Crop"))))) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_dropzone__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, "Cancel Crop"))))) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_dropzone__WEBPACK_IMPORTED_MODULE_2__["default"], {
         onDrop: this.handleDrop,
         accept: acceptedFileTypes,
         multiple: false,
@@ -77200,7 +77273,8 @@ function (_Component) {
           key: i
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
           src: "/images/uploads/square/".concat(mediaItem.media_name),
-          className: "img-fluid thumbImg"
+          className: "img-fluid thumbImg",
+          onClick: _this5.handleSelectImage.bind(_this5, mediaItem)
         }));
       })));
     }
@@ -77323,8 +77397,19 @@ function (_Component) {
     _classCallCheck(this, MediaModel);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(MediaModel).call(this, props));
+
+    _this.toggleModal = function () {
+      _this.setState({
+        modalOpen: !_this.state.modalOpen
+      });
+    };
+
+    _this.handleSelectedImage = function (image) {
+      _this.props.sendImage(image);
+    };
+
     _this.state = {
-      modelOpen: false
+      modalOpen: false
     };
     return _this;
   }
@@ -77332,14 +77417,22 @@ function (_Component) {
   _createClass(MediaModel, [{
     key: "render",
     value: function render() {
-      var modelOpen = this.state.modelOpen;
+      var modalOpen = this.state.modalOpen;
+      console.log(modalOpen);
 
-      if (!modelOpen) {
+      if (!modalOpen) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "btn btn-block btn-placeholder"
+          className: "btn btn-block btn-placeholder",
+          onClick: this.toggleModal
         }, "Select an Image");
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "uploader"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "uploaderCard"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Gallery__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          selectedImage: this.handleSelectedImage
+        })));
       }
     }
   }]);

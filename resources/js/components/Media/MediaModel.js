@@ -5,21 +5,33 @@ class MediaModel extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            modelOpen: false
+            modalOpen: false
         }
     }
 
-    render () {
-        const {modelOpen} = this.state;
-        if(!modelOpen){
-            return(
-                <button className="btn btn-block btn-placeholder">Select an Image</button>
-            )
+    toggleModal = () => {
+        this.setState({
+            modalOpen: !this.state.modalOpen
+        })
+    }
 
+    handleSelectedImage = (image) => {
+        this.props.sendImage(image);
+    }
+
+    render () {
+        const {modalOpen} = this.state;
+        console.log(modalOpen);
+        if(!modalOpen){
+            return(
+                <button className="btn btn-block btn-placeholder" onClick={this.toggleModal}>Select an Image</button>
+            )
         } else {
             return(
-                <div>
-
+                <div id="uploader">
+                    <div className="uploaderCard">
+                        <Gallery selectedImage={this.handleSelectedImage}/>
+                    </div>
                 </div>
             )
         }

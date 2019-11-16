@@ -69,16 +69,28 @@ class ImageBlock extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            mediaID: []
+            media: null
         }
     }
 
+    handleSendImage = (image) => {
+        this.setState({
+            media: image
+        })
+    }
+
     render () {
+        const { media } = this.state;
+        console.log(media);
         return (
             <div className="block">
-                <div className="">
-                    <MediaModel/>
-                </div>
+            {
+                media === null?
+                    <MediaModel sendImage={this.handleSendImage}/>
+                :
+                <img className="img-fluid" src={`/images/uploads/originals/${media.media_name}`} />
+            }
+
             </div>
         )
     }

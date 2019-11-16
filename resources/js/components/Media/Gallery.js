@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import './Modal.scss';
-import Dropzone from 'react-dropzone';
+import React, {Component} from 'react'
+import Dropzone from 'react-dropzone'
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
 import axios from 'axios';
+
+import './Modal.scss';
 
 import {image64toCanvasRef, downloadBase64File, extractImageFileExtensionFromBase64, base64StringtoFile} from './ReusableUtils.js';
 
@@ -17,13 +18,23 @@ class Gallery extends Component {
             media: [],
             uploader: false,
             hovering: false,
-            src: null,
+            imgSrc: null,
+            croppedURL: null,
             crop: {
-                unit: '%',
+                x: 20,
+                y: 10,
                 width: 40,
                 height: 40
-            },
+            }
         }
+        this.handleDrop = this.handleDrop.bind(this);
+        this.hover = this.hover.bind(this);
+        this.handleDragLeave = this.handleDragLeave.bind(this);
+        this.onCropChange = this.onCropChange.bind(this);
+        this.onImageLoaded = this.onImageLoaded.bind(this);
+        this.onCropComplete = this.onCropComplete.bind(this);
+        this.cropImage = this.cropImage.bind(this);
+
     }
 
     componentDidMount () {
@@ -53,7 +64,7 @@ class Gallery extends Component {
         })
     }
 
-    verifyFile = (files) => {
+    verifyFile(files){
         if (files && files.length > 0){
             const currentFile = files[0]
             const currentFileType = currentFile.type
@@ -70,71 +81,88 @@ class Gallery extends Component {
         }
     }
 
-    handleDrop = (files, rejectedFiles) => {
+    handleDrop(files, rejectedFiles){
         if (rejectedFiles && rejectedFiles.length > 0){
             this.verifyFile(rejectedFiles)
         }
 
         if (files && files.length > 0){
-            const isVerified = this.verifyFile(files)
-            if (isVerified){
-                const currentFile = files[0];
-                const myFileItemReader = new FileReader()
-                myFileItemReader.addEventListener('load', () => {
-                    const myResult = myFileItemReader.result;
-                    this.setState({
-                        src: myResult,
-                        imageType: currentFile.type,
-                        extention: currentFile.path.split('.').pop()
-                    })
-                }, false)
+             const isVerified = this.verifyFile(files)
+              if (isVerified){
+                  const currentFile = files[0]
+                 const myFileItemReader = new FileReader()
+                 myFileItemReader.addEventListener("load", ()=>{
+                     const myResult = myFileItemReader.result
+                     this.setState({
+                         imgSrc: myResult,
+                         imageType: currentFile.type,
+                     })
+                 }, false)
 
-                myFileItemReader.readAsDataURL(currentFile)
-            }
-        }
+                 myFileItemReader.readAsDataURL(currentFile)
+              }
+         }
     }
 
-    onImageLoaded = (image) => {
-        this.imageRef = image;
-    };
+    hover(){
+        this.setState({
+            hovering: true
+        })
+    }
 
-    onCropComplete = crop => {
-        this.makeClientCrop(crop);
-    };
+    handleDragLeave(){
+        this.setState({
+            hovering: false
+        })
+    }
 
-    onCropChange = (crop, percentCrop) => {
+    onCropChange(crop){
         this.setState({ crop });
-    };
+    }
 
-    async makeClientCrop(crop) {
-        if (this.imageRef && crop.width && crop.height) {
-            const croppedImageUrl = await this.getCroppedImg(
-                this.imageRef,
-                crop,
-                'newFile.jpeg'
-            );
-            this.setState({ croppedImageUrl });
+    onImageLoaded(image, pixelCrop){
+        this.imageRef = image;
+        const { crop } = this.state;
+        if (crop.aspect && crop.height && crop.width) {
+          this.setState({
+            crop: { ...crop, height: null },
+          });
+        } else {
+          this.makeClientCrop(crop, pixelCrop);
         }
     }
 
-    getCroppedImg(image, crop, fileName) {
+    onCropComplete(crop, pixelCrop){
+        this.makeClientCrop(crop, pixelCrop);
+    }
+
+    async makeClientCrop(crop, pixelCrop) {
+        if (this.imageRef && crop.width && crop.height) {
+            const croppedURL = await this.getCroppedImg(
+                this.imageRef,
+                pixelCrop,
+                'newFile.jpeg',
+            );
+            this.setState({ croppedURL });
+        }
+    }
+
+    getCroppedImg(image, pixelCrop, fileName) {
         const canvas = document.createElement('canvas');
-        const scaleX = image.naturalWidth / image.width;
-        const scaleY = image.naturalHeight / image.height;
-        canvas.width = crop.width;
-        canvas.height = crop.height;
+        canvas.width = pixelCrop.width;
+        canvas.height = pixelCrop.height;
         const ctx = canvas.getContext('2d');
 
         ctx.drawImage(
             image,
-            crop.x * scaleX,
-            crop.y * scaleY,
-            crop.width * scaleX,
-            crop.height * scaleY,
+            pixelCrop.x,
+            pixelCrop.y,
+            pixelCrop.width,
+            pixelCrop.height,
             0,
             0,
-            crop.width,
-            crop.height
+            pixelCrop.width,
+            pixelCrop.height,
         );
 
         return new Promise((resolve, reject) => {
@@ -142,23 +170,13 @@ class Gallery extends Component {
         });
     }
 
-    cancelCrop = (e) => {
+    cropImage(e){
         e.preventDefault();
-        this.setState({
-            src: null,
-            croppedImageUrl: null,
-            imageType: null,
-            hovering: false
-        });
-    }
-
-    cropImage = (e) => {
-        e.preventDefault();
-        const {croppedImageUrl, src, imageType, media} = this.state;
+        const {croppedURL, imgSrc, imageType, media} = this.state;
         let form = new FormData();
-        const extention = extractImageFileExtensionFromBase64(src);
+        const extention = extractImageFileExtensionFromBase64(imgSrc);
         const fileName = "previewFile"+ extention;
-        const newCroppedFile = base64StringtoFile(croppedImageUrl, fileName);
+        const newCroppedFile = base64StringtoFile(croppedURL, fileName);
         form.append('file', newCroppedFile);
         form.append('type', imageType);
         form.append('extention', extention);
@@ -171,31 +189,50 @@ class Gallery extends Component {
         })
         .then((response) => {
             if(this.props.selectedImage){
-                this.props.selectedImage();
+                this.props.selectedImage(response.data.mediaInfo);
             }
             media.push(response.data.mediaInfo)
             this.setState({
+                media: media,
                 uploader: false,
-                media: media
+                imgSrc: null,
+                croppedURL: null,
             })
         });
     }
 
+    handleSelectImage = (media) => {
+        this.setState({
+            uploader: false,
+        });
+        this.props.selectedImage(media);
+    }
+
+    cancelCrop = (e) => {
+        e.preventDefault();
+        this.setState({
+            src: null,
+            croppedImageUrl: null,
+            imageType: null,
+            hovering: false
+        });
+    }
+
     render () {
-        const { uploader, hovering, crop, croppedImageUrl, src, media } = this.state;
+        const {imgSrc, hovering, croppedURL, uploader, media, crop} = this.state;
         return (
-            <div>
+            <div className="gallery">
                 <ul className="nav nav-tabs mb-3">
-                    <li className="nav-item"><a className={ `nav-link ${uploader? '': 'active' }`} onClick={this.toggleTabs} href="#">Select Image</a></li>
+                    <li className="nav-item"><a className={ `nav-link ${uploader? '': 'active' }`} onClick={this.toggleTabs} href="#">Select Media</a></li>
                     <li className="nav-item"><a className={ `nav-link ${uploader? 'active': '' }`} onClick={this.toggleTabs} href="#">Upload</a></li>
                 </ul>
                 { uploader?
-                        src !== null?
+                        imgSrc !== null?
                             <div className="row">
-                                {src && (
+                                {imgSrc && (
                                     <div className="col-12 col-md-8">
                                     <ReactCrop
-                                        src={src}
+                                        src={imgSrc}
                                         crop={crop}
                                         onImageLoaded={this.onImageLoaded}
                                         onComplete={this.onCropComplete}
@@ -203,12 +240,12 @@ class Gallery extends Component {
                                     />
                                     </div>
                                 )}
-                                {croppedImageUrl && (
+                                {croppedURL && (
                                     <div className="col-md-4">
                                         <div className="card bg-light h-100">
                                             <div className="card-body bg-white">
                                                 <p className="text-left d-none d-md-block">Preview Image</p>
-                                                <img alt="Crop" style={{ maxWidth: '100%' }} src={croppedImageUrl} />
+                                                <img alt="Crop" style={{ maxWidth: '100%' }} src={croppedURL} />
                                             </div>
                                             <div className="card-footer bg-white border-0">
                                                 <button className="btn btn-bgi mt-3" onClick={this.cropImage}>Crop Image</button>
@@ -244,6 +281,7 @@ class Gallery extends Component {
                                         <img
                                             src={`/images/uploads/square/${mediaItem.media_name}`}
                                             className="img-fluid thumbImg"
+                                            onClick={this.handleSelectImage.bind(this, mediaItem)}
                                         />
                                     </div>
                                 ))
@@ -251,7 +289,7 @@ class Gallery extends Component {
                         </div>
                 }
             </div>
-        );
+        )
     }
 }
 

@@ -42,7 +42,6 @@ class MediaController extends Controller
         $manager = new ImageManager();
         $heroImage = $manager->make($request['file']);
         $imageName = uniqid();
-
         $originalFolder = 'images/uploads/originals';
         if( ! is_dir($originalFolder)){
             mkdir($originalFolder, 0777, true);
