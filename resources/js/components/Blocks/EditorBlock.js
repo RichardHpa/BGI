@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Editor, EditorState , RichUtils, convertFromRaw, convertToRaw} from 'draft-js';
+import { Editor, EditorState , RichUtils, convertFromHTML, ContentState} from 'draft-js';
 import {stateToHTML} from 'draft-js-export-html';
 import './EditorBlock.scss';
 
@@ -11,12 +11,35 @@ class CustomEditor extends Component {
         this.state = {
             editorState: EditorState.createEmpty(),
             editorText: '',
-            focused: false
+            focused: false,
+            editorID: null
         }
         this.toggleInlineStyle = this.toggleInlineStyle.bind(this);
         this.toggleBlockType = this.toggleBlockType.bind(this);
         this.onChange = this.onChange.bind(this);
         this.toggleActive = this.toggleActive.bind(this);
+    }
+
+    componentDidMount () {
+        const { editorState } = this.state;
+        if(this.props.blockInfo !== undefined){
+
+            if(this.props.blockInfo.content){
+                const blocksFromHTML = convertFromHTML(this.props.blockInfo.content);
+                const content = ContentState.createFromBlockArray(
+                  blocksFromHTML.contentBlocks,
+                  blocksFromHTML.entityMap
+                );
+                this.setState({
+                    editorState: EditorState.createWithContent(content),
+                    editorID: this.props.blockInfo.id
+                })
+            } else {
+                this.setState({
+                    editorID: this.props.blockInfo.id
+                })
+            }
+        }
     }
 
     toggleInlineStyle(inlineStyle){
@@ -33,7 +56,12 @@ class CustomEditor extends Component {
             editorState: editorState,
             editorText: convertedText
         });
-        // this.props.changeEditor(convertedText);
+        // console.log(this.state.editorID);
+        const newValues = {
+            id: this.state.editorID,
+            content: convertedText
+        }
+        this.props.sendContent(newValues);
     }
 
     toggleActive(){

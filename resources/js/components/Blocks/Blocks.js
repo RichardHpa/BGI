@@ -10,23 +10,42 @@ class BlockEditor extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            blocks: [{
-                id: 1,
-                type: 'textBlock'
-            }]
+            blocks: []
         }
+    }
+
+    componentDidMount () {
+        this.setState({
+            blocks: this.props.blocks
+        })
     }
 
     addBlock = (type) => {
         const { blocks } = this.state;
         blocks.push({
             id: blocks.length + 1,
-            type: type
+            type: type,
+            content: ''
         });
         this.setState({
             blocks
         })
-        // this.props.addBlock(type);
+        this.props.addBlock(blocks);
+    }
+
+    handleSendContent = (updatedBlock) => {
+        const { blocks } = this.state;
+        for (var i = 0; i < blocks.length; i++) {
+            if(blocks[i].id === updatedBlock.id){
+                blocks[i].content = updatedBlock.content
+                this.setState({
+                    blocks
+                })
+                this.props.recieveBlocks(blocks);
+                break;
+            }
+        }
+
     }
 
     render () {
@@ -39,8 +58,8 @@ class BlockEditor extends Component {
                             <div className="blockContent">
                                 {(() => {
                                   switch (singleBlock.type) {
-                                    case 'imageBlock':   return <ImageBlock/>;
-                                    case 'textBlock': return <CustomEditor/>;
+                                    case 'imageBlock':   return <ImageBlock blockInfo={singleBlock} sendContent={this.handleSendContent}/>;
+                                    case 'textBlock': return <CustomEditor blockInfo={singleBlock} sendContent={this.handleSendContent}/>;
                                   }
                                 })()}
                             </div>

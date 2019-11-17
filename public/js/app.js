@@ -91430,14 +91430,1036 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/react-image-crop/dist/ReactCrop.min.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/react-image-crop/dist/ReactCrop.min.js ***!
-  \*************************************************************/
+/***/ "./node_modules/react-image-crop/dist/ReactCrop.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/react-image-crop/dist/ReactCrop.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-!function(e,t){ true?module.exports=t(__webpack_require__(/*! react */ "./node_modules/react/index.js"),__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js")):undefined}("undefined"!=typeof self?self:this,function(e,t){return function(e){function t(o){if(r[o])return r[o].exports;var a=r[o]={i:o,l:!1,exports:{}};return e[o].call(a.exports,a,a.exports,t),a.l=!0,a.exports}var r={};return t.m=e,t.c=r,t.d=function(e,r,o){t.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:o})},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=0)}([function(e,t,r){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}function a(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function s(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}function d(e){var t=void 0,r=void 0;if(e.touches){var o=w(e.touches,1),a=o[0];t=a.pageX,r=a.pageY}else t=e.pageX,r=e.pageY;return{x:t,y:r}}function c(e,t,r){return Math.min(Math.max(e,t),r)}function h(e){return e&&e.width&&e.height&&!isNaN(e.width)&&!isNaN(e.height)}function u(e){var t=void 0;return"n"===e?t="s":"ne"===e?t="sw":"e"===e?t="w":"se"===e?t="nw":"s"===e?t="n":"sw"===e?t="ne":"w"===e?t="e":"nw"===e&&(t="se"),t}function p(e,t){if(isNaN(e.aspect)||isNaN(t))return console.warn("`crop.aspect` and `imageAspect` need to be numbers in order to make an aspect crop",e),e;var r=y({x:0,y:0},e);return e.width&&(r.height=e.width/e.aspect*t),e.height&&(r.width=(r.height||e.height)*(e.aspect/t)),e.y+(r.height||e.height)>100&&(r.height=100-e.y,r.width=r.height*e.aspect/t),e.x+(r.width||e.width)>100&&(r.width=100-e.x,r.height=r.width/e.aspect*t),r}function l(e,t,r){return!!(!e.width&&e.height||e.width&&!e.height)||!(!e.width||!e.height||Math.round(r*(e.height/100)*e.aspect)===Math.round(t*(e.width/100)))}function f(e,t){return e&&e.aspect&&l(e,t.naturalWidth,t.naturalHeight)?p(e,t.naturalWidth/t.naturalHeight):e}function g(e,t){var r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];if(!e||!t)return null;var o=r?e.naturalWidth:e.width,a=r?e.naturalHeight:e.height,n=Math.round(o*(t.x/100)),i=Math.round(a*(t.y/100)),s=Math.round(o*(t.width/100)),d=Math.round(a*(t.height/100));return{x:n,y:i,width:c(s,0,o-n),height:c(d,0,a-i)}}function m(e,t,r){var o=y({},t);t.aspect&&e.x>t.x&&t.height+t.y>=100&&(o.x=e.x);var a=!1;o.x+o.width>100?(o.width=t.width+(100-(t.x+t.width)),o.x=t.x+(100-(t.x+o.width)),a=!0):o.x<0&&(o.width=t.x+t.width,o.x=0,a=!0),a&&t.aspect&&(o.height=o.width/t.aspect*r,e.y>o.y&&(o.y=t.y+(t.height-o.height)));var n=!1;return o.y+o.height>100?(o.height=t.height+(100-(t.y+t.height)),o.y=t.y+(100-(t.y+o.height)),n=!0):o.y<0&&(o.height=t.y+t.height,o.y=0,n=!0),n&&t.aspect&&(o.width=o.height*t.aspect/r,o.x<t.x&&(o.x=t.x+(t.width-o.width))),o}Object.defineProperty(t,"__esModule",{value:!0}),t.containCrop=t.makeAspectCrop=t.getPixelCrop=t.Component=t.default=void 0;var v=function(){function e(e,t){for(var r=0;r<t.length;r++){var o=t[r];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,r,o){return r&&e(t.prototype,r),o&&e(t,o),t}}(),y=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var o in r)Object.prototype.hasOwnProperty.call(r,o)&&(e[o]=r[o])}return e},w=function(){function e(e,t){var r=[],o=!0,a=!1,n=void 0;try{for(var i,s=e[Symbol.iterator]();!(o=(i=s.next()).done)&&(r.push(i.value),!t||r.length!==t);o=!0);}catch(e){a=!0,n=e}finally{try{!o&&s.return&&s.return()}finally{if(a)throw n}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),C=r(1),x=o(C),O=r(2),b=o(O),S=!1;try{window.addEventListener("test",null,Object.defineProperty({},"passive",{get:function(){return S=!0,!0}}))}catch(e){}var D=function(e){function t(){var e,r,o,a;n(this,t);for(var s=arguments.length,u=Array(s),p=0;p<s;p++)u[p]=arguments[p];return r=o=i(this,(e=t.__proto__||Object.getPrototypeOf(t)).call.apply(e,[this].concat(u))),o.window=window,o.document=document,o.state={},o.onCropMouseTouchDown=function(e){var t=o.props,r=t.crop;if(!t.disabled){e.preventDefault();var a=d(e);o.componentRef.focus({preventScroll:!0});var n=e.target.dataset.ord,i="nw"===n||"w"===n||"sw"===n,s="nw"===n||"n"===n||"ne"===n,c=void 0;r.aspect&&(c=o.getElementOffset(o.cropSelectRef)),o.evData={clientStartX:a.x,clientStartY:a.y,cropStartWidth:r.width,cropStartHeight:r.height,cropStartX:i?r.x+r.width:r.x,cropStartY:s?r.y+r.height:r.y,xInversed:i,yInversed:s,xCrossOver:i,yCrossOver:s,startXCrossOver:i,startYCrossOver:s,isResize:e.target.dataset.ord,ord:n,cropOffset:c},o.mouseDownOnCrop=!0,o.setState({cropIsActive:!0})}},o.onComponentMouseTouchDown=function(e){var t=o.props,r=t.crop,a=t.disabled,n=t.locked,i=t.keepSelection,s=t.onChange,c=t.useNaturalImageDimensions;if(e.target===o.imageRef&&!(a||n||i&&h(r))){e.preventDefault();var u=d(e);o.componentRef.focus({preventScroll:!0});var p=o.getElementOffset(o.imageRef),l=(u.x-p.left)/o.imageRef.width*100,f=(u.y-p.top)/o.imageRef.height*100,m={aspect:r?r.aspect:void 0,x:l,y:f,width:0,height:0};o.evData={clientStartX:u.x,clientStartY:u.y,cropStartWidth:m.width,cropStartHeight:m.height,cropStartX:m.x,cropStartY:m.y,xInversed:!1,yInversed:!1,xCrossOver:!1,yCrossOver:!1,startXCrossOver:!1,startYCrossOver:!1,isResize:!0,ord:"nw"},o.mouseDownOnCrop=!0,s(m,g(o.imageRef,m,c)),o.setState({cropIsActive:!0})}},o.onDocMouseTouchMove=function(e){var t=o.props,r=t.crop,a=t.disabled,n=t.onChange,i=t.onDragStart;if(!a&&o.mouseDownOnCrop){e.preventDefault(),o.dragStarted||(o.dragStarted=!0,i());var s=o,c=s.evData,h=d(e);c.isResize&&r.aspect&&c.cropOffset&&(h.y=o.straightenYPath(h.x));var u=h.x-c.clientStartX;c.xDiffPc=u/o.imageRef.width*100;var p=h.y-c.clientStartY;c.yDiffPc=p/o.imageRef.height*100;var l=void 0;l=c.isResize?o.resizeCrop():o.dragCrop(),l!==r&&n(l,g(o.imageRef,l))}},o.onComponentKeyDown=function(e){var r=o.props,a=r.crop,n=r.disabled,i=r.onChange,s=r.onComplete,d=r.useNaturalImageDimensions;if(!n){var u=e.which,p=!1;if(h(a)){var l=o.makeNewCrop();u===t.arrowKey.left?(l.x-=t.nudgeStep,p=!0):u===t.arrowKey.right?(l.x+=t.nudgeStep,p=!0):u===t.arrowKey.up?(l.y-=t.nudgeStep,p=!0):u===t.arrowKey.down&&(l.y+=t.nudgeStep,p=!0),p&&(e.preventDefault(),l.x=c(l.x,0,100-l.width),l.y=c(l.y,0,100-l.height),i(l,g(o.imageRef,l,d)),s(l,g(o.imageRef,l,d)))}}},o.onDocMouseTouchEnd=function(){var e=o.props,t=e.crop,r=e.disabled,a=e.onComplete,n=e.onDragEnd,i=e.useNaturalImageDimensions;r||o.mouseDownOnCrop&&(o.mouseDownOnCrop=!1,o.dragStarted=!1,n(),a(t,g(o.imageRef,t,i)),o.setState({cropIsActive:!1}))},a=r,i(o,a)}return s(t,e),v(t,[{key:"componentDidMount",value:function(){var e=!!S&&{passive:!1};if(this.document.addEventListener("mousemove",this.onDocMouseTouchMove,e),this.document.addEventListener("touchmove",this.onDocMouseTouchMove,e),this.document.addEventListener("mouseup",this.onDocMouseTouchEnd,e),this.document.addEventListener("touchend",this.onDocMouseTouchEnd,e),this.document.addEventListener("touchcancel",this.onDocMouseTouchEnd,e),this.imageRef.complete||this.imageRef.readyState)if(0===this.imageRef.naturalWidth){var t=this.imageRef.src;this.imageRef.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",this.imageRef.src=t}else this.onImageLoad(this.imageRef)}},{key:"componentWillUnmount",value:function(){this.document.removeEventListener("mousemove",this.onDocMouseTouchMove),this.document.removeEventListener("touchmove",this.onDocMouseTouchMove),this.document.removeEventListener("mouseup",this.onDocMouseTouchEnd),this.document.removeEventListener("touchend",this.onDocMouseTouchEnd),this.document.removeEventListener("touchcancel",this.onDocMouseTouchEnd)}},{key:"onImageLoad",value:function(e){var t=this.props,r=t.crop,o=t.onComplete,a=t.onChange,n=t.onImageLoaded,i=t.useNaturalImageDimensions,s=f(r,e);!1!==n(e,g(e,s,i))&&s!==r&&(a(s,g(e,s,i)),o(s,g(e,s,i)))}},{key:"getElementOffset",value:function(e){var t=e.getBoundingClientRect(),r=this.document.documentElement;return{top:t.top+this.window.pageYOffset-r.clientTop,left:t.left+this.window.pageXOffset-r.clientLeft}}},{key:"getCropStyle",value:function(){var e=this.props.crop;return{top:e.y+"%",left:e.x+"%",width:e.width+"%",height:e.height+"%"}}},{key:"getNewSize",value:function(){var e=this.props,t=e.crop,r=e.minWidth,o=e.maxWidth,a=e.minHeight,n=e.maxHeight,i=this.evData,s=this.imageRef.width/this.imageRef.height,d=i.cropStartWidth+i.xDiffPc;i.xCrossOver&&(d=Math.abs(d)),d=c(d,r,o);var h=void 0;return h=t.aspect?d/t.aspect*s:i.cropStartHeight+i.yDiffPc,i.yCrossOver&&(h=Math.min(Math.abs(h),i.cropStartY)),h=c(h,a,n),t.aspect&&(d=c(h*t.aspect/s,0,100)),{width:d,height:h}}},{key:"dragCrop",value:function(){var e=this.makeNewCrop(),t=this.evData;return e.x=c(t.cropStartX+t.xDiffPc,0,100-e.width),e.y=c(t.cropStartY+t.yDiffPc,0,100-e.height),e}},{key:"resizeCrop",value:function(){var e=this.makeNewCrop(),r=this.evData,o=this.props,a=o.crop,n=o.minWidth,i=o.minHeight,s=r.ord,d=this.imageRef.width/this.imageRef.height;r.xInversed&&(r.xDiffPc-=2*r.cropStartWidth),r.yInversed&&(r.yDiffPc-=2*r.cropStartHeight);var c=this.getNewSize(),h=r.cropStartX,u=r.cropStartY;r.xCrossOver&&(h=e.x+(e.width-c.width)),r.yCrossOver&&(u=!1===r.lastYCrossover?e.y-c.height:e.y+(e.height-c.height));var p=m(this.props.crop,{x:h,y:u,width:c.width,height:c.height,aspect:e.aspect},d);return e.aspect||t.xyOrds.indexOf(s)>-1?(e.x=p.x,e.y=p.y,e.width=p.width,e.height=p.height):t.xOrds.indexOf(s)>-1?(e.x=p.x,e.width=p.width):t.yOrds.indexOf(s)>-1&&(e.y=p.y,e.height=p.height),r.lastYCrossover=r.yCrossOver,this.crossOverCheck(),n&&e.width<n?a:i&&e.height<i?a:e}},{key:"straightenYPath",value:function(e){var t=this.evData,r=t.ord,o=t.cropOffset,a=t.cropStartWidth/100*this.imageRef.width,n=t.cropStartHeight/100*this.imageRef.height,i=void 0,s=void 0;return"nw"===r||"se"===r?(i=n/a,s=o.top-o.left*i):(i=-n/a,s=o.top+(n-o.left*i)),i*e+s}},{key:"createCropSelection",value:function(){var e=this,t=this.props,r=t.disabled,o=t.locked,a=t.renderSelectionAddon,n=this.getCropStyle();return x.default.createElement("div",{ref:function(t){e.cropSelectRef=t},style:n,className:"ReactCrop__crop-selection",onMouseDown:this.onCropMouseTouchDown,onTouchStart:this.onCropMouseTouchDown,role:"presentation"},!r&&!o&&x.default.createElement("div",{className:"ReactCrop__drag-elements"},x.default.createElement("div",{className:"ReactCrop__drag-bar ord-n","data-ord":"n"}),x.default.createElement("div",{className:"ReactCrop__drag-bar ord-e","data-ord":"e"}),x.default.createElement("div",{className:"ReactCrop__drag-bar ord-s","data-ord":"s"}),x.default.createElement("div",{className:"ReactCrop__drag-bar ord-w","data-ord":"w"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-nw","data-ord":"nw"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-n","data-ord":"n"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-ne","data-ord":"ne"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-e","data-ord":"e"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-se","data-ord":"se"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-s","data-ord":"s"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-sw","data-ord":"sw"}),x.default.createElement("div",{className:"ReactCrop__drag-handle ord-w","data-ord":"w"})),a&&a(this.state))}},{key:"makeNewCrop",value:function(){return y({},t.defaultCrop,this.props.crop)}},{key:"crossOverCheck",value:function(){var e=this.evData;(!e.xCrossOver&&-Math.abs(e.cropStartWidth)-e.xDiffPc>=0||e.xCrossOver&&-Math.abs(e.cropStartWidth)-e.xDiffPc<=0)&&(e.xCrossOver=!e.xCrossOver),(!e.yCrossOver&&-Math.abs(e.cropStartHeight)-e.yDiffPc>=0||e.yCrossOver&&-Math.abs(e.cropStartHeight)-e.yDiffPc<=0)&&(e.yCrossOver=!e.yCrossOver);var t=e.xCrossOver!==e.startXCrossOver,r=e.yCrossOver!==e.startYCrossOver;e.inversedXOrd=!!t&&u(e.ord),e.inversedYOrd=!!r&&u(e.ord)}},{key:"render",value:function(){var e=this,t=this.props,r=t.children,o=t.className,n=t.crossorigin,i=t.crop,s=t.disabled,d=t.locked,c=t.imageAlt,u=t.onImageError,p=t.src,l=t.style,f=t.imageStyle,g=this.state.cropIsActive,m=void 0;h(i)&&(m=this.createCropSelection());var v=["ReactCrop"];return g&&v.push("ReactCrop--active"),i&&(i.aspect&&v.push("ReactCrop--fixed-aspect"),!g||i.width&&i.height||v.push("ReactCrop--crop-invisible")),s&&v.push("ReactCrop--disabled"),d&&v.push("ReactCrop--locked"),o&&v.push.apply(v,a(o.split(" "))),x.default.createElement("div",{ref:function(t){e.componentRef=t},className:v.join(" "),style:l,onTouchStart:this.onComponentMouseTouchDown,onMouseDown:this.onComponentMouseTouchDown,role:"presentation",tabIndex:1,onKeyDown:this.onComponentKeyDown},x.default.createElement("img",{ref:function(t){e.imageRef=t},crossOrigin:n,className:"ReactCrop__image",style:f,src:p,onLoad:function(t){return e.onImageLoad(t.target)},onError:u,alt:c}),r,m)}}]),t}(C.PureComponent);D.xOrds=["e","w"],D.yOrds=["n","s"],D.xyOrds=["nw","ne","se","sw"],D.arrowKey={left:37,up:38,right:39,down:40},D.nudgeStep=.2,D.defaultCrop={x:0,y:0,width:0,height:0},D.propTypes={className:b.default.string,crossorigin:b.default.string,children:b.default.oneOfType([b.default.arrayOf(b.default.node),b.default.node]),crop:b.default.shape({aspect:b.default.number,x:b.default.number,y:b.default.number,width:b.default.number,height:b.default.number}),disabled:b.default.bool,locked:b.default.bool,imageAlt:b.default.string,imageStyle:b.default.shape({}),keepSelection:b.default.bool,minWidth:b.default.number,minHeight:b.default.number,maxWidth:b.default.number,maxHeight:b.default.number,onChange:b.default.func.isRequired,onImageError:b.default.func,onComplete:b.default.func,onImageLoaded:b.default.func,onDragStart:b.default.func,onDragEnd:b.default.func,src:b.default.string.isRequired,style:b.default.shape({}),renderSelectionAddon:b.default.func},D.defaultProps={className:void 0,crop:void 0,crossorigin:void 0,disabled:!1,locked:!1,imageAlt:"",maxWidth:100,maxHeight:100,minWidth:0,minHeight:0,keepSelection:!1,onComplete:function(){},onImageError:function(){},onImageLoaded:function(){},onDragStart:function(){},onDragEnd:function(){},children:void 0,style:void 0,imageStyle:void 0,renderSelectionAddon:void 0,useNaturalImageDimensions:!0},t.default=D,t.Component=D,t.getPixelCrop=g,t.makeAspectCrop=p,t.containCrop=m},function(t,r){t.exports=e},function(e,r){e.exports=t}])});
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory(__webpack_require__(/*! react */ "./node_modules/react/index.js"), __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+	else {}
+})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.containCrop = exports.makeAspectCrop = exports.getPixelCrop = exports.Component = exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /* globals document, window */
+
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// Feature detection
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners
+var passiveSupported = false;
+
+try {
+  window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
+    get: function get() {
+      passiveSupported = true;return true;
+    }
+  }));
+} catch (err) {} // eslint-disable-line no-empty
+
+var EMPTY_GIF = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+
+function getClientPos(e) {
+  var pageX = void 0;
+  var pageY = void 0;
+
+  if (e.touches) {
+    var _e$touches = _slicedToArray(e.touches, 1);
+
+    var _e$touches$ = _e$touches[0];
+    pageX = _e$touches$.pageX;
+    pageY = _e$touches$.pageY;
+  } else {
+    pageX = e.pageX;
+    pageY = e.pageY;
+  }
+
+  return {
+    x: pageX,
+    y: pageY
+  };
+}
+
+function clamp(num, min, max) {
+  return Math.min(Math.max(num, min), max);
+}
+
+function isCropValid(crop) {
+  return crop && crop.width && crop.height && !isNaN(crop.width) && !isNaN(crop.height);
+}
+
+function inverseOrd(ord) {
+  var inversedOrd = void 0;
+
+  if (ord === 'n') inversedOrd = 's';else if (ord === 'ne') inversedOrd = 'sw';else if (ord === 'e') inversedOrd = 'w';else if (ord === 'se') inversedOrd = 'nw';else if (ord === 's') inversedOrd = 'n';else if (ord === 'sw') inversedOrd = 'ne';else if (ord === 'w') inversedOrd = 'e';else if (ord === 'nw') inversedOrd = 'se';
+
+  return inversedOrd;
+}
+
+function makeAspectCrop(crop, imageAspect) {
+  if (isNaN(crop.aspect) || isNaN(imageAspect)) {
+    console.warn('`crop.aspect` and `imageAspect` need to be numbers in order to make an aspect crop', crop);
+    return crop;
+  }
+
+  var completeCrop = _extends({
+    x: 0,
+    y: 0
+  }, crop);
+
+  if (crop.width) {
+    completeCrop.height = crop.width / crop.aspect * imageAspect;
+  }
+  if (crop.height) {
+    completeCrop.width = (completeCrop.height || crop.height) * (crop.aspect / imageAspect);
+  }
+
+  if (crop.y + (completeCrop.height || crop.height) > 100) {
+    completeCrop.height = 100 - crop.y;
+    completeCrop.width = completeCrop.height * crop.aspect / imageAspect;
+  }
+
+  if (crop.x + (completeCrop.width || crop.width) > 100) {
+    completeCrop.width = 100 - crop.x;
+    completeCrop.height = completeCrop.width / crop.aspect * imageAspect;
+  }
+
+  return completeCrop;
+}
+
+function isAspectInvalid(crop, width, height) {
+  if (!crop.width && crop.height || crop.width && !crop.height) {
+    return true;
+  }
+
+  if (crop.width && crop.height && Math.round(height * (crop.height / 100) * crop.aspect) !== Math.round(width * (crop.width / 100))) {
+    return true;
+  }
+
+  return false;
+}
+
+function resolveCrop(crop, image) {
+  if (crop && crop.aspect && isAspectInvalid(crop, image.naturalWidth, image.naturalHeight)) {
+    return makeAspectCrop(crop, image.naturalWidth / image.naturalHeight);
+  }
+
+  return crop;
+}
+
+function getPixelCrop(image, percentCrop) {
+  var useNaturalImageDimensions = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+
+  if (!image || !percentCrop) {
+    return null;
+  }
+
+  var imageWidth = useNaturalImageDimensions ? image.naturalWidth : image.width;
+  var imageHeight = useNaturalImageDimensions ? image.naturalHeight : image.height;
+
+  var x = Math.round(imageWidth * (percentCrop.x / 100));
+  var y = Math.round(imageHeight * (percentCrop.y / 100));
+  var width = Math.round(imageWidth * (percentCrop.width / 100));
+  var height = Math.round(imageHeight * (percentCrop.height / 100));
+
+  return {
+    x: x,
+    y: y,
+    // Clamp width and height so rounding doesn't cause the crop to exceed bounds.
+    width: clamp(width, 0, imageWidth - x),
+    height: clamp(height, 0, imageHeight - y)
+  };
+}
+
+function containCrop(prevCrop, crop, imageAspect) {
+  var contained = _extends({}, crop);
+
+  // Fixes issue where crop can be dragged to the left when resizing with SW ord
+  // even though it's hit the bottom of the image.
+  if (crop.aspect && prevCrop.x > crop.x && crop.height + crop.y >= 100) {
+    contained.x = prevCrop.x;
+  }
+
+  // Don't let the crop grow on the opposite side when hitting an x image boundary.
+  var cropXAdjusted = false;
+  if (contained.x + contained.width > 100) {
+    contained.width = crop.width + (100 - (crop.x + crop.width));
+    contained.x = crop.x + (100 - (crop.x + contained.width));
+    cropXAdjusted = true;
+  } else if (contained.x < 0) {
+    contained.width = crop.x + crop.width;
+    contained.x = 0;
+    cropXAdjusted = true;
+  }
+
+  if (cropXAdjusted && crop.aspect) {
+    // Adjust height to the resized width to maintain aspect.
+    contained.height = contained.width / crop.aspect * imageAspect;
+    // If sizing in up direction we need to pin Y at the point it
+    // would be at the boundary.
+    if (prevCrop.y > contained.y) {
+      contained.y = crop.y + (crop.height - contained.height);
+    }
+  }
+
+  // Don't let the crop grow on the opposite side when hitting a y image boundary.
+  var cropYAdjusted = false;
+  if (contained.y + contained.height > 100) {
+    contained.height = crop.height + (100 - (crop.y + crop.height));
+    contained.y = crop.y + (100 - (crop.y + contained.height));
+    cropYAdjusted = true;
+  } else if (contained.y < 0) {
+    contained.height = crop.y + crop.height;
+    contained.y = 0;
+    cropYAdjusted = true;
+  }
+
+  if (cropYAdjusted && crop.aspect) {
+    // Adjust width to the resized height to maintain aspect.
+    contained.width = contained.height * crop.aspect / imageAspect;
+    // If sizing in up direction we need to pin X at the point it
+    // would be at the boundary.
+    if (contained.x < crop.x) {
+      contained.x = crop.x + (crop.width - contained.width);
+    }
+  }
+
+  return contained;
+}
+
+var ReactCrop = function (_PureComponent) {
+  _inherits(ReactCrop, _PureComponent);
+
+  function ReactCrop() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, ReactCrop);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ReactCrop.__proto__ || Object.getPrototypeOf(ReactCrop)).call.apply(_ref, [this].concat(args))), _this), _this.window = window, _this.document = document, _this.state = {}, _this.onCropMouseTouchDown = function (e) {
+      var _this$props = _this.props,
+          crop = _this$props.crop,
+          disabled = _this$props.disabled;
+
+
+      if (disabled) {
+        return;
+      }
+
+      e.preventDefault(); // Stop drag selection.
+
+      var clientPos = getClientPos(e);
+
+      // Focus for detecting keypress.
+      _this.componentRef.focus({ preventScroll: true });
+
+      var ord = e.target.dataset.ord;
+
+      var xInversed = ord === 'nw' || ord === 'w' || ord === 'sw';
+      var yInversed = ord === 'nw' || ord === 'n' || ord === 'ne';
+
+      var cropOffset = void 0;
+
+      if (crop.aspect) {
+        cropOffset = _this.getElementOffset(_this.cropSelectRef);
+      }
+
+      _this.evData = {
+        clientStartX: clientPos.x,
+        clientStartY: clientPos.y,
+        cropStartWidth: crop.width,
+        cropStartHeight: crop.height,
+        cropStartX: xInversed ? crop.x + crop.width : crop.x,
+        cropStartY: yInversed ? crop.y + crop.height : crop.y,
+        xInversed: xInversed,
+        yInversed: yInversed,
+        xCrossOver: xInversed,
+        yCrossOver: yInversed,
+        startXCrossOver: xInversed,
+        startYCrossOver: yInversed,
+        isResize: e.target.dataset.ord,
+        ord: ord,
+        cropOffset: cropOffset
+      };
+
+      _this.mouseDownOnCrop = true;
+      _this.setState({ cropIsActive: true });
+    }, _this.onComponentMouseTouchDown = function (e) {
+      var _this$props2 = _this.props,
+          crop = _this$props2.crop,
+          disabled = _this$props2.disabled,
+          locked = _this$props2.locked,
+          keepSelection = _this$props2.keepSelection,
+          onChange = _this$props2.onChange,
+          useNaturalImageDimensions = _this$props2.useNaturalImageDimensions;
+
+
+      if (e.target !== _this.imageRef) {
+        return;
+      }
+
+      if (disabled || locked || keepSelection && isCropValid(crop)) {
+        return;
+      }
+
+      e.preventDefault(); // Stop drag selection.
+
+      var clientPos = getClientPos(e);
+
+      // Focus for detecting keypress.
+      _this.componentRef.focus({ preventScroll: true });
+
+      var imageOffset = _this.getElementOffset(_this.imageRef);
+      var xPc = (clientPos.x - imageOffset.left) / _this.imageRef.width * 100;
+      var yPc = (clientPos.y - imageOffset.top) / _this.imageRef.height * 100;
+
+      var nextCrop = {
+        aspect: crop ? crop.aspect : undefined,
+        x: xPc,
+        y: yPc,
+        width: 0,
+        height: 0
+      };
+
+      _this.evData = {
+        clientStartX: clientPos.x,
+        clientStartY: clientPos.y,
+        cropStartWidth: nextCrop.width,
+        cropStartHeight: nextCrop.height,
+        cropStartX: nextCrop.x,
+        cropStartY: nextCrop.y,
+        xInversed: false,
+        yInversed: false,
+        xCrossOver: false,
+        yCrossOver: false,
+        startXCrossOver: false,
+        startYCrossOver: false,
+        isResize: true,
+        ord: 'nw'
+      };
+
+      _this.mouseDownOnCrop = true;
+      onChange(nextCrop, getPixelCrop(_this.imageRef, nextCrop, useNaturalImageDimensions));
+      _this.setState({ cropIsActive: true });
+    }, _this.onDocMouseTouchMove = function (e) {
+      var _this$props3 = _this.props,
+          crop = _this$props3.crop,
+          disabled = _this$props3.disabled,
+          onChange = _this$props3.onChange,
+          onDragStart = _this$props3.onDragStart;
+
+
+      if (disabled) {
+        return;
+      }
+
+      if (!_this.mouseDownOnCrop) {
+        return;
+      }
+
+      e.preventDefault(); // Stop drag selection.
+      if (!_this.dragStarted) {
+        _this.dragStarted = true;
+        onDragStart();
+      }
+
+      var _this2 = _this,
+          evData = _this2.evData;
+
+      var clientPos = getClientPos(e);
+
+      if (evData.isResize && crop.aspect && evData.cropOffset) {
+        clientPos.y = _this.straightenYPath(clientPos.x);
+      }
+
+      var xDiffPx = clientPos.x - evData.clientStartX;
+      evData.xDiffPc = xDiffPx / _this.imageRef.width * 100;
+
+      var yDiffPx = clientPos.y - evData.clientStartY;
+      evData.yDiffPc = yDiffPx / _this.imageRef.height * 100;
+
+      var nextCrop = void 0;
+
+      if (evData.isResize) {
+        nextCrop = _this.resizeCrop();
+      } else {
+        nextCrop = _this.dragCrop();
+      }
+
+      if (nextCrop !== crop) {
+        onChange(nextCrop, getPixelCrop(_this.imageRef, nextCrop));
+      }
+    }, _this.onComponentKeyDown = function (e) {
+      var _this$props4 = _this.props,
+          crop = _this$props4.crop,
+          disabled = _this$props4.disabled,
+          onChange = _this$props4.onChange,
+          onComplete = _this$props4.onComplete,
+          useNaturalImageDimensions = _this$props4.useNaturalImageDimensions;
+
+
+      if (disabled) {
+        return;
+      }
+
+      var keyCode = e.which;
+      var nudged = false;
+
+      if (!isCropValid(crop)) {
+        return;
+      }
+
+      var nextCrop = _this.makeNewCrop();
+
+      if (keyCode === ReactCrop.arrowKey.left) {
+        nextCrop.x -= ReactCrop.nudgeStep;
+        nudged = true;
+      } else if (keyCode === ReactCrop.arrowKey.right) {
+        nextCrop.x += ReactCrop.nudgeStep;
+        nudged = true;
+      } else if (keyCode === ReactCrop.arrowKey.up) {
+        nextCrop.y -= ReactCrop.nudgeStep;
+        nudged = true;
+      } else if (keyCode === ReactCrop.arrowKey.down) {
+        nextCrop.y += ReactCrop.nudgeStep;
+        nudged = true;
+      }
+
+      if (nudged) {
+        e.preventDefault(); // Stop drag selection.
+        nextCrop.x = clamp(nextCrop.x, 0, 100 - nextCrop.width);
+        nextCrop.y = clamp(nextCrop.y, 0, 100 - nextCrop.height);
+
+        onChange(nextCrop, getPixelCrop(_this.imageRef, nextCrop, useNaturalImageDimensions));
+        onComplete(nextCrop, getPixelCrop(_this.imageRef, nextCrop, useNaturalImageDimensions));
+      }
+    }, _this.onDocMouseTouchEnd = function () {
+      var _this$props5 = _this.props,
+          crop = _this$props5.crop,
+          disabled = _this$props5.disabled,
+          onComplete = _this$props5.onComplete,
+          onDragEnd = _this$props5.onDragEnd,
+          useNaturalImageDimensions = _this$props5.useNaturalImageDimensions;
+
+
+      if (disabled) {
+        return;
+      }
+
+      if (_this.mouseDownOnCrop) {
+        _this.mouseDownOnCrop = false;
+        _this.dragStarted = false;
+        onDragEnd();
+        onComplete(crop, getPixelCrop(_this.imageRef, crop, useNaturalImageDimensions));
+        _this.setState({ cropIsActive: false });
+      }
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(ReactCrop, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var options = passiveSupported ? { passive: false } : false;
+
+      this.document.addEventListener('mousemove', this.onDocMouseTouchMove, options);
+      this.document.addEventListener('touchmove', this.onDocMouseTouchMove, options);
+
+      this.document.addEventListener('mouseup', this.onDocMouseTouchEnd, options);
+      this.document.addEventListener('touchend', this.onDocMouseTouchEnd, options);
+      this.document.addEventListener('touchcancel', this.onDocMouseTouchEnd, options);
+
+      if (this.imageRef.complete || this.imageRef.readyState) {
+        if (this.imageRef.naturalWidth === 0) {
+          // Broken load on iOS, PR #51
+          // https://css-tricks.com/snippets/jquery/fixing-load-in-ie-for-cached-images/
+          // http://stackoverflow.com/questions/821516/browser-independent-way-to-detect-when-image-has-been-loaded
+          var src = this.imageRef.src;
+
+          this.imageRef.src = EMPTY_GIF;
+          this.imageRef.src = src;
+        } else {
+          this.onImageLoad(this.imageRef);
+        }
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.document.removeEventListener('mousemove', this.onDocMouseTouchMove);
+      this.document.removeEventListener('touchmove', this.onDocMouseTouchMove);
+
+      this.document.removeEventListener('mouseup', this.onDocMouseTouchEnd);
+      this.document.removeEventListener('touchend', this.onDocMouseTouchEnd);
+      this.document.removeEventListener('touchcancel', this.onDocMouseTouchEnd);
+    }
+  }, {
+    key: 'onImageLoad',
+    value: function onImageLoad(image) {
+      var _props = this.props,
+          crop = _props.crop,
+          onComplete = _props.onComplete,
+          onChange = _props.onChange,
+          onImageLoaded = _props.onImageLoaded,
+          useNaturalImageDimensions = _props.useNaturalImageDimensions;
+
+
+      var resolvedCrop = resolveCrop(crop, image);
+
+      // Return false from onImageLoaded if you set the crop with setState in there as otherwise the subsequent
+      // onChange + onComplete will not have your updated crop.
+      var res = onImageLoaded(image, getPixelCrop(image, resolvedCrop, useNaturalImageDimensions));
+
+      if (res !== false && resolvedCrop !== crop) {
+        onChange(resolvedCrop, getPixelCrop(image, resolvedCrop, useNaturalImageDimensions));
+        onComplete(resolvedCrop, getPixelCrop(image, resolvedCrop, useNaturalImageDimensions));
+      }
+    }
+  }, {
+    key: 'getElementOffset',
+    value: function getElementOffset(el) {
+      var rect = el.getBoundingClientRect();
+      var docEl = this.document.documentElement;
+
+      var rectTop = rect.top + this.window.pageYOffset - docEl.clientTop;
+      var rectLeft = rect.left + this.window.pageXOffset - docEl.clientLeft;
+
+      return {
+        top: rectTop,
+        left: rectLeft
+      };
+    }
+  }, {
+    key: 'getCropStyle',
+    value: function getCropStyle() {
+      var crop = this.props.crop;
+
+      return {
+        top: crop.y + '%',
+        left: crop.x + '%',
+        width: crop.width + '%',
+        height: crop.height + '%'
+      };
+    }
+  }, {
+    key: 'getNewSize',
+    value: function getNewSize() {
+      var _props2 = this.props,
+          crop = _props2.crop,
+          minWidth = _props2.minWidth,
+          maxWidth = _props2.maxWidth,
+          minHeight = _props2.minHeight,
+          maxHeight = _props2.maxHeight;
+      var evData = this.evData;
+
+      var imageAspect = this.imageRef.width / this.imageRef.height;
+
+      // New width.
+      var newWidth = evData.cropStartWidth + evData.xDiffPc;
+
+      if (evData.xCrossOver) {
+        newWidth = Math.abs(newWidth);
+      }
+
+      newWidth = clamp(newWidth, minWidth, maxWidth);
+
+      // New height.
+      var newHeight = void 0;
+
+      if (crop.aspect) {
+        newHeight = newWidth / crop.aspect * imageAspect;
+      } else {
+        newHeight = evData.cropStartHeight + evData.yDiffPc;
+      }
+
+      if (evData.yCrossOver) {
+        // Cap if polarity is inversed and the height fills the y space.
+        newHeight = Math.min(Math.abs(newHeight), evData.cropStartY);
+      }
+
+      newHeight = clamp(newHeight, minHeight, maxHeight);
+
+      if (crop.aspect) {
+        newWidth = clamp(newHeight * crop.aspect / imageAspect, 0, 100);
+      }
+
+      return {
+        width: newWidth,
+        height: newHeight
+      };
+    }
+  }, {
+    key: 'dragCrop',
+    value: function dragCrop() {
+      var nextCrop = this.makeNewCrop();
+      var evData = this.evData;
+
+      nextCrop.x = clamp(evData.cropStartX + evData.xDiffPc, 0, 100 - nextCrop.width);
+      nextCrop.y = clamp(evData.cropStartY + evData.yDiffPc, 0, 100 - nextCrop.height);
+      return nextCrop;
+    }
+  }, {
+    key: 'resizeCrop',
+    value: function resizeCrop() {
+      var nextCrop = this.makeNewCrop();
+      var evData = this.evData;
+      var _props3 = this.props,
+          crop = _props3.crop,
+          minWidth = _props3.minWidth,
+          minHeight = _props3.minHeight;
+      var ord = evData.ord;
+
+      var imageAspect = this.imageRef.width / this.imageRef.height;
+
+      // On the inverse change the diff so it's the same and
+      // the same algo applies.
+      if (evData.xInversed) {
+        evData.xDiffPc -= evData.cropStartWidth * 2;
+      }
+      if (evData.yInversed) {
+        evData.yDiffPc -= evData.cropStartHeight * 2;
+      }
+
+      // New size.
+      var newSize = this.getNewSize();
+
+      // Adjust x/y to give illusion of 'staticness' as width/height is increased
+      // when polarity is inversed.
+      var newX = evData.cropStartX;
+      var newY = evData.cropStartY;
+
+      if (evData.xCrossOver) {
+        newX = nextCrop.x + (nextCrop.width - newSize.width);
+      }
+
+      if (evData.yCrossOver) {
+        // This not only removes the little "shake" when inverting at a diagonal, but for some
+        // reason y was way off at fast speeds moving sw->ne with fixed aspect only, I couldn't
+        // figure out why.
+        if (evData.lastYCrossover === false) {
+          newY = nextCrop.y - newSize.height;
+        } else {
+          newY = nextCrop.y + (nextCrop.height - newSize.height);
+        }
+      }
+
+      var containedCrop = containCrop(this.props.crop, {
+        x: newX,
+        y: newY,
+        width: newSize.width,
+        height: newSize.height,
+        aspect: nextCrop.aspect
+      }, imageAspect);
+
+      // Apply x/y/width/height changes depending on ordinate (fixed aspect always applies both).
+      if (nextCrop.aspect || ReactCrop.xyOrds.indexOf(ord) > -1) {
+        nextCrop.x = containedCrop.x;
+        nextCrop.y = containedCrop.y;
+        nextCrop.width = containedCrop.width;
+        nextCrop.height = containedCrop.height;
+      } else if (ReactCrop.xOrds.indexOf(ord) > -1) {
+        nextCrop.x = containedCrop.x;
+        nextCrop.width = containedCrop.width;
+      } else if (ReactCrop.yOrds.indexOf(ord) > -1) {
+        nextCrop.y = containedCrop.y;
+        nextCrop.height = containedCrop.height;
+      }
+
+      evData.lastYCrossover = evData.yCrossOver;
+      this.crossOverCheck();
+
+      // Ensure new dimensions aren't less than min dimensions.
+      if (minWidth && nextCrop.width < minWidth) {
+        return crop;
+      }
+
+      if (minHeight && nextCrop.height < minHeight) {
+        return crop;
+      }
+
+      return nextCrop;
+    }
+  }, {
+    key: 'straightenYPath',
+    value: function straightenYPath(clientX) {
+      var evData = this.evData;
+      var ord = evData.ord;
+      var cropOffset = evData.cropOffset;
+
+      var cropStartWidth = evData.cropStartWidth / 100 * this.imageRef.width;
+      var cropStartHeight = evData.cropStartHeight / 100 * this.imageRef.height;
+      var k = void 0;
+      var d = void 0;
+
+      if (ord === 'nw' || ord === 'se') {
+        k = cropStartHeight / cropStartWidth;
+        d = cropOffset.top - cropOffset.left * k;
+      } else {
+        k = -cropStartHeight / cropStartWidth;
+        d = cropOffset.top + (cropStartHeight - cropOffset.left * k);
+      }
+
+      return k * clientX + d;
+    }
+  }, {
+    key: 'createCropSelection',
+    value: function createCropSelection() {
+      var _this3 = this;
+
+      var _props4 = this.props,
+          disabled = _props4.disabled,
+          locked = _props4.locked,
+          renderSelectionAddon = _props4.renderSelectionAddon;
+
+      var style = this.getCropStyle();
+
+      return _react2.default.createElement(
+        'div',
+        {
+          ref: function ref(n) {
+            _this3.cropSelectRef = n;
+          },
+          style: style,
+          className: 'ReactCrop__crop-selection',
+          onMouseDown: this.onCropMouseTouchDown,
+          onTouchStart: this.onCropMouseTouchDown,
+          role: 'presentation'
+        },
+        !disabled && !locked && _react2.default.createElement(
+          'div',
+          { className: 'ReactCrop__drag-elements' },
+          _react2.default.createElement('div', { className: 'ReactCrop__drag-bar ord-n', 'data-ord': 'n' }),
+          _react2.default.createElement('div', { className: 'ReactCrop__drag-bar ord-e', 'data-ord': 'e' }),
+          _react2.default.createElement('div', { className: 'ReactCrop__drag-bar ord-s', 'data-ord': 's' }),
+          _react2.default.createElement('div', { className: 'ReactCrop__drag-bar ord-w', 'data-ord': 'w' }),
+          _react2.default.createElement('div', { className: 'ReactCrop__drag-handle ord-nw', 'data-ord': 'nw' }),
+          _react2.default.createElement('div', { className: 'ReactCrop__drag-handle ord-n', 'data-ord': 'n' }),
+          _react2.default.createElement('div', { className: 'ReactCrop__drag-handle ord-ne', 'data-ord': 'ne' }),
+          _react2.default.createElement('div', { className: 'ReactCrop__drag-handle ord-e', 'data-ord': 'e' }),
+          _react2.default.createElement('div', { className: 'ReactCrop__drag-handle ord-se', 'data-ord': 'se' }),
+          _react2.default.createElement('div', { className: 'ReactCrop__drag-handle ord-s', 'data-ord': 's' }),
+          _react2.default.createElement('div', { className: 'ReactCrop__drag-handle ord-sw', 'data-ord': 'sw' }),
+          _react2.default.createElement('div', { className: 'ReactCrop__drag-handle ord-w', 'data-ord': 'w' })
+        ),
+        renderSelectionAddon && renderSelectionAddon(this.state)
+      );
+    }
+  }, {
+    key: 'makeNewCrop',
+    value: function makeNewCrop() {
+      return _extends({}, ReactCrop.defaultCrop, this.props.crop);
+    }
+  }, {
+    key: 'crossOverCheck',
+    value: function crossOverCheck() {
+      var evData = this.evData;
+
+
+      if (!evData.xCrossOver && -Math.abs(evData.cropStartWidth) - evData.xDiffPc >= 0 || evData.xCrossOver && -Math.abs(evData.cropStartWidth) - evData.xDiffPc <= 0) {
+        evData.xCrossOver = !evData.xCrossOver;
+      }
+
+      if (!evData.yCrossOver && -Math.abs(evData.cropStartHeight) - evData.yDiffPc >= 0 || evData.yCrossOver && -Math.abs(evData.cropStartHeight) - evData.yDiffPc <= 0) {
+        evData.yCrossOver = !evData.yCrossOver;
+      }
+
+      var swapXOrd = evData.xCrossOver !== evData.startXCrossOver;
+      var swapYOrd = evData.yCrossOver !== evData.startYCrossOver;
+
+      evData.inversedXOrd = swapXOrd ? inverseOrd(evData.ord) : false;
+      evData.inversedYOrd = swapYOrd ? inverseOrd(evData.ord) : false;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this4 = this;
+
+      var _props5 = this.props,
+          children = _props5.children,
+          className = _props5.className,
+          crossorigin = _props5.crossorigin,
+          crop = _props5.crop,
+          disabled = _props5.disabled,
+          locked = _props5.locked,
+          imageAlt = _props5.imageAlt,
+          onImageError = _props5.onImageError,
+          src = _props5.src,
+          style = _props5.style,
+          imageStyle = _props5.imageStyle;
+      var cropIsActive = this.state.cropIsActive;
+
+      var cropSelection = void 0;
+
+      if (isCropValid(crop)) {
+        cropSelection = this.createCropSelection();
+      }
+
+      var componentClasses = ['ReactCrop'];
+
+      if (cropIsActive) {
+        componentClasses.push('ReactCrop--active');
+      }
+
+      if (crop) {
+        if (crop.aspect) {
+          componentClasses.push('ReactCrop--fixed-aspect');
+        }
+
+        // In this case we have to shadow the image, since the box-shadow
+        // on the crop won't work.
+        if (cropIsActive && (!crop.width || !crop.height)) {
+          componentClasses.push('ReactCrop--crop-invisible');
+        }
+      }
+
+      if (disabled) {
+        componentClasses.push('ReactCrop--disabled');
+      }
+
+      if (locked) {
+        componentClasses.push('ReactCrop--locked');
+      }
+
+      if (className) {
+        componentClasses.push.apply(componentClasses, _toConsumableArray(className.split(' ')));
+      }
+
+      return _react2.default.createElement(
+        'div',
+        {
+          ref: function ref(n) {
+            _this4.componentRef = n;
+          },
+          className: componentClasses.join(' '),
+          style: style,
+          onTouchStart: this.onComponentMouseTouchDown,
+          onMouseDown: this.onComponentMouseTouchDown,
+          role: 'presentation',
+          tabIndex: 1,
+          onKeyDown: this.onComponentKeyDown
+        },
+        _react2.default.createElement('img', {
+          ref: function ref(n) {
+            _this4.imageRef = n;
+          },
+          crossOrigin: crossorigin,
+          className: 'ReactCrop__image',
+          style: imageStyle,
+          src: src,
+          onLoad: function onLoad(e) {
+            return _this4.onImageLoad(e.target);
+          },
+          onError: onImageError,
+          alt: imageAlt
+        }),
+        children,
+        cropSelection
+      );
+    }
+  }]);
+
+  return ReactCrop;
+}(_react.PureComponent);
+
+ReactCrop.xOrds = ['e', 'w'];
+ReactCrop.yOrds = ['n', 's'];
+ReactCrop.xyOrds = ['nw', 'ne', 'se', 'sw'];
+
+ReactCrop.arrowKey = {
+  left: 37,
+  up: 38,
+  right: 39,
+  down: 40
+};
+
+ReactCrop.nudgeStep = 0.2;
+
+ReactCrop.defaultCrop = {
+  x: 0,
+  y: 0,
+  width: 0,
+  height: 0
+};
+
+ReactCrop.propTypes = {
+  className: _propTypes2.default.string,
+  crossorigin: _propTypes2.default.string,
+  children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]),
+  crop: _propTypes2.default.shape({
+    aspect: _propTypes2.default.number,
+    x: _propTypes2.default.number,
+    y: _propTypes2.default.number,
+    width: _propTypes2.default.number,
+    height: _propTypes2.default.number
+  }),
+  disabled: _propTypes2.default.bool,
+  locked: _propTypes2.default.bool,
+  imageAlt: _propTypes2.default.string,
+  imageStyle: _propTypes2.default.shape({}),
+  keepSelection: _propTypes2.default.bool,
+  minWidth: _propTypes2.default.number,
+  minHeight: _propTypes2.default.number,
+  maxWidth: _propTypes2.default.number,
+  maxHeight: _propTypes2.default.number,
+  onChange: _propTypes2.default.func.isRequired,
+  onImageError: _propTypes2.default.func,
+  onComplete: _propTypes2.default.func,
+  onImageLoaded: _propTypes2.default.func,
+  onDragStart: _propTypes2.default.func,
+  onDragEnd: _propTypes2.default.func,
+  src: _propTypes2.default.string.isRequired,
+  style: _propTypes2.default.shape({}),
+  renderSelectionAddon: _propTypes2.default.func
+};
+
+ReactCrop.defaultProps = {
+  className: undefined,
+  crop: undefined,
+  crossorigin: undefined,
+  disabled: false,
+  locked: false,
+  imageAlt: '',
+  maxWidth: 100,
+  maxHeight: 100,
+  minWidth: 0,
+  minHeight: 0,
+  keepSelection: false,
+  onComplete: function onComplete() {},
+  onImageError: function onImageError() {},
+  onImageLoaded: function onImageLoaded() {},
+  onDragStart: function onDragStart() {},
+  onDragEnd: function onDragEnd() {},
+  children: undefined,
+  style: undefined,
+  imageStyle: undefined,
+  renderSelectionAddon: undefined,
+  useNaturalImageDimensions: true
+};
+
+exports.default = ReactCrop;
+exports.Component = ReactCrop;
+exports.getPixelCrop = getPixelCrop;
+exports.makeAspectCrop = makeAspectCrop;
+exports.containCrop = containCrop;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+
+/***/ })
+/******/ ]);
+});
 
 /***/ }),
 
@@ -100142,27 +101164,53 @@ function (_Component) {
       var blocks = _this.state.blocks;
       blocks.push({
         id: blocks.length + 1,
-        type: type
+        type: type,
+        content: ''
       });
 
       _this.setState({
         blocks: blocks
-      }); // this.props.addBlock(type);
+      });
 
+      _this.props.addBlock(blocks);
+    };
+
+    _this.handleSendContent = function (updatedBlock) {
+      var blocks = _this.state.blocks;
+
+      for (var i = 0; i < blocks.length; i++) {
+        if (blocks[i].id === updatedBlock.id) {
+          blocks[i].content = updatedBlock.content;
+
+          _this.setState({
+            blocks: blocks
+          });
+
+          _this.props.recieveBlocks(blocks);
+
+          break;
+        }
+      }
     };
 
     _this.state = {
-      blocks: [{
-        id: 1,
-        type: 'textBlock'
-      }]
+      blocks: []
     };
     return _this;
   }
 
   _createClass(BlockEditor, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.setState({
+        blocks: this.props.blocks
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var blocks = this.state.blocks;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "blockEditor"
@@ -100175,10 +101223,16 @@ function (_Component) {
         }, function () {
           switch (singleBlock.type) {
             case 'imageBlock':
-              return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ImageBlock, null);
+              return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ImageBlock, {
+                blockInfo: singleBlock,
+                sendContent: _this2.handleSendContent
+              });
 
             case 'textBlock':
-              return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_EditorBlock__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+              return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_EditorBlock__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                blockInfo: singleBlock,
+                sendContent: _this2.handleSendContent
+              });
           }
         }()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "blockControls"
@@ -100208,22 +101262,22 @@ function (_Component2) {
   _inherits(ImageBlock, _Component2);
 
   function ImageBlock(props) {
-    var _this2;
+    var _this3;
 
     _classCallCheck(this, ImageBlock);
 
-    _this2 = _possibleConstructorReturn(this, _getPrototypeOf(ImageBlock).call(this, props));
+    _this3 = _possibleConstructorReturn(this, _getPrototypeOf(ImageBlock).call(this, props));
 
-    _this2.handleSendImage = function (image) {
-      _this2.setState({
+    _this3.handleSendImage = function (image) {
+      _this3.setState({
         media: image
       });
     };
 
-    _this2.state = {
+    _this3.state = {
       media: null
     };
-    return _this2;
+    return _this3;
   }
 
   _createClass(ImageBlock, [{
@@ -100349,7 +101403,8 @@ function (_Component) {
     _this.state = {
       editorState: draft_js__WEBPACK_IMPORTED_MODULE_1__["EditorState"].createEmpty(),
       editorText: '',
-      focused: false
+      focused: false,
+      editorID: null
     };
     _this.toggleInlineStyle = _this.toggleInlineStyle.bind(_assertThisInitialized(_this));
     _this.toggleBlockType = _this.toggleBlockType.bind(_assertThisInitialized(_this));
@@ -100359,6 +101414,26 @@ function (_Component) {
   }
 
   _createClass(CustomEditor, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var editorState = this.state.editorState;
+
+      if (this.props.blockInfo !== undefined) {
+        if (this.props.blockInfo.content) {
+          var blocksFromHTML = Object(draft_js__WEBPACK_IMPORTED_MODULE_1__["convertFromHTML"])(this.props.blockInfo.content);
+          var content = draft_js__WEBPACK_IMPORTED_MODULE_1__["ContentState"].createFromBlockArray(blocksFromHTML.contentBlocks, blocksFromHTML.entityMap);
+          this.setState({
+            editorState: draft_js__WEBPACK_IMPORTED_MODULE_1__["EditorState"].createWithContent(content),
+            editorID: this.props.blockInfo.id
+          });
+        } else {
+          this.setState({
+            editorID: this.props.blockInfo.id
+          });
+        }
+      }
+    }
+  }, {
     key: "toggleInlineStyle",
     value: function toggleInlineStyle(inlineStyle) {
       this.onChange(draft_js__WEBPACK_IMPORTED_MODULE_1__["RichUtils"].toggleInlineStyle(this.state.editorState, inlineStyle));
@@ -100375,7 +101450,13 @@ function (_Component) {
       this.setState({
         editorState: editorState,
         editorText: convertedText
-      }); // this.props.changeEditor(convertedText);
+      }); // console.log(this.state.editorID);
+
+      var newValues = {
+        id: this.state.editorID,
+        content: convertedText
+      };
+      this.props.sendContent(newValues);
     }
   }, {
     key: "toggleActive",
@@ -101282,7 +102363,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_dropzone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dropzone */ "./node_modules/react-dropzone/dist/es/index.js");
-/* harmony import */ var react_image_crop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-image-crop */ "./node_modules/react-image-crop/dist/ReactCrop.min.js");
+/* harmony import */ var react_image_crop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-image-crop */ "./node_modules/react-image-crop/dist/ReactCrop.js");
 /* harmony import */ var react_image_crop__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_image_crop__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_image_crop_dist_ReactCrop_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-image-crop/dist/ReactCrop.css */ "./node_modules/react-image-crop/dist/ReactCrop.css");
 /* harmony import */ var react_image_crop_dist_ReactCrop_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_image_crop_dist_ReactCrop_css__WEBPACK_IMPORTED_MODULE_4__);
@@ -101981,8 +103062,18 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(AddPage).call(this, props));
 
-    _this.handleAddBlock = function (type) {
+    _this.handleAddBlock = function (newBlocks) {
       var blocks = _this.state.blocks;
+
+      _this.setState({
+        blocks: newBlocks
+      });
+    };
+
+    _this.handleRecieveBlocks = function (allBlocks) {
+      _this.setState({
+        blocks: allBlocks
+      });
     };
 
     _this.changeTitle = function (e) {
@@ -101992,19 +103083,31 @@ function (_Component) {
     };
 
     _this.sendForm = function (e) {
-      e.preventDefault(); // const { title } = this.state;
-      // let form = new FormData();
-      // form.append('page_title', title);
-      // axios.post('/api/pages/add', form)
-      // .then((response) => {
-      //     console.log(response);
-      // }).catch((error) => {
-      //     console.log('error');
-      // });
+      e.preventDefault();
+      var _this$state = _this.state,
+          title = _this$state.title,
+          blocks = _this$state.blocks;
+      var form = new FormData();
+      form.append('page_title', title);
+      form.append('blocks', JSON.stringify(blocks));
+      axios.post('/api/pages/add', form).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {
+        console.log('error');
+      });
     };
 
     _this.state = {
-      title: ''
+      title: '',
+      blocks: [{
+        id: 1,
+        type: 'textBlock',
+        content: '<h2>This is a Test Block</h2>'
+      }, {
+        id: 2,
+        type: 'textBlock',
+        content: ''
+      }]
     };
     return _this;
   }
@@ -102012,6 +103115,8 @@ function (_Component) {
   _createClass(AddPage, [{
     key: "render",
     value: function render() {
+      var blocks = this.state.blocks;
+      console.log(blocks);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -102032,7 +103137,9 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12 d-flex justify-content-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Blocks_Blocks__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        addBlock: this.handleAddBlock
+        addBlock: this.handleAddBlock,
+        blocks: blocks,
+        recieveBlocks: this.handleRecieveBlocks
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12 col-md"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

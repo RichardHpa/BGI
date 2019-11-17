@@ -6,12 +6,30 @@ class AddPage extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            title: ''
+            title: '',
+            blocks: [{
+                id: 1,
+                type: 'textBlock',
+                content: '<h2>This is a Test Block</h2>'
+            },{
+                id: 2,
+                type: 'textBlock',
+                content: ''
+            }]
         }
     }
 
-    handleAddBlock = (type) => {
+    handleAddBlock = (newBlocks) => {
         const { blocks } = this.state;
+        this.setState({
+            blocks: newBlocks
+        })
+    }
+
+    handleRecieveBlocks = (allBlocks) => {
+        this.setState({
+            blocks: allBlocks
+        })
     }
 
     changeTitle = (e) => {
@@ -22,18 +40,21 @@ class AddPage extends Component {
 
     sendForm = (e) => {
         e.preventDefault();
-        // const { title } = this.state;
-        // let form = new FormData();
-        // form.append('page_title', title);
-        // axios.post('/api/pages/add', form)
-        // .then((response) => {
-        //     console.log(response);
-        // }).catch((error) => {
-        //     console.log('error');
-        // });
+        const { title, blocks } = this.state;
+        let form = new FormData();
+        form.append('page_title', title);
+        form.append('blocks', JSON.stringify(blocks));
+        axios.post('/api/pages/add', form)
+        .then((response) => {
+            console.log(response);
+        }).catch((error) => {
+            console.log('error');
+        });
     }
 
     render () {
+        const { blocks } = this.state;
+        console.log(blocks);
         return (
             <section>
                 <div className="row">
@@ -47,7 +68,11 @@ class AddPage extends Component {
                         </div>
                         <div className="row">
                             <div className="col-12 d-flex justify-content-center">
-                                <BlockEditor addBlock={this.handleAddBlock}/>
+                                <BlockEditor
+                                    addBlock={this.handleAddBlock}
+                                    blocks={blocks}
+                                    recieveBlocks={this.handleRecieveBlocks}
+                                />
                             </div>
                         </div>
                     </div>
