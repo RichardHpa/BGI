@@ -43,9 +43,9 @@ class Pages extends Component {
                                         <td className="align-middle d-flex align-items-center">
                                             {page['page_title']}
                                         </td>
-                                        <td className="align-middle">/{page['page_url']}</td>
+                                        <td className="align-middle"><a href={`/${page['page_url']}`}>/{page['page_url']}</a></td>
                                         <td className="align-middle">
-                                            <a href="#"><i className="fas fa-cog fa-lg pr-2"></i></a>
+                                            <Link to={`./pages/edit_page/${page['id']}`}><i className="fas fa-cog fa-lg pr-2"></i></Link>
                                             <a href="#"><i className="fas fa-times-circle text-danger fa-lg"></i></a>
                                         </td>
                                     </tr>
@@ -57,7 +57,7 @@ class Pages extends Component {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <Link className="btn btn-bgi" to='./pages/add-page'>Add New Page</Link>
+                        <Link className="btn btn-bgi" to='./pages/add_page'>Add New Page</Link>
                     </div>
                 </div>
             </section>

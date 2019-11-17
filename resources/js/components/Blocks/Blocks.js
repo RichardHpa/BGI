@@ -25,8 +25,8 @@ class BlockEditor extends Component {
         const { blocks } = this.state;
         blocks.push({
             id: blocks.length + 1,
-            type: type,
-            content: ''
+            section_type: type,
+            section_content: ''
         });
         this.setState({
             blocks
@@ -38,7 +38,7 @@ class BlockEditor extends Component {
         const { blocks } = this.state;
         for (var i = 0; i < blocks.length; i++) {
             if(blocks[i].id === updatedBlock.id){
-                blocks[i].content = updatedBlock.content
+                blocks[i].section_content = updatedBlock.section_content
                 this.setState({
                     blocks
                 })
@@ -58,7 +58,7 @@ class BlockEditor extends Component {
                         <div className="blockList" key={i}>
                             <div className="blockContent">
                                 {(() => {
-                                  switch (singleBlock.type) {
+                                  switch (singleBlock.section_type) {
                                     case 'imageBlock':   return <ImageBlock blockInfo={singleBlock} sendContent={this.handleSendContent}/>;
                                     case 'textBlock': return <CustomEditor blockInfo={singleBlock} sendContent={this.handleSendContent}/>;
                                   }
@@ -98,8 +98,8 @@ class ImageBlock extends Component {
 
     componentDidMount () {
         const { editorState } = this.state;
-        if(this.props.blockInfo.content){
-            axios.get(`/api/media/${this.props.blockInfo.content}`).then(response => {
+        if(this.props.blockInfo.section_content){
+            axios.get(`/api/media/${this.props.blockInfo.section_content}`).then(response => {
                 this.setState({
                     media: response.data,
                     editorID: this.props.blockInfo.id
@@ -118,7 +118,7 @@ class ImageBlock extends Component {
         })
         const newValues = {
             id: this.state.editorID,
-            content: image.id
+            section_content: image.id
         }
         this.props.sendContent(newValues);
     }

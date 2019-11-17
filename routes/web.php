@@ -24,6 +24,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/', 'AdminController@index')->middleware(['web', 'auth']);
     Route::get('/{sub}', 'AdminController@index')->middleware(['web', 'auth']);
     Route::get('/{sub}/{action}', 'AdminController@index')->middleware(['web', 'auth']);
+    Route::get('/{sub}/{action}/{id}', 'AdminController@index')->middleware(['web', 'auth']);
 });
 
 Route::delete('users/delete/{id}', 'UserController@destroy');
+
+
+Route::get('/{url}', 'PageController@show');

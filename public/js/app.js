@@ -101167,8 +101167,8 @@ function (_Component) {
       var blocks = _this.state.blocks;
       blocks.push({
         id: blocks.length + 1,
-        type: type,
-        content: ''
+        section_type: type,
+        section_content: ''
       });
 
       _this.setState({
@@ -101183,7 +101183,7 @@ function (_Component) {
 
       for (var i = 0; i < blocks.length; i++) {
         if (blocks[i].id === updatedBlock.id) {
-          blocks[i].content = updatedBlock.content;
+          blocks[i].section_content = updatedBlock.section_content;
 
           _this.setState({
             blocks: blocks
@@ -101224,7 +101224,7 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "blockContent"
         }, function () {
-          switch (singleBlock.type) {
+          switch (singleBlock.section_type) {
             case 'imageBlock':
               return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ImageBlock, {
                 blockInfo: singleBlock,
@@ -101278,7 +101278,7 @@ function (_Component2) {
 
       var newValues = {
         id: _this3.state.editorID,
-        content: image.id
+        section_content: image.id
       };
 
       _this3.props.sendContent(newValues);
@@ -101298,8 +101298,8 @@ function (_Component2) {
 
       var editorState = this.state.editorState;
 
-      if (this.props.blockInfo.content) {
-        axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/media/".concat(this.props.blockInfo.content)).then(function (response) {
+      if (this.props.blockInfo.section_content) {
+        axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/media/".concat(this.props.blockInfo.section_content)).then(function (response) {
           _this4.setState({
             media: response.data,
             editorID: _this4.props.blockInfo.id
@@ -101450,8 +101450,8 @@ function (_Component) {
       var editorState = this.state.editorState;
 
       if (this.props.blockInfo !== undefined) {
-        if (this.props.blockInfo.content) {
-          var blocksFromHTML = Object(draft_js__WEBPACK_IMPORTED_MODULE_1__["convertFromHTML"])(this.props.blockInfo.content);
+        if (this.props.blockInfo.section_content) {
+          var blocksFromHTML = Object(draft_js__WEBPACK_IMPORTED_MODULE_1__["convertFromHTML"])(this.props.blockInfo.section_content);
           var content = draft_js__WEBPACK_IMPORTED_MODULE_1__["ContentState"].createFromBlockArray(blocksFromHTML.contentBlocks, blocksFromHTML.entityMap);
           this.setState({
             editorState: draft_js__WEBPACK_IMPORTED_MODULE_1__["EditorState"].createWithContent(content),
@@ -101484,7 +101484,7 @@ function (_Component) {
       });
       var newValues = {
         id: this.state.editorID,
-        content: convertedText
+        section_content: convertedText
       };
       this.props.sendContent(newValues);
     }
@@ -101780,6 +101780,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Users_Users__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Users/Users */ "./resources/js/components/Users/Users.js");
 /* harmony import */ var _Pages_Pages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Pages/Pages */ "./resources/js/components/Pages/Pages.js");
 /* harmony import */ var _Pages_AddPage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Pages/AddPage */ "./resources/js/components/Pages/AddPage.js");
+/* harmony import */ var _Pages_EditPage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Pages/EditPage */ "./resources/js/components/Pages/EditPage.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -101797,6 +101798,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -101900,8 +101902,12 @@ function (_Component) {
         component: _Pages_Pages__WEBPACK_IMPORTED_MODULE_7__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
-        path: "/admin/pages/add-page",
+        path: "/admin/pages/add_page",
         component: _Pages_AddPage__WEBPACK_IMPORTED_MODULE_8__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        exact: true,
+        path: "/admin/pages/edit_page/:id",
+        component: _Pages_EditPage__WEBPACK_IMPORTED_MODULE_9__["default"]
       }))))));
     }
   }]);
@@ -103129,15 +103135,7 @@ function (_Component) {
 
     _this.state = {
       title: '',
-      blocks: [{
-        id: 1,
-        type: 'imageBlock',
-        content: '9'
-      }, {
-        id: 2,
-        type: 'textBlock',
-        content: '<h2>H3llo</h2>'
-      }]
+      blocks: []
     };
     return _this;
   }
@@ -103146,7 +103144,6 @@ function (_Component) {
     key: "render",
     value: function render() {
       var blocks = this.state.blocks;
-      console.log(blocks);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -103185,6 +103182,127 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (AddPage);
+
+/***/ }),
+
+/***/ "./resources/js/components/Pages/EditPage.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Pages/EditPage.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Buttons_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Buttons/Button */ "./resources/js/components/Buttons/Button.js");
+/* harmony import */ var _Blocks_Blocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Blocks/Blocks */ "./resources/js/components/Blocks/Blocks.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var EditPage =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(EditPage, _Component);
+
+  function EditPage(props) {
+    var _this;
+
+    _classCallCheck(this, EditPage);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(EditPage).call(this, props));
+    _this.state = {
+      pageInfo: ''
+    };
+    return _this;
+  }
+
+  _createClass(EditPage, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var pageId = this.props.match.params.id;
+      axios.get("/api/page/".concat(pageId)).then(function (response) {
+        console.log(response);
+
+        if (response.data === '404') {
+          console.log('need to redirect');
+        } else {
+          _this2.setState({
+            pageInfo: response.data.pageInfo
+          });
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var pageInfo = this.state.pageInfo;
+      console.log(pageInfo['blocks']);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Edit ", pageInfo['page_title']))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-md-7"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "form-control form-control-lg",
+        type: "text",
+        placeholder: "Page Title",
+        onChange: this.changeTitle,
+        value: pageInfo['page_title']
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 d-flex justify-content-center"
+      }, pageInfo && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Blocks_Blocks__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        addBlock: this.handleAddBlock,
+        blocks: pageInfo['blocks'],
+        recieveBlocks: this.handleRecieveBlocks
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-md"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card p-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-bgi btn-block",
+        onClick: this.sendForm
+      }, "Edit Page")))));
+    }
+  }]);
+
+  return EditPage;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (EditPage);
 
 /***/ }),
 
@@ -103274,10 +103392,12 @@ function (_Component) {
           className: "align-middle d-flex align-items-center"
         }, page['page_title']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "align-middle"
-        }, "/", page['page_url']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-          className: "align-middle"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
+          href: "/".concat(page['page_url'])
+        }, "/", page['page_url'])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "align-middle"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "./pages/edit_page/".concat(page['id'])
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-cog fa-lg pr-2"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -103291,7 +103411,7 @@ function (_Component) {
         className: "col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "btn btn-bgi",
-        to: "./pages/add-page"
+        to: "./pages/add_page"
       }, "Add New Page"))));
     }
   }]);

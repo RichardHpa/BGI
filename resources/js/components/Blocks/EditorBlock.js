@@ -24,8 +24,8 @@ class CustomEditor extends Component {
         const { editorState } = this.state;
         if(this.props.blockInfo !== undefined){
 
-            if(this.props.blockInfo.content){
-                const blocksFromHTML = convertFromHTML(this.props.blockInfo.content);
+            if(this.props.blockInfo.section_content){
+                const blocksFromHTML = convertFromHTML(this.props.blockInfo.section_content);
                 const content = ContentState.createFromBlockArray(
                   blocksFromHTML.contentBlocks,
                   blocksFromHTML.entityMap
@@ -58,7 +58,7 @@ class CustomEditor extends Component {
         });
         const newValues = {
             id: this.state.editorID,
-            content: convertedText
+            section_content: convertedText
         }
         this.props.sendContent(newValues);
     }
@@ -76,18 +76,18 @@ class CustomEditor extends Component {
         return(
             <div className="editorWrapper block">
                 <EditorControls
-                active={this.state.focused}
-                editorState={editorState}
-                onToggle={this.toggleInlineStyle}
-                onToggleBlockType={this.toggleBlockType}
+                    active={this.state.focused}
+                    editorState={editorState}
+                    onToggle={this.toggleInlineStyle}
+                    onToggleBlockType={this.toggleBlockType}
                 />
                 <Editor
-                editorState={editorState}
-                placeholder="Write about this section"
-                spellCheck={true}
-                onChange={this.onChange}
-                onFocus={this.toggleActive}
-                onBlur={this.toggleActive}
+                    editorState={editorState}
+                    placeholder="Write about this section"
+                    spellCheck={true}
+                    onChange={this.onChange}
+                    onFocus={this.toggleActive}
+                    onBlur={this.toggleActive}
                 />
             </div>
         )

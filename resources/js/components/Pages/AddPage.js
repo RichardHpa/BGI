@@ -7,15 +7,7 @@ class AddPage extends Component {
         super(props)
         this.state = {
             title: '',
-            blocks: [{
-                id: 1,
-                type: 'imageBlock',
-                content: '9'
-            },{
-                id: 2,
-                type: 'textBlock',
-                content: '<h2>H3llo</h2>'
-            }]
+            blocks: []
         }
     }
 
@@ -54,7 +46,6 @@ class AddPage extends Component {
 
     render () {
         const { blocks } = this.state;
-        console.log(blocks);
         return (
             <section>
                 <div className="row">
@@ -82,7 +73,6 @@ class AddPage extends Component {
                         </div>
                     </div>
                 </div>
-
             </section>
         )
     }

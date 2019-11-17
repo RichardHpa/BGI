@@ -9,4 +9,8 @@ class PageBlock extends Model
     protected $fillable = [
         'page_id', 'section_type', 'section_content', 'order'
     ];
+
+    public function page() {
+        return $this->belongsTo('App\Page');
+    }
 }

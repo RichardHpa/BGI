@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 use App\Page;
 use App\PageBlock;
+use App\Media;
 
 class PageController extends Controller
 {
@@ -50,8 +52,8 @@ class PageController extends Controller
         foreach ($allBlocks as $key=>$block) {
             $newBlock = PageBlock::create([
                 'page_id' => $page->id,
-                'section_type' => $block->type,
-                'section_content' => $block->content,
+                'section_type' => $block->section_type,
+                'section_content' => $block->section_content,
                 'order' => $key+1
             ]);
         }
@@ -72,7 +74,16 @@ class PageController extends Controller
      */
     public function show($id)
     {
-        //
+        $page = Page::where('page_url', '=', $id)->firstOrFail();
+        // $blocks = $page->blocks;
+        $blocks = PageBlock::where('page_id', '=', $page->id)->get();
+        foreach($blocks as $block){
+            if($block->section_type === 'imageBlock'){
+                $media = Media::where('id', '=', $block->section_content)->firstOrFail();
+                $block['section_content'] = $media->media_name;
+            }
+        }
+        return view('templates/standard', compact('page', 'blocks'));
     }
 
     /**
@@ -83,7 +94,19 @@ class PageController extends Controller
      */
     public function edit($id)
     {
-        //
+        try{
+            $page = Page::where('id', '=', $id)->firstOrFail();
+            $blocks = $page->blocks;
+            $result = array(
+                'pageInfo' => $page,
+            );
+        }
+        // catch(Exception $e) catch any exception
+        catch(ModelNotFoundException $e){
+            $result = '404';
+        }
+
+        return response()->json($result);
     }
 
     /**
