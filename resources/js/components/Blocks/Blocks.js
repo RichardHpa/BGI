@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Blocks.scss';
 
+import axios from 'axios';
 import Button from '../Buttons/Button';
 import MediaModel from '../Media/MediaModel';
 
@@ -90,7 +91,24 @@ class ImageBlock extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            media: null
+            media: null,
+            editorID: null
+        }
+    }
+
+    componentDidMount () {
+        const { editorState } = this.state;
+        if(this.props.blockInfo.content){
+            axios.get(`/api/media/${this.props.blockInfo.content}`).then(response => {
+                this.setState({
+                    media: response.data,
+                    editorID: this.props.blockInfo.id
+                })
+            })
+        } else {
+            this.setState({
+                editorID: this.props.blockInfo.id
+            })
         }
     }
 
@@ -98,6 +116,11 @@ class ImageBlock extends Component {
         this.setState({
             media: image
         })
+        const newValues = {
+            id: this.state.editorID,
+            content: image.id
+        }
+        this.props.sendContent(newValues);
     }
 
     render () {

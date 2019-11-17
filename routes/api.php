@@ -22,6 +22,7 @@ Route::post('users/add', 'UserController@store');
 
 
 Route::get('media', 'MediaController@index');
+Route::get('media/{id}', 'MediaController@show');
 Route::post('media', 'MediaController@store');
 
 Route::get('pages', 'PageController@index');

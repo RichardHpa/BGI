@@ -88,7 +88,8 @@ class MediaController extends Controller
      */
     public function show($id)
     {
-        //
+        $media = Media::where('id', '=', $id)->firstOrFail();
+        return $media->toJson();
     }
 
     /**

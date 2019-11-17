@@ -56,7 +56,6 @@ class CustomEditor extends Component {
             editorState: editorState,
             editorText: convertedText
         });
-        // console.log(this.state.editorID);
         const newValues = {
             id: this.state.editorID,
             content: convertedText

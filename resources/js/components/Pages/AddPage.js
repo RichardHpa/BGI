@@ -9,12 +9,12 @@ class AddPage extends Component {
             title: '',
             blocks: [{
                 id: 1,
-                type: 'textBlock',
-                content: '<h2>This is a Test Block</h2>'
+                type: 'imageBlock',
+                content: '9'
             },{
                 id: 2,
                 type: 'textBlock',
-                content: ''
+                content: '<h2>H3llo</h2>'
             }]
         }
     }

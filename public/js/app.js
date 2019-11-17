@@ -101121,9 +101121,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Blocks_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Blocks.scss */ "./resources/js/components/Blocks/Blocks.scss");
 /* harmony import */ var _Blocks_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Blocks_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Buttons_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Buttons/Button */ "./resources/js/components/Buttons/Button.js");
-/* harmony import */ var _Media_MediaModel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Media/MediaModel */ "./resources/js/components/Media/MediaModel.js");
-/* harmony import */ var _EditorBlock__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./EditorBlock */ "./resources/js/components/Blocks/EditorBlock.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Buttons_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Buttons/Button */ "./resources/js/components/Buttons/Button.js");
+/* harmony import */ var _Media_MediaModel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Media/MediaModel */ "./resources/js/components/Media/MediaModel.js");
+/* harmony import */ var _EditorBlock__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./EditorBlock */ "./resources/js/components/Blocks/EditorBlock.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -101141,6 +101143,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -101229,7 +101232,7 @@ function (_Component) {
               });
 
             case 'textBlock':
-              return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_EditorBlock__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_EditorBlock__WEBPACK_IMPORTED_MODULE_5__["default"], {
                 blockInfo: singleBlock,
                 sendContent: _this2.handleSendContent
               });
@@ -101272,21 +101275,49 @@ function (_Component2) {
       _this3.setState({
         media: image
       });
+
+      var newValues = {
+        id: _this3.state.editorID,
+        content: image.id
+      };
+
+      _this3.props.sendContent(newValues);
     };
 
     _this3.state = {
-      media: null
+      media: null,
+      editorID: null
     };
     return _this3;
   }
 
   _createClass(ImageBlock, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this4 = this;
+
+      var editorState = this.state.editorState;
+
+      if (this.props.blockInfo.content) {
+        axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/media/".concat(this.props.blockInfo.content)).then(function (response) {
+          _this4.setState({
+            media: response.data,
+            editorID: _this4.props.blockInfo.id
+          });
+        });
+      } else {
+        this.setState({
+          editorID: this.props.blockInfo.id
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var media = this.state.media;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "block"
-      }, media === null ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Media_MediaModel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, media === null ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Media_MediaModel__WEBPACK_IMPORTED_MODULE_4__["default"], {
         sendImage: this.handleSendImage
       }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "img-fluid",
@@ -101450,8 +101481,7 @@ function (_Component) {
       this.setState({
         editorState: editorState,
         editorText: convertedText
-      }); // console.log(this.state.editorID);
-
+      });
       var newValues = {
         id: this.state.editorID,
         content: convertedText
@@ -103101,12 +103131,12 @@ function (_Component) {
       title: '',
       blocks: [{
         id: 1,
-        type: 'textBlock',
-        content: '<h2>This is a Test Block</h2>'
+        type: 'imageBlock',
+        content: '9'
       }, {
         id: 2,
         type: 'textBlock',
-        content: ''
+        content: '<h2>H3llo</h2>'
       }]
     };
     return _this;
