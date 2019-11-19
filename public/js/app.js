@@ -6503,6 +6503,25 @@ exports.push([module.i, "", ""]);
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/Info/Info.scss":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/components/Info/Info.scss ***!
+  \***********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/Media/Modal.scss":
 /*!*************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/components/Media/Modal.scss ***!
@@ -6515,7 +6534,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#dropzoneSection {\n  display: inline;\n}\n#dropzoneSection #dropzone {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n  min-height: 30vh;\n  height: 100%;\n  width: 100%;\n  border: 1px dashed grey;\n}\n#dropzoneSection #dropzone.hovering {\n  border: 1px dashed rgba(255, 0, 0, 0.5);\n  color: rgba(255, 0, 0, 0.5);\n}\n\n.gallery {\n  width: 100%;\n}\n\n#uploader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: 100vh;\n  background-color: rgba(0, 0, 0, 0.5);\n  z-index: 1000000;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n}\n#uploader .uploaderCard {\n  position: relative;\n  background-color: white;\n  width: 90vw;\n  height: 80vh;\n  min-height: 50vh;\n  max-height: 80vh;\n  padding: 20px;\n}", ""]);
+exports.push([module.i, "#dropzoneSection {\n  display: inline;\n}\n#dropzoneSection #dropzone {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n  min-height: 30vh;\n  height: 100%;\n  width: 100%;\n  border: 1px dashed grey;\n}\n#dropzoneSection #dropzone.hovering {\n  border: 1px dashed rgba(255, 0, 0, 0.5);\n  color: rgba(255, 0, 0, 0.5);\n}\n\n.gallery {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  height: 100%;\n}\n\n#uploader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: 100vh;\n  background-color: rgba(0, 0, 0, 0.5);\n  z-index: 1000000;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n}\n#uploader .uploaderCard {\n  position: relative;\n  background-color: white;\n  width: 90vw;\n  height: 80vh;\n  min-height: 50vh;\n  max-height: 80vh;\n  padding: 20px;\n}\n#uploader .uploaderCard .thumbnailGallery {\n  overflow-y: auto;\n}", ""]);
 
 // exports
 
@@ -101863,11 +101882,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _Header_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header/Header */ "./resources/js/components/Header/Header.js");
 /* harmony import */ var _Sidebar_Sidebar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Sidebar/Sidebar */ "./resources/js/components/Sidebar/Sidebar.js");
-/* harmony import */ var _Media_Media__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Media/Media */ "./resources/js/components/Media/Media.js");
-/* harmony import */ var _Users_Users__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Users/Users */ "./resources/js/components/Users/Users.js");
-/* harmony import */ var _Pages_Pages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Pages/Pages */ "./resources/js/components/Pages/Pages.js");
-/* harmony import */ var _Pages_AddPage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Pages/AddPage */ "./resources/js/components/Pages/AddPage.js");
-/* harmony import */ var _Pages_EditPage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Pages/EditPage */ "./resources/js/components/Pages/EditPage.js");
+/* harmony import */ var _Info_Info__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Info/Info */ "./resources/js/components/Info/Info.js");
+/* harmony import */ var _Media_Media__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Media/Media */ "./resources/js/components/Media/Media.js");
+/* harmony import */ var _Users_Users__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Users/Users */ "./resources/js/components/Users/Users.js");
+/* harmony import */ var _Pages_Pages__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Pages/Pages */ "./resources/js/components/Pages/Pages.js");
+/* harmony import */ var _Pages_AddPage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Pages/AddPage */ "./resources/js/components/Pages/AddPage.js");
+/* harmony import */ var _Pages_EditPage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Pages/EditPage */ "./resources/js/components/Pages/EditPage.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -101885,6 +101905,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -101977,24 +101998,28 @@ function (_Component) {
         className: "col-12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.state.currentPage['name']))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
+        path: "/admin/",
+        component: _Info_Info__WEBPACK_IMPORTED_MODULE_5__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        exact: true,
         path: "/admin/media",
-        component: _Media_Media__WEBPACK_IMPORTED_MODULE_5__["default"]
+        component: _Media_Media__WEBPACK_IMPORTED_MODULE_6__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/admin/users",
-        component: _Users_Users__WEBPACK_IMPORTED_MODULE_6__["default"]
+        component: _Users_Users__WEBPACK_IMPORTED_MODULE_7__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/admin/pages",
-        component: _Pages_Pages__WEBPACK_IMPORTED_MODULE_7__["default"]
+        component: _Pages_Pages__WEBPACK_IMPORTED_MODULE_8__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/admin/pages/add_page",
-        component: _Pages_AddPage__WEBPACK_IMPORTED_MODULE_8__["default"]
+        component: _Pages_AddPage__WEBPACK_IMPORTED_MODULE_9__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/admin/pages/edit_page/:id",
-        component: _Pages_EditPage__WEBPACK_IMPORTED_MODULE_9__["default"]
+        component: _Pages_EditPage__WEBPACK_IMPORTED_MODULE_10__["default"]
       }))))));
     }
   }]);
@@ -102595,6 +102620,132 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/Info/Info.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Info/Info.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Info_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Info.scss */ "./resources/js/components/Info/Info.scss");
+/* harmony import */ var _Info_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Info_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var Info =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Info, _Component);
+
+  function Info(props) {
+    var _this;
+
+    _classCallCheck(this, Info);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Info).call(this, props));
+    _this.state = {
+      serverPercentage: 0
+    };
+    return _this;
+  }
+
+  _createClass(Info, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/info').then(function (response) {
+        console.log(response.data);
+
+        _this2.setState({
+          serverPercentage: 100 - response.data.freeSpace / response.data.totalSpace * 100
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      console.log(this.state.serverPercentage);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "progress",
+        style: {
+          height: '20px'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "progress-bar",
+        role: "progressbar",
+        style: {
+          width: '25%'
+        },
+        "aria-valuenow": "25",
+        "aria-valuemin": "0",
+        "aria-valuemax": "100"
+      }, "25%")));
+    }
+  }]);
+
+  return Info;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Info);
+
+/***/ }),
+
+/***/ "./resources/js/components/Info/Info.scss":
+/*!************************************************!*\
+  !*** ./resources/js/components/Info/Info.scss ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./Info.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/Info/Info.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./resources/js/components/Media/Gallery.js":
 /*!**************************************************!*\
   !*** ./resources/js/components/Media/Gallery.js ***!
@@ -102991,7 +103142,7 @@ function (_Component) {
           className: "btn btn-theme-color"
         }, "Drag 'n' drop some files here, or click to select files")));
       }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "row"
+        className: "row thumbnailGallery"
       }, media.map(function (mediaItem, i) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "col-6 col-sm-4 col-md-2 mt-2",

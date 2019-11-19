@@ -17,6 +17,9 @@
 
 .gallery{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 #uploader{
@@ -38,5 +41,8 @@
         min-height: 50vh;
         max-height: 80vh;
         padding: 20px;
+        .thumbnailGallery{
+            overflow-y: auto;
+        }
     }
 }

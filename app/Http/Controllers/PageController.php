@@ -21,7 +21,6 @@ class PageController extends Controller
     {
         $pages = Page::all();
         return $pages->toJson();
-
     }
 
     /**

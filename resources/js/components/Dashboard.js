@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
+
+import Info from './Info/Info';
 import Media from './Media/Media';
 import Users from './Users/Users';
 import Pages from './Pages/Pages';
@@ -53,6 +55,7 @@ class Dashboard extends Component {
                             </div>
                         </div>
                         <Switch>
+                            <Route exact path='/admin/' component={Info} />
                             <Route exact path='/admin/media' component={Media} />
                             <Route exact path='/admin/users' component={Users} />
                             <Route exact path='/admin/pages' component={Pages} />

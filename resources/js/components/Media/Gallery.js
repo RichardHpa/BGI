@@ -274,7 +274,7 @@ class Gallery extends Component {
                                 )}
                             </Dropzone>
                         :
-                        <div className="row">
+                        <div className="row thumbnailGallery">
                             {
                                 media.map((mediaItem, i) => (
                                     <div className="col-6 col-sm-4 col-md-2 mt-2" key={i}>
