@@ -1,73 +1,84 @@
 import React, { Component } from 'react';
 import './Blocks.scss';
 
+import ImageBlock from './ImageBlock';
+import EditorBlock from './EditorBlock';
+
 import axios from 'axios';
 import Button from '../Buttons/Button';
-import MediaModel from '../Media/MediaModel';
-
-import CustomEditor from './EditorBlock';
 
 class BlockEditor extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            blocks: []
+            currentBlocks: [],
+            iterationNum: 0
         }
     }
 
     componentDidMount () {
+        console.log(this.props);
         this.setState({
-            blocks: this.props.blocks
+            currentBlocks: this.props.blocks,
+            iterationNum: this.props.blocks.length + 1
         })
     }
 
     addBlock = (type) => {
-        const { blocks } = this.state;
-        blocks.push({
-            id: blocks.length + 1,
-            section_type: type,
-            section_content: ''
-        });
+        const {currentBlocks, iterationNum} = this.state;
+        const newBlock = {
+            id: iterationNum,
+            block_type: type,
+            block_content: null,
+            originalID: null
+        }
+
+        currentBlocks.push(newBlock);
         this.setState({
-            blocks
+            currentBlocks: currentBlocks,
+            iterationNum: iterationNum + 1
         })
-        this.props.addBlock(blocks);
+                this.props.recieveBlocks(currentBlocks);
     }
 
     handleSendContent = (updatedBlock) => {
-        const { blocks } = this.state;
-        for (var i = 0; i < blocks.length; i++) {
-            if(blocks[i].id === updatedBlock.id){
-                blocks[i].section_content = updatedBlock.section_content
-                this.setState({
-                    blocks
-                })
-                this.props.recieveBlocks(blocks);
+        const { currentBlocks } = this.state;
+        for (var i = 0; i < currentBlocks.length; i++) {
+            if(currentBlocks[i].id === updatedBlock.id){
+                currentBlocks[i] = updatedBlock;
                 break;
             }
         }
-
+        this.props.recieveBlocks(currentBlocks);
     }
 
+    handleRemove = (idToRemove) => {
+        const {currentBlocks} = this.state;
+        for (let i = 0; i < currentBlocks.length; i++) {
+            if(currentBlocks[i].id === idToRemove){
+                currentBlocks.splice(i, 1);
+                break;
+            }
+        }
+        this.setState({
+          currentBlocks: currentBlocks
+        })
+        this.props.recieveBlocks(currentBlocks);
+    }
+
+
     render () {
-        const { blocks } = this.state;
+        const { currentBlocks } = this.state;
         return (
             <div className="blockEditor">
                 {
-                    blocks.map((singleBlock, i) => (
-                        <div className="blockList" key={i}>
-                            <div className="blockContent">
-                                {(() => {
-                                  switch (singleBlock.section_type) {
-                                    case 'imageBlock':   return <ImageBlock blockInfo={singleBlock} sendContent={this.handleSendContent}/>;
-                                    case 'textBlock': return <CustomEditor blockInfo={singleBlock} sendContent={this.handleSendContent}/>;
-                                  }
-                                })()}
-                            </div>
-                            <div className="blockControls">
-                                <i className="fas fa-times-circle text-danger fa-lg"></i>
-                            </div>
-                        </div>
+                    currentBlocks.map((singleBlock) => (
+                        <SingleBlock
+                            key={singleBlock.id}
+                            blockInfo={singleBlock}
+                            remove={this.handleRemove}
+                            sendContent={this.handleSendContent}
+                        />
                     ))
                 }
                 <div className="blockSelector">
@@ -79,83 +90,48 @@ class BlockEditor extends Component {
                     </div>
                 </div>
             </div>
-
         )
     }
 }
-
-
 export default BlockEditor
 
-class ImageBlock extends Component {
+
+
+class SingleBlock extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            media: null,
-            editorID: null
+
         }
     }
 
-    componentDidMount () {
-        const { editorState } = this.state;
-        if(this.props.blockInfo.section_content){
-            axios.get(`/api/media/${this.props.blockInfo.section_content}`).then(response => {
-                this.setState({
-                    media: response.data,
-                    editorID: this.props.blockInfo.id
-                })
-            })
-        } else {
-            this.setState({
-                editorID: this.props.blockInfo.id
-            })
-        }
+    removeBlock = () => {
+        this.props.remove(this.props.blockInfo.id);
     }
 
-    handleSendImage = (image) => {
-        this.setState({
-            media: image
-        })
-        const newValues = {
-            id: this.state.editorID,
-            section_content: image.id
-        }
-        this.props.sendContent(newValues);
+    handleSendContent = (content) => {
+        let updatedBlock = this.props.blockInfo;
+        updatedBlock.block_content = content;
+        this.props.sendContent(updatedBlock);
     }
 
-    render () {
-        const { media } = this.state;
-        return (
-            <div className="block">
-                {
-                    media === null?
-                        <MediaModel sendImage={this.handleSendImage}/>
-                    :
-                    <img className="img-fluid" src={`/images/uploads/originals/${media.media_name}`} />
-                }
+    render(){
+        return(
+            <div className="blockList">
+                <div className="blockContent">
+                    {(() => {
+                      switch (this.props.blockInfo.block_type) {
+                        case 'imageBlock':   return <ImageBlock blockContent={this.props.blockInfo.block_content} sendContent={this.handleSendContent}/>;
+                        case 'textBlock':   return <EditorBlock blockContent={this.props.blockInfo.block_content} sendContent={this.handleSendContent}/>;
+                      }
+                    })()}
+                </div>
+                <div className="blockControls">
+                    <i onClick={this.removeBlock} className="fas fa-caret-square-up text-secondary fa-lg"></i>
+                    <i onClick={this.removeBlock} className="fas fa-caret-square-down text-secondary fa-lg"></i>
+                    <i onClick={this.removeBlock} className="fas fa-times-circle text-danger fa-lg"></i>
+                </div>
             </div>
         )
     }
 }
-
-//
-// import { Editor, EditorState , RichUtils, convertFromRaw, convertToRaw} from 'draft-js';
-// import {stateToHTML} from 'draft-js-export-html';
-//
-// class TextBlock extends Component {
-//
-//     constructor (props) {
-//         super(props)
-//         this.state = {
-//             text: []
-//         }
-//     }
-//
-//     render () {
-//         return (
-//             <div className="block">
-//                 <h2>Text Block</h2>
-//             </div>
-//         )
-//     }
-// }

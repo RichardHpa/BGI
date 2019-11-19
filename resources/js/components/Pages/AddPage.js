@@ -10,14 +10,6 @@ class AddPage extends Component {
             blocks: []
         }
     }
-
-    handleAddBlock = (newBlocks) => {
-        const { blocks } = this.state;
-        this.setState({
-            blocks: newBlocks
-        })
-    }
-
     handleRecieveBlocks = (allBlocks) => {
         this.setState({
             blocks: allBlocks
@@ -60,7 +52,6 @@ class AddPage extends Component {
                         <div className="row">
                             <div className="col-12 d-flex justify-content-center">
                                 <BlockEditor
-                                    addBlock={this.handleAddBlock}
                                     blocks={blocks}
                                     recieveBlocks={this.handleRecieveBlocks}
                                 />

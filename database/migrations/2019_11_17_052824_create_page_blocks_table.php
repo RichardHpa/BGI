@@ -16,9 +16,9 @@ class CreatePageBlocksTable extends Migration
         Schema::create('page_blocks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('page_id')->unsigned()->index()->nullable();
-            $table->foreign('page_id')->references('id')->on('pages');
-            $table->string('section_type');
-            $table->text('section_content');
+            $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');;
+            $table->string('block_type');
+            $table->text('block_content');
             $table->smallInteger('order');
             $table->timestamps();
         });

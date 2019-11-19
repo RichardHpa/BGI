@@ -3,8 +3,6 @@ import { Editor, EditorState , RichUtils, convertFromHTML, ContentState} from 'd
 import {stateToHTML} from 'draft-js-export-html';
 import './EditorBlock.scss';
 
-
-
 class CustomEditor extends Component {
     constructor () {
         super()
@@ -22,23 +20,15 @@ class CustomEditor extends Component {
 
     componentDidMount () {
         const { editorState } = this.state;
-        if(this.props.blockInfo !== undefined){
-
-            if(this.props.blockInfo.section_content){
-                const blocksFromHTML = convertFromHTML(this.props.blockInfo.section_content);
-                const content = ContentState.createFromBlockArray(
-                  blocksFromHTML.contentBlocks,
-                  blocksFromHTML.entityMap
-                );
-                this.setState({
-                    editorState: EditorState.createWithContent(content),
-                    editorID: this.props.blockInfo.id
-                })
-            } else {
-                this.setState({
-                    editorID: this.props.blockInfo.id
-                })
-            }
+        if(this.props.blockContent !== null){
+             const blocksFromHTML = convertFromHTML(this.props.blockContent);
+             const content = ContentState.createFromBlockArray(
+               blocksFromHTML.contentBlocks,
+               blocksFromHTML.entityMap
+             );
+             this.setState({
+                 editorState: EditorState.createWithContent(content)
+             })
         }
     }
 
@@ -56,11 +46,7 @@ class CustomEditor extends Component {
             editorState: editorState,
             editorText: convertedText
         });
-        const newValues = {
-            id: this.state.editorID,
-            section_content: convertedText
-        }
-        this.props.sendContent(newValues);
+        this.props.sendContent(convertedText);
     }
 
     toggleActive(){
@@ -69,7 +55,6 @@ class CustomEditor extends Component {
             focused: !focused
         })
     }
-
 
     render(){
         const { editorState } = this.state;
@@ -133,7 +118,6 @@ const INLINE_STYLES = [
         style: 'UNDERLINE'
     }
 ];
-
 
 const EditorControls = (props) => {
     var currentStyle = props.editorState.getCurrentInlineStyle();

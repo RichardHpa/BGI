@@ -9,11 +9,19 @@
         }
         .blockControls{
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             width: 5%;
             float: left;
+            i{
+                padding: 5px 0;
+                &:hover{
+                    cursor: pointer;
+                    opacity: 0.8;
+                }
+            }
         }
         &::after{
             clear: both;

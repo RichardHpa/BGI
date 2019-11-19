@@ -6401,7 +6401,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".blockEditor {\n  width: 100%;\n}\n.blockEditor .blockList {\n  display: -webkit-box;\n  display: flex;\n}\n.blockEditor .blockList .blockContent {\n  width: 95%;\n  float: left;\n}\n.blockEditor .blockList .blockControls {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n  text-align: center;\n  width: 5%;\n  float: left;\n}\n.blockEditor .blockList::after {\n  clear: both;\n  content: \"\";\n  display: block;\n}\n.blockEditor .block {\n  padding: 10px 0;\n}\n.blockEditor .blockSelector {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  border-top: 1px solid #ced4da;\n  padding-top: 10px;\n}\n.blockEditor .blockSelector .blockIcon {\n  padding: 10px;\n  margin: 0 10px;\n  border: 1px solid #ced4da;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n  text-align: center;\n}\n.blockEditor .blockSelector .blockIcon:hover {\n  cursor: pointer;\n  border: 1px solid #95a5a6;\n}", ""]);
+exports.push([module.i, ".blockEditor {\n  width: 100%;\n}\n.blockEditor .blockList {\n  display: -webkit-box;\n  display: flex;\n}\n.blockEditor .blockList .blockContent {\n  width: 95%;\n  float: left;\n}\n.blockEditor .blockList .blockControls {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n  text-align: center;\n  width: 5%;\n  float: left;\n}\n.blockEditor .blockList .blockControls i {\n  padding: 5px 0;\n}\n.blockEditor .blockList .blockControls i:hover {\n  cursor: pointer;\n  opacity: 0.8;\n}\n.blockEditor .blockList::after {\n  clear: both;\n  content: \"\";\n  display: block;\n}\n.blockEditor .block {\n  padding: 10px 0;\n}\n.blockEditor .blockSelector {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  border-top: 1px solid #ced4da;\n  padding-top: 10px;\n}\n.blockEditor .blockSelector .blockIcon {\n  padding: 10px;\n  margin: 0 10px;\n  border: 1px solid #ced4da;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n  text-align: center;\n}\n.blockEditor .blockSelector .blockIcon:hover {\n  cursor: pointer;\n  border: 1px solid #95a5a6;\n}", ""]);
 
 // exports
 
@@ -6420,7 +6420,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".editorWrapper {\n  width: 100%;\n  min-height: 10px;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\n.editorWrapper .editorControls {\n  position: absolute;\n  top: 0;\n  -webkit-transform: translateY(-100%);\n          transform: translateY(-100%);\n  left: 0;\n  width: 100%;\n  background-color: white;\n  border: 1px solid #ddd;\n  padding: 5px;\n  -webkit-transition: -webkit-transform 0.5s;\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n}\n.editorWrapper .editorControls.open {\n  top: 0;\n  -webkit-transform: translateY(0);\n          transform: translateY(0);\n}\n.editorWrapper .editorControls .editorButton {\n  color: #999;\n  cursor: pointer;\n  padding: 0px 16px;\n  display: inline-block;\n  border-right: 0.8px solid #ddd;\n}\n.editorWrapper .editorControls .editorButton:hover {\n  cursor: pointer;\n  text-decoration: underline;\n}\n.editorWrapper .editorControls .editorButton.editorButtonActive {\n  color: #5890ff;\n}\n\n.DraftEditor-root {\n  background: #fff;\n  border: 1px solid #ddd;\n  font-family: Georgia, serif;\n  font-size: 14px;\n  padding: 90px 15px;\n  height: 100%;\n  margin-top: 10px;\n}\n@media screen and (min-width: 768px) {\n  .DraftEditor-root {\n    margin-top: 0px;\n  }\n}\n\n.DraftEditor-editorContainer {\n  background-color: rgba(255, 255, 255, 0);\n  border-left: 0.1px solid transparent;\n  position: relative;\n  z-index: 1;\n  width: 100%;\n}\n\n.public-DraftEditorPlaceholder-inner {\n  color: #9197a3;\n  position: absolute;\n  z-index: 1;\n}", ""]);
+exports.push([module.i, ".editorWrapper {\n  width: 100%;\n  min-height: 10px;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\n.editorWrapper .editorControls {\n  position: absolute;\n  top: 0;\n  -webkit-transform: translateY(-100%);\n          transform: translateY(-100%);\n  left: 0;\n  width: 100%;\n  background-color: white;\n  border: 1px solid #ddd;\n  padding: 5px;\n  -webkit-transition: -webkit-transform 0.5s;\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n}\n.editorWrapper .editorControls.open {\n  top: 0;\n  -webkit-transform: translateY(0);\n          transform: translateY(0);\n}\n.editorWrapper .editorControls .editorButton {\n  color: #999;\n  cursor: pointer;\n  padding: 0px 16px;\n  display: inline-block;\n  border-right: 0.8px solid #ddd;\n}\n.editorWrapper .editorControls .editorButton:hover {\n  cursor: pointer;\n  text-decoration: underline;\n}\n.editorWrapper .editorControls .editorButton.editorButtonActive {\n  color: #5890ff;\n}\n\n.DraftEditor-root {\n  background: #fff;\n  border: 1px solid #ddd;\n  font-family: \"Nunito\", sans-serif;\n  font-size: 14px;\n  padding: 80px 15px 20px 15px;\n  height: 100%;\n  margin-top: 10px;\n}\n@media screen and (min-width: 768px) {\n  .DraftEditor-root {\n    margin-top: 0px;\n  }\n}\n\n.DraftEditor-editorContainer {\n  background-color: rgba(255, 255, 255, 0);\n  border-left: 0.1px solid transparent;\n  position: relative;\n  z-index: 1;\n  width: 100%;\n}\n\n.public-DraftEditorPlaceholder-inner {\n  color: #9197a3;\n  position: absolute;\n  z-index: 1;\n}", ""]);
 
 // exports
 
@@ -101121,11 +101121,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Blocks_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Blocks.scss */ "./resources/js/components/Blocks/Blocks.scss");
 /* harmony import */ var _Blocks_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Blocks_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Buttons_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Buttons/Button */ "./resources/js/components/Buttons/Button.js");
-/* harmony import */ var _Media_MediaModel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Media/MediaModel */ "./resources/js/components/Media/MediaModel.js");
-/* harmony import */ var _EditorBlock__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./EditorBlock */ "./resources/js/components/Blocks/EditorBlock.js");
+/* harmony import */ var _ImageBlock__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ImageBlock */ "./resources/js/components/Blocks/ImageBlock.js");
+/* harmony import */ var _EditorBlock__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./EditorBlock */ "./resources/js/components/Blocks/EditorBlock.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Buttons_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Buttons/Button */ "./resources/js/components/Buttons/Button.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -101164,40 +101164,58 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(BlockEditor).call(this, props));
 
     _this.addBlock = function (type) {
-      var blocks = _this.state.blocks;
-      blocks.push({
-        id: blocks.length + 1,
-        section_type: type,
-        section_content: ''
-      });
+      var _this$state = _this.state,
+          currentBlocks = _this$state.currentBlocks,
+          iterationNum = _this$state.iterationNum;
+      var newBlock = {
+        id: iterationNum,
+        block_type: type,
+        block_content: null,
+        originalID: null
+      };
+      currentBlocks.push(newBlock);
 
       _this.setState({
-        blocks: blocks
+        currentBlocks: currentBlocks,
+        iterationNum: iterationNum + 1
       });
 
-      _this.props.addBlock(blocks);
+      _this.props.recieveBlocks(currentBlocks);
     };
 
     _this.handleSendContent = function (updatedBlock) {
-      var blocks = _this.state.blocks;
+      var currentBlocks = _this.state.currentBlocks;
 
-      for (var i = 0; i < blocks.length; i++) {
-        if (blocks[i].id === updatedBlock.id) {
-          blocks[i].section_content = updatedBlock.section_content;
-
-          _this.setState({
-            blocks: blocks
-          });
-
-          _this.props.recieveBlocks(blocks);
-
+      for (var i = 0; i < currentBlocks.length; i++) {
+        if (currentBlocks[i].id === updatedBlock.id) {
+          currentBlocks[i] = updatedBlock;
           break;
         }
       }
+
+      _this.props.recieveBlocks(currentBlocks);
+    };
+
+    _this.handleRemove = function (idToRemove) {
+      var currentBlocks = _this.state.currentBlocks;
+
+      for (var i = 0; i < currentBlocks.length; i++) {
+        if (currentBlocks[i].id === idToRemove) {
+          currentBlocks.splice(i, 1);
+          break;
+        }
+      }
+
+      _this.setState({
+        currentBlocks: currentBlocks
+      });
+
+      _this.props.recieveBlocks(currentBlocks);
     };
 
     _this.state = {
-      blocks: []
+      currentBlocks: [],
+      iterationNum: 0
     };
     return _this;
   }
@@ -101205,8 +101223,10 @@ function (_Component) {
   _createClass(BlockEditor, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      console.log(this.props);
       this.setState({
-        blocks: this.props.blocks
+        currentBlocks: this.props.blocks,
+        iterationNum: this.props.blocks.length + 1
       });
     }
   }, {
@@ -101214,34 +101234,16 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var blocks = this.state.blocks;
+      var currentBlocks = this.state.currentBlocks;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "blockEditor"
-      }, blocks.map(function (singleBlock, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "blockList",
-          key: i
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "blockContent"
-        }, function () {
-          switch (singleBlock.section_type) {
-            case 'imageBlock':
-              return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ImageBlock, {
-                blockInfo: singleBlock,
-                sendContent: _this2.handleSendContent
-              });
-
-            case 'textBlock':
-              return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_EditorBlock__WEBPACK_IMPORTED_MODULE_5__["default"], {
-                blockInfo: singleBlock,
-                sendContent: _this2.handleSendContent
-              });
-          }
-        }()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "blockControls"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-times-circle text-danger fa-lg"
-        })));
+      }, currentBlocks.map(function (singleBlock) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SingleBlock, {
+          key: singleBlock.id,
+          blockInfo: singleBlock,
+          remove: _this2.handleRemove,
+          sendContent: _this2.handleSendContent
+        });
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "blockSelector"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -101259,95 +101261,73 @@ function (_Component) {
 
 /* harmony default export */ __webpack_exports__["default"] = (BlockEditor);
 
-var ImageBlock =
+var SingleBlock =
 /*#__PURE__*/
 function (_Component2) {
-  _inherits(ImageBlock, _Component2);
+  _inherits(SingleBlock, _Component2);
 
-  function ImageBlock(props) {
+  function SingleBlock(props) {
     var _this3;
 
-    _classCallCheck(this, ImageBlock);
+    _classCallCheck(this, SingleBlock);
 
-    _this3 = _possibleConstructorReturn(this, _getPrototypeOf(ImageBlock).call(this, props));
+    _this3 = _possibleConstructorReturn(this, _getPrototypeOf(SingleBlock).call(this, props));
 
-    _this3.handleSendImage = function (image) {
-      _this3.setState({
-        media: image
-      });
-
-      var newValues = {
-        id: _this3.state.editorID,
-        section_content: image.id
-      };
-
-      _this3.props.sendContent(newValues);
+    _this3.removeBlock = function () {
+      _this3.props.remove(_this3.props.blockInfo.id);
     };
 
-    _this3.state = {
-      media: null,
-      editorID: null
+    _this3.handleSendContent = function (content) {
+      var updatedBlock = _this3.props.blockInfo;
+      updatedBlock.block_content = content;
+
+      _this3.props.sendContent(updatedBlock);
     };
+
+    _this3.state = {};
     return _this3;
   }
 
-  _createClass(ImageBlock, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this4 = this;
-
-      var editorState = this.state.editorState;
-
-      if (this.props.blockInfo.section_content) {
-        axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/media/".concat(this.props.blockInfo.section_content)).then(function (response) {
-          _this4.setState({
-            media: response.data,
-            editorID: _this4.props.blockInfo.id
-          });
-        });
-      } else {
-        this.setState({
-          editorID: this.props.blockInfo.id
-        });
-      }
-    }
-  }, {
+  _createClass(SingleBlock, [{
     key: "render",
     value: function render() {
-      var media = this.state.media;
+      var _this4 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "block"
-      }, media === null ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Media_MediaModel__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        sendImage: this.handleSendImage
-      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "img-fluid",
-        src: "/images/uploads/originals/".concat(media.media_name)
-      }));
+        className: "blockList"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "blockContent"
+      }, function () {
+        switch (_this4.props.blockInfo.block_type) {
+          case 'imageBlock':
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ImageBlock__WEBPACK_IMPORTED_MODULE_2__["default"], {
+              blockContent: _this4.props.blockInfo.block_content,
+              sendContent: _this4.handleSendContent
+            });
+
+          case 'textBlock':
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_EditorBlock__WEBPACK_IMPORTED_MODULE_3__["default"], {
+              blockContent: _this4.props.blockInfo.block_content,
+              sendContent: _this4.handleSendContent
+            });
+        }
+      }()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "blockControls"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        onClick: this.removeBlock,
+        className: "fas fa-caret-square-up text-secondary fa-lg"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        onClick: this.removeBlock,
+        className: "fas fa-caret-square-down text-secondary fa-lg"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        onClick: this.removeBlock,
+        className: "fas fa-times-circle text-danger fa-lg"
+      })));
     }
   }]);
 
-  return ImageBlock;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]); //
-// import { Editor, EditorState , RichUtils, convertFromRaw, convertToRaw} from 'draft-js';
-// import {stateToHTML} from 'draft-js-export-html';
-//
-// class TextBlock extends Component {
-//
-//     constructor (props) {
-//         super(props)
-//         this.state = {
-//             text: []
-//         }
-//     }
-//
-//     render () {
-//         return (
-//             <div className="block">
-//                 <h2>Text Block</h2>
-//             </div>
-//         )
-//     }
-// }
+  return SingleBlock;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /***/ }),
 
@@ -101449,19 +101429,12 @@ function (_Component) {
     value: function componentDidMount() {
       var editorState = this.state.editorState;
 
-      if (this.props.blockInfo !== undefined) {
-        if (this.props.blockInfo.section_content) {
-          var blocksFromHTML = Object(draft_js__WEBPACK_IMPORTED_MODULE_1__["convertFromHTML"])(this.props.blockInfo.section_content);
-          var content = draft_js__WEBPACK_IMPORTED_MODULE_1__["ContentState"].createFromBlockArray(blocksFromHTML.contentBlocks, blocksFromHTML.entityMap);
-          this.setState({
-            editorState: draft_js__WEBPACK_IMPORTED_MODULE_1__["EditorState"].createWithContent(content),
-            editorID: this.props.blockInfo.id
-          });
-        } else {
-          this.setState({
-            editorID: this.props.blockInfo.id
-          });
-        }
+      if (this.props.blockContent !== null) {
+        var blocksFromHTML = Object(draft_js__WEBPACK_IMPORTED_MODULE_1__["convertFromHTML"])(this.props.blockContent);
+        var content = draft_js__WEBPACK_IMPORTED_MODULE_1__["ContentState"].createFromBlockArray(blocksFromHTML.contentBlocks, blocksFromHTML.entityMap);
+        this.setState({
+          editorState: draft_js__WEBPACK_IMPORTED_MODULE_1__["EditorState"].createWithContent(content)
+        });
       }
     }
   }, {
@@ -101482,11 +101455,7 @@ function (_Component) {
         editorState: editorState,
         editorText: convertedText
       });
-      var newValues = {
-        id: this.state.editorID,
-        section_content: convertedText
-      };
-      this.props.sendContent(newValues);
+      this.props.sendContent(convertedText);
     }
   }, {
     key: "toggleActive",
@@ -101654,6 +101623,105 @@ var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/a
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/Blocks/ImageBlock.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Blocks/ImageBlock.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Blocks_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Blocks.scss */ "./resources/js/components/Blocks/Blocks.scss");
+/* harmony import */ var _Blocks_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Blocks_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Media_MediaModel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Media/MediaModel */ "./resources/js/components/Media/MediaModel.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var ImageBlock =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(ImageBlock, _Component);
+
+  function ImageBlock(props) {
+    var _this;
+
+    _classCallCheck(this, ImageBlock);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ImageBlock).call(this, props));
+
+    _this.handleSendImage = function (imageInfo) {
+      _this.setState({
+        media: imageInfo
+      });
+
+      _this.props.sendContent(imageInfo.id);
+    };
+
+    _this.state = {
+      media: null
+    };
+    return _this;
+  }
+
+  _createClass(ImageBlock, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      // console.log(this.props);
+      // console.log('mounted');
+      if (this.props.blockContent) {
+        axios.get("/api/media/".concat(this.props.blockContent)).then(function (response) {
+          _this2.setState({
+            media: response.data
+          });
+        });
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var media = this.state.media;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "block"
+      }, media === null ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Media_MediaModel__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        sendImage: this.handleSendImage
+      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "img-fluid",
+        src: "/images/uploads/originals/".concat(media.media_name)
+      }));
+    }
+  }]);
+
+  return ImageBlock;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (ImageBlock);
 
 /***/ }),
 
@@ -103098,14 +103166,6 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(AddPage).call(this, props));
 
-    _this.handleAddBlock = function (newBlocks) {
-      var blocks = _this.state.blocks;
-
-      _this.setState({
-        blocks: newBlocks
-      });
-    };
-
     _this.handleRecieveBlocks = function (allBlocks) {
       _this.setState({
         blocks: allBlocks
@@ -103164,7 +103224,6 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12 d-flex justify-content-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Blocks_Blocks__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        addBlock: this.handleAddBlock,
         blocks: blocks,
         recieveBlocks: this.handleRecieveBlocks
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -103231,8 +103290,40 @@ function (_Component) {
     _classCallCheck(this, EditPage);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(EditPage).call(this, props));
+
+    _this.changeTitle = function (e) {
+      _this.setState({
+        pageTitle: e.target.value
+      });
+    };
+
+    _this.handleRecieveBlocks = function (allBlocks) {
+      // console.log(allBlocks);
+      _this.setState({
+        blocks: allBlocks
+      });
+    };
+
+    _this.sendForm = function (e) {
+      e.preventDefault();
+      var _this$state = _this.state,
+          pageTitle = _this$state.pageTitle,
+          blocks = _this$state.blocks;
+      var form = new FormData();
+      form.append('page_title', pageTitle);
+      form.append('blocks', JSON.stringify(blocks));
+      axios.post("/api/pages/edit/".concat(_this.state.pageID), form).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {
+        console.log('error');
+      });
+    };
+
     _this.state = {
-      pageInfo: ''
+      orignalName: '',
+      pageID: null,
+      pageTitle: '',
+      blocks: []
     };
     return _this;
   }
@@ -103244,13 +103335,19 @@ function (_Component) {
 
       var pageId = this.props.match.params.id;
       axios.get("/api/page/".concat(pageId)).then(function (response) {
-        console.log(response);
-
         if (response.data === '404') {
           console.log('need to redirect');
         } else {
+          for (var i = 0; i < response.data.pageInfo.blocks.length; i++) {
+            response.data.pageInfo.blocks[i].originalID = response.data.pageInfo.blocks[i].id;
+            response.data.pageInfo.blocks[i].id = i + 1;
+          }
+
           _this2.setState({
-            pageInfo: response.data.pageInfo
+            orignalName: response.data.pageInfo.page_title,
+            pageID: response.data.pageInfo.id,
+            pageTitle: response.data.pageInfo.page_title,
+            blocks: response.data.pageInfo.blocks
           });
         }
       });
@@ -103258,13 +103355,14 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var pageInfo = this.state.pageInfo;
-      console.log(pageInfo['blocks']);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
+      var _this$state2 = this.state,
+          orignalName = _this$state2.orignalName,
+          pageTitle = _this$state2.pageTitle,
+          blocks = _this$state2.blocks,
+          pageID = _this$state2.pageID;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "pb-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Edit ", pageInfo['page_title']))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12 col-md-7"
@@ -103279,20 +103377,23 @@ function (_Component) {
         type: "text",
         placeholder: "Page Title",
         onChange: this.changeTitle,
-        value: pageInfo['page_title']
+        value: pageTitle
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12 d-flex justify-content-center"
-      }, pageInfo && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Blocks_Blocks__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        addBlock: this.handleAddBlock,
-        blocks: pageInfo['blocks'],
+      }, pageID && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Blocks_Blocks__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        blocks: blocks,
         recieveBlocks: this.handleRecieveBlocks
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12 col-md"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card p-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Edit ", orignalName))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-bgi btn-block",
         onClick: this.sendForm
       }, "Edit Page")))));
