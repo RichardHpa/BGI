@@ -101711,10 +101711,12 @@ function (_Component) {
         className: "block"
       }, media === null ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Media_MediaModel__WEBPACK_IMPORTED_MODULE_2__["default"], {
         sendImage: this.handleSendImage
-      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "img-fluid",
         src: "/images/uploads/originals/".concat(media.media_name)
-      }));
+      })));
     }
   }]);
 

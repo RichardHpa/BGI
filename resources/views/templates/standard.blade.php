@@ -8,18 +8,18 @@
             </div>
         </div>
         @foreach ($blocks as $block)
-            @switch($block->section_type)
+            @switch($block->block_type)
                 @case('textBlock')
                     <div class="row">
                         <div class="col">
-                            {!! $block->section_content !!}
+                            {!! $block->block_content !!}
                         </div>
                     </div>
                     @break
                 @case('imageBlock')
                     <div class="row">
-                        <div class="col">
-                            <img src="images/uploads/originals/{{ $block->section_content }}" class="img-fluid">
+                        <div class="col text-center">
+                            <img src="images/uploads/originals/{{ $block->block_content }}" class="img-fluid">
                         </div>
                     </div>
                     @break

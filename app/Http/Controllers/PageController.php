@@ -77,9 +77,9 @@ class PageController extends Controller
         $page = Page::where('page_url', '=', $id)->firstOrFail();
         $blocks = PageBlock::where('page_id', '=', $page->id)->get();
         foreach($blocks as $block){
-            if($block->section_type === 'imageBlock'){
-                $media = Media::where('id', '=', $block->section_content)->firstOrFail();
-                $block['section_content'] = $media->media_name;
+            if($block->block_type === 'imageBlock'){
+                $media = Media::where('id', '=', $block->block_content)->firstOrFail();
+                $block['block_content'] = $media->media_name;
             }
         }
         return view('templates/standard', compact('page', 'blocks'));

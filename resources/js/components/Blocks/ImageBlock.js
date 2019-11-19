@@ -38,7 +38,9 @@ class ImageBlock extends Component {
                     media === null?
                         <MediaModel sendImage={this.handleSendImage}/>
                     :
-                    <img className="img-fluid" src={`/images/uploads/originals/${media.media_name}`} />
+                    <div className="text-center">
+                        <img className="img-fluid" src={`/images/uploads/originals/${media.media_name}`} />
+                    </div>
                 }
             </div>
         )
