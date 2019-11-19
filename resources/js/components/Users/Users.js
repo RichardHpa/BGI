@@ -3,7 +3,8 @@ import './Users.scss';
 
 import Button from '../Buttons/Button';
 import AddUsers from './AddUsers';
-import DeleteUsers from './DeleteUsers';
+import Delete from '../Delete/Delete';
+
 import axios from 'axios';
 
 class Users extends Component {
@@ -87,7 +88,8 @@ class Users extends Component {
                     </div>
                 </div>
                 {add && <AddUsers formSuccess={this.handleFormSuccess}/>}
-                {deleting && <DeleteUsers user={deleting} formSuccess={this.handleFormSuccess}/>}
+
+                {deleting && <Delete id={deleting['id']} title={deleting['name']} route="users" formSuccess={this.handleFormSuccess}/>}
             </section>
         )
     }

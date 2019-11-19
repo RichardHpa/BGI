@@ -127,8 +127,8 @@ class SingleBlock extends Component {
                     })()}
                 </div>
                 <div className="blockControls">
-                    <i onClick={this.removeBlock} className="fas fa-caret-square-up text-secondary fa-lg"></i>
-                    <i onClick={this.removeBlock} className="fas fa-caret-square-down text-secondary fa-lg"></i>
+                    <i className="fas fa-caret-square-up text-secondary fa-lg"></i>
+                    <i className="fas fa-caret-square-down text-secondary fa-lg"></i>
                     <i onClick={this.removeBlock} className="fas fa-times-circle text-danger fa-lg"></i>
                 </div>
             </div>

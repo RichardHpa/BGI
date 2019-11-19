@@ -27,7 +27,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/{sub}/{action}/{id}', 'AdminController@index')->middleware(['web', 'auth']);
 });
 
+
+// Public API Routes to check user permissions
 Route::delete('users/delete/{id}', 'UserController@destroy');
+Route::delete('pages/delete/{id}', 'PageController@destroy');
 
 
 Route::get('/{url}', 'PageController@show');

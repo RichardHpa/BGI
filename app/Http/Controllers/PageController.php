@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Page;
 use App\PageBlock;
 use App\Media;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -168,6 +169,18 @@ class PageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(Auth::check()){
+            $currentLoggedUser = Auth::user();
+            if($currentLoggedUser->hasAnyRole(['Super Admin', 'Admin'])){
+                $page = Page::findOrFail($id);
+                $page->delete();
+                return response('success');
+            } else {
+                return response('they cant delete');
+            }
+
+        } else {
+            return response('401');
+        }
     }
 }

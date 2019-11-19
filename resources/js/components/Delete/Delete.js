@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './Users.scss';
+import './Delete.scss';
 import axios from 'axios';
 
 import { Form, Input } from '../Form/Form';
 
-class DeleteUsers extends Component {
+class Delete extends Component {
     constructor (props) {
         super(props)
         this.state = {
@@ -13,7 +13,7 @@ class DeleteUsers extends Component {
     }
 
     handleSendForm = () => {
-        axios.delete(`/users/delete/${this.props.user.id}`)
+        axios.delete(`/${this.props.route}/delete/${this.props.id}`)
             .then((response) => {
                 if(response.data == 'success'){
                     this.props.formSuccess();
@@ -34,7 +34,7 @@ class DeleteUsers extends Component {
                 <Form
                     method="post"
                     sendForm={this.handleSendForm}
-                    heading={`Are you sure you want to delete ${this.props.user.name}`}
+                    heading={`Are you sure you want to delete ${this.props.title}`}
                     btnText='Confirm'
                     cancelForm={this.handleCancelForm}
                 />
@@ -44,4 +44,4 @@ class DeleteUsers extends Component {
     }
 }
 
-export default DeleteUsers
+export default Delete;

@@ -6446,6 +6446,25 @@ exports.push([module.i, "", ""]);
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/Delete/Delete.scss":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/components/Delete/Delete.scss ***!
+  \***************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".modalForm {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: 100vh;\n  background-color: rgba(0, 0, 0, 0.5);\n  z-index: 10000;\n  overflow: hidden;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n}\n.modalForm .content {\n  width: 50%;\n  max-height: 80%;\n  overflow-y: auto;\n  padding: 10px;\n  background-color: white;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/Form/Form.scss":
 /*!***********************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/components/Form/Form.scss ***!
@@ -6553,7 +6572,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".modalForm {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: 100vh;\n  background-color: rgba(0, 0, 0, 0.5);\n  z-index: 10000;\n  overflow: hidden;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n}\n.modalForm .content {\n  width: 50%;\n  max-height: 80%;\n  overflow-y: auto;\n  padding: 10px;\n  background-color: white;\n}", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -101314,10 +101333,8 @@ function (_Component2) {
       }()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "blockControls"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        onClick: this.removeBlock,
         className: "fas fa-caret-square-up text-secondary fa-lg"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        onClick: this.removeBlock,
         className: "fas fa-caret-square-down text-secondary fa-lg"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         onClick: this.removeBlock,
@@ -101990,6 +102007,129 @@ function (_Component) {
 if (document.getElementById('reactApp')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Dashboard, null), document.getElementById('reactApp'));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/Delete/Delete.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/Delete/Delete.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Delete_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Delete.scss */ "./resources/js/components/Delete/Delete.scss");
+/* harmony import */ var _Delete_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Delete_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Form_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Form/Form */ "./resources/js/components/Form/Form.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var Delete =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Delete, _Component);
+
+  function Delete(props) {
+    var _this;
+
+    _classCallCheck(this, Delete);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Delete).call(this, props));
+
+    _this.handleSendForm = function () {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/".concat(_this.props.route, "/delete/").concat(_this.props.id)).then(function (response) {
+        if (response.data == 'success') {
+          _this.props.formSuccess();
+        }
+      })["catch"](function (error) {
+        console.log('error');
+      });
+    };
+
+    _this.handleCancelForm = function () {
+      _this.props.formSuccess();
+    };
+
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(Delete, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modalForm"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form_Form__WEBPACK_IMPORTED_MODULE_3__["Form"], {
+        method: "post",
+        sendForm: this.handleSendForm,
+        heading: "Are you sure you want to delete ".concat(this.props.title),
+        btnText: "Confirm",
+        cancelForm: this.handleCancelForm
+      })));
+    }
+  }]);
+
+  return Delete;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Delete);
+
+/***/ }),
+
+/***/ "./resources/js/components/Delete/Delete.scss":
+/*!****************************************************!*\
+  !*** ./resources/js/components/Delete/Delete.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./Delete.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/Delete/Delete.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -103424,8 +103564,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Pages_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Pages.scss */ "./resources/js/components/Pages/Pages.scss");
 /* harmony import */ var _Pages_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Pages_scss__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Buttons_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Buttons/Button */ "./resources/js/components/Buttons/Button.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Delete_Delete__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Delete/Delete */ "./resources/js/components/Delete/Delete.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -103450,6 +103591,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Pages =
 /*#__PURE__*/
 function (_Component) {
@@ -103461,8 +103603,25 @@ function (_Component) {
     _classCallCheck(this, Pages);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Pages).call(this, props));
+
+    _this.deletePage = function (page) {
+      _this.setState({
+        deleting: page
+      });
+    };
+
+    _this.handleFormSuccess = function () {
+      axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('/api/pages').then(function (response) {
+        _this.setState({
+          pages: response.data,
+          deleting: false
+        });
+      });
+    };
+
     _this.state = {
-      pages: []
+      pages: [],
+      deleting: false
     };
     return _this;
   }
@@ -103472,7 +103631,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('/api/pages').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('/api/pages').then(function (response) {
         _this2.setState({
           pages: response.data
         });
@@ -103481,7 +103640,11 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var pages = this.state.pages;
+      var _this3 = this;
+
+      var _this$state = this.state,
+          pages = _this$state.pages,
+          deleting = _this$state.deleting;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -103504,7 +103667,8 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-cog fa-lg pr-2"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "#"
+          href: "#",
+          onClick: _this3.deletePage.bind(_this3, page)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-times-circle text-danger fa-lg"
         }))));
@@ -103515,7 +103679,12 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "btn btn-bgi",
         to: "./pages/add_page"
-      }, "Add New Page"))));
+      }, "Add New Page"))), deleting && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Delete_Delete__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        id: deleting['id'],
+        title: deleting['page_title'],
+        route: "pages",
+        formSuccess: this.handleFormSuccess
+      }));
     }
   }]);
 
@@ -103849,99 +104018,6 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Users/DeleteUsers.js":
-/*!******************************************************!*\
-  !*** ./resources/js/components/Users/DeleteUsers.js ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Users_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Users.scss */ "./resources/js/components/Users/Users.scss");
-/* harmony import */ var _Users_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Form_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Form/Form */ "./resources/js/components/Form/Form.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-var DeleteUsers =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(DeleteUsers, _Component);
-
-  function DeleteUsers(props) {
-    var _this;
-
-    _classCallCheck(this, DeleteUsers);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(DeleteUsers).call(this, props));
-
-    _this.handleSendForm = function () {
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]("/users/delete/".concat(_this.props.user.id)).then(function (response) {
-        if (response.data == 'success') {
-          _this.props.formSuccess();
-        }
-      })["catch"](function (error) {
-        console.log('error');
-      });
-    };
-
-    _this.handleCancelForm = function () {
-      _this.props.formSuccess();
-    };
-
-    _this.state = {};
-    return _this;
-  }
-
-  _createClass(DeleteUsers, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "modalForm"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form_Form__WEBPACK_IMPORTED_MODULE_3__["Form"], {
-        method: "post",
-        sendForm: this.handleSendForm,
-        heading: "Are you sure you want to delete ".concat(this.props.user.name),
-        btnText: "Confirm",
-        cancelForm: this.handleCancelForm
-      })));
-    }
-  }]);
-
-  return DeleteUsers;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (DeleteUsers);
-
-/***/ }),
-
 /***/ "./resources/js/components/Users/Users.js":
 /*!************************************************!*\
   !*** ./resources/js/components/Users/Users.js ***!
@@ -103957,7 +104033,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Users_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_scss__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Buttons_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Buttons/Button */ "./resources/js/components/Buttons/Button.js");
 /* harmony import */ var _AddUsers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AddUsers */ "./resources/js/components/Users/AddUsers.js");
-/* harmony import */ var _DeleteUsers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./DeleteUsers */ "./resources/js/components/Users/DeleteUsers.js");
+/* harmony import */ var _Delete_Delete__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Delete/Delete */ "./resources/js/components/Delete/Delete.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -104085,8 +104161,10 @@ function (_Component) {
         btnClicked: this.openModal
       }))), add && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddUsers__WEBPACK_IMPORTED_MODULE_3__["default"], {
         formSuccess: this.handleFormSuccess
-      }), deleting && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DeleteUsers__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        user: deleting,
+      }), deleting && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Delete_Delete__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        id: deleting['id'],
+        title: deleting['name'],
+        route: "users",
         formSuccess: this.handleFormSuccess
       }));
     }
