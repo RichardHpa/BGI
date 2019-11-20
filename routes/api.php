@@ -31,3 +31,6 @@ Route::get('pages', 'PageController@index');
 Route::post('pages/add', 'PageController@store');
 Route::get('page/{id}', 'PageController@edit');
 Route::post('pages/edit/{id}', 'PageController@update');
+
+Route::get('staff', 'StaffController@index');
+Route::post('staff/add', 'StaffController@store');

@@ -11,6 +11,7 @@ import Users from './Users/Users';
 import Pages from './Pages/Pages';
 import AddPage from './Pages/AddPage';
 import EditPage from './Pages/EditPage';
+import Staff from './Staff/Staff';
 
 const pages = [
     { 'id': 1, 'name': 'Dashboard', 'url': '/admin','icon': 'chart-pie' },
@@ -61,6 +62,7 @@ class Dashboard extends Component {
                             <Route exact path='/admin/pages' component={Pages} />
                             <Route exact path='/admin/pages/add_page' component={AddPage} />
                             <Route exact path='/admin/pages/edit_page/:id' component={EditPage} />
+                            <Route exact path='/admin/staff' component={Staff} />
                         </Switch>
                         </main>
                     </div>

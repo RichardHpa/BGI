@@ -10,7 +10,7 @@ class InfoController extends Controller
     {
         $info = array(
             'freeSpace'=>disk_free_space('/'),
-            'totalSpace'=>disk_total_space('/System/Volumes/Data')
+            'totalSpace'=>disk_total_space('/')
         );
         return $info;
     }

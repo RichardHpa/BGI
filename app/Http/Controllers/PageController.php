@@ -48,7 +48,6 @@ class PageController extends Controller
             'template' => 'standard',
         ]);
 
-
         foreach ($allBlocks as $key=>$block) {
             $newBlock = PageBlock::create([
                 'page_id' => $page->id,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './Form.scss';
+import MediaModel from '../Media/MediaModel';
 
 class Form extends Component {
     constructor(props){
@@ -104,12 +105,15 @@ class Form extends Component {
                     </div>
                 }
                 { this.renderChildren() }
-            <button type="submit" className="btn btn-bgi">{this.props.btnText? this.props.btnText: 'Submit'}</button>
-            <button onClick={this.cancel} className="btn">Cancel</button>
-        </form>
-    )
+                <button type="submit" className="btn btn-bgi">{this.props.btnText? this.props.btnText: 'Submit'}</button>
+                <button onClick={this.cancel} className="btn">Cancel</button>
+            </form>
+        )
+    }
 }
-}
+
+
+
 
 class Input extends Component {
     constructor(props){
@@ -182,6 +186,121 @@ class Input extends Component {
     }
 }
 
+class Textarea extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            value: '',
+            valid: false
+        }
+    }
+
+    onBlur = (e) => {
+        const checkValidation = validate(event.target.value, this.props.validation);
+        let valid;
+        if(checkValidation === true){
+            valid = true;
+            this.setState({
+                valid: true,
+                validFeedback: null
+            })
+        } else {
+            valid = false;
+            this.setState({
+                valid: false,
+                validFeedback: checkValidation
+            })
+        }
+
+        this.props.onBlur({
+            key: this.props.iterationNum,
+            value: event.target.value,
+            name: this.props.name,
+            valid: valid
+        });
+    }
+
+    onChange = (e) => {
+        this.setState({
+            value: e.target.value
+        })
+    }
+
+    render(){
+        const { valid, validFeedback} = this.state;
+        return(
+            <div className="form-group">
+            {this.props.label && <label>{this.props.label}</label> }
+            <textarea
+                className={`form-control ${validFeedback ? 'is-invalid': '' }`}
+                name={this.props.name}
+                onBlur={this.onBlur}
+                onChange={this.onChange}
+                value={this.state.value}
+                placeholder={this.props.placeholder? this.props.placeholder: ''}
+            ></textarea>
+            {
+                !valid?
+                <div className="invalid-feedback">
+                {this.props.label} {validFeedback}
+                </div>
+                : ''
+            }
+            </div>
+        )
+    }
+}
+
+class Image extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            value: '',
+            valid: false,
+            media: null
+        }
+    }
+
+    handleSendImage = (image) => {
+        this.setState({
+            value: image.id,
+            media: image,
+            valid: true
+        });
+        this.props.onBlur({
+            key: this.props.iterationNum,
+            value: image.id,
+            name: this.props.name
+        });
+    }
+
+    render(){
+        const { valid, validFeedback, media} = this.state;
+        return(
+            <div className="form-group">
+            {this.props.label && <label>{this.props.label}</label> }
+            {
+                media === null?
+                    <MediaModel sendImage={this.handleSendImage}/>
+                :
+                <div className="col-4">
+                    <img className="img-fluid" src={`/images/uploads/originals/${media.media_name}`} />
+                </div>
+            }
+            {
+                !valid?
+                <div className="invalid-feedback">
+                {this.props.label} {validFeedback}
+                </div>
+                : ''
+            }
+            </div>
+        )
+    }
+}
+
 const validate = (value, validationRules) => {
     let validInput = true;
     if(validationRules){
@@ -231,4 +350,5 @@ const validate = (value, validationRules) => {
 }
 
 
-export { Form, Input };
+
+export { Form, Input, Textarea, Image };

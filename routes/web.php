@@ -31,6 +31,6 @@ Route::prefix('admin')->group(function () {
 // Public API Routes to check user permissions
 Route::delete('users/delete/{id}', 'UserController@destroy');
 Route::delete('pages/delete/{id}', 'PageController@destroy');
-
+Route::delete('staff/delete/{id}', 'StaffController@destroy');
 
 Route::get('/{url}', 'PageController@show');

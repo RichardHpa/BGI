@@ -13,20 +13,24 @@ class Info extends Component {
 
     componentDidMount () {
         axios.get('/api/info').then(response => {
-            console.log(response.data);
             this.setState({
-                serverPercentage: 100 - ((response.data.freeSpace / response.data.totalSpace) * 100)
+                serverPercentage: Math.ceil(100 - ((response.data.freeSpace / response.data.totalSpace) * 100))
             })
         })
     }
 
     render () {
-        console.log(this.state.serverPercentage);
         return (
             <section>
-                <div className="progress" style={{height: '20px'}}>
-                    <div className="progress-bar" role="progressbar" style={{width: '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                <div className="row">
+                    <div className="col-12">
+                        <p>Server Space</p>
+                        <div className="progress" style={{height: '20px'}}>
+                            <div className="progress-bar bg-danger" role="progressbar" style={{width: this.state.serverPercentage+'%'}} aria-valuenow={this.state.serverPercentage} aria-valuemin="0" aria-valuemax="100">{this.state.serverPercentage}%</div>
+                        </div>
+                    </div>
                 </div>
+
             </section>
         )
     }
