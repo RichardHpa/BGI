@@ -11006,6 +11006,50 @@ a.text-bgi:focus {
   }
 }
 
+#navigation ul li a {
+  color: #37598D;
+  padding: 0 25px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#navigation ul li a:hover {
+  text-decoration: underline;
+}
+
+#Banner img {
+  display: none;
+}
+
+#Banner {
+  background-size: cover;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  height: 80vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(55,89,141)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: #37598D;
+}
+
+body {
+  font-size: 1rem;
+}
+
 .btn-placeholder {
   height: calc(1.6em + 0.75rem + 2px);
   border: 1px dashed #ced4da;

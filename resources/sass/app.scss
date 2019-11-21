@@ -7,6 +7,12 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import '_frontend';
+
+body{
+    font-size: 1rem;
+}
+
 .btn-placeholder{
     height: calc(1.6em + 0.75rem + 2px);
     border: 1px dashed #ced4da;
