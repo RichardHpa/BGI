@@ -6591,7 +6591,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".smallImg {\n  max-width: 55px;\n}", ""]);
 
 // exports
 
@@ -104453,9 +104453,12 @@ function (_Component) {
           key: i
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "align-middle d-flex align-items-center"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        }, staff['image'] ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "../images/uploads/thumbnails/".concat(staff['image']),
+          className: "img-fluid smallImg"
+        }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-user-circle fa-3x pr-2"
-        }), " ", staff['name']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        }), staff['name']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "align-middle"
         }, staff['role']), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
           className: "align-middle"

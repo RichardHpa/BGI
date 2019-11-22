@@ -16,6 +16,16 @@
 // });
 Route::get('/', 'HomeController@index');
 
+Route::get('/programmes', function () {
+    return view('temp/programmes');
+});
+
+// Route::get('/staff', function () {
+//     return view('temp/staff');
+// });
+
+Route::get('/staff', 'StaffController@show');
+
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout')->middleware('auth');
 

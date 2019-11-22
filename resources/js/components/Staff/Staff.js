@@ -67,7 +67,13 @@ class Staff extends Component {
                                 allStaff.map((staff, i) => (
                                     <tr key={i}>
                                         <td className="align-middle d-flex align-items-center">
-                                            <i className="fas fa-user-circle fa-3x pr-2"></i> {staff['name']}
+                                            {
+                                                staff['image']?
+                                                <img src={`../images/uploads/thumbnails/${staff['image']}`} className="img-fluid smallImg"/>
+                                                :
+                                                <i className="fas fa-user-circle fa-3x pr-2"></i>
+                                            }
+                                            {staff['name']}
                                         </td>
                                         <td className="align-middle">{staff['role']}</td>
                                         <td className="align-middle">{staff['email']}</td>

@@ -11046,6 +11046,57 @@ a.text-bgi:focus {
   border-color: #37598D;
 }
 
+.staffCard {
+  position: relative;
+}
+
+.staffCard img {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.staffCard .card-body {
+  text-align: center;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 576px) {
+  .staffCard .card-body {
+    opacity: 0;
+    position: absolute;
+  }
+}
+
+.staffCard:hover {
+  cursor: pointer;
+}
+
+.staffCard:hover img {
+  opacity: 0.2;
+}
+
+.staffCard:hover .card-body {
+  opacity: 1;
+}
+
 body {
   font-size: 1rem;
 }

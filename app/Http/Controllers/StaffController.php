@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Staff;
+use App\Media;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,6 +17,12 @@ class StaffController extends Controller
     public function index()
     {
         $staff = Staff::all();
+        foreach($staff as $member){
+            if($member->image){
+                $media = Media::where('id', '=', $member->image)->firstOrFail();
+                $member['image'] = $media->media_name;
+            }
+        }
         return $staff->toJson();
     }
 
@@ -60,7 +67,14 @@ class StaffController extends Controller
      */
     public function show(Staff $staff)
     {
-        //
+        $staff = Staff::all();
+        foreach($staff as $member){
+            if($member->image){
+                $media = Media::where('id', '=', $member->image)->firstOrFail();
+                $member['image'] = $media->media_name;
+            }
+        }
+        return view('temp/staff', compact('staff'));
     }
 
     /**
@@ -107,5 +121,13 @@ class StaffController extends Controller
         } else {
             return response('401');
         }
+    }
+
+    public function single($id)
+    {
+        $staff = Staff::findOrFail($id);
+        $media = Media::where('id', '=', $staff->image)->firstOrFail();
+        $staff['image'] = $media->media_name;
+        return response()->json($staff);
     }
 }

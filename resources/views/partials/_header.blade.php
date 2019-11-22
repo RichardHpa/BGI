@@ -1,53 +1,33 @@
-<header>
-    @if (Auth::check())
-        <div class="bg-dark text-white px-5 py-2 d-flex justify-content-between ">
-            <span>Welcome {{ Auth::user()->name }}</span>
-            <div class="text-white">
-                <a href="{{ url('/admin') }}">Go to Dashboard</a>
-                <a href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
-            </div>
-        </div>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
-    @endif
-    <div class="container">
-        <div class="row p-2">
-            <div class="col d-flex justify-content-center">
-                <a href="{{ url('/') }}">
-                    <img id="logo-main" src="{{ asset('images/BGI-Logo-Blue.png') }}" alt="Logo for BGI">
-                </a>
-            </div>
-        </div>
-        <nav id="navigation" class="navbar navbar-expand-lg">
-            <div class="container justify-content-center">
-                <button class="navbar-toggler custom-toggler mb-4" type="button" data-toggle="collapse" data-target="#mainNavigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse" id="mainNavigation">
-                    <ul class="navbar-nav nav-fill w-100">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Programmes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Staff</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">History</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Kallio Kunsthalle</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" crossorigin="anonymous">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script>
+    function backgroundLoaded(element) {
+        var url = "url('" + element.src + "')";
+        var parent = element.parentNode;
+        var bgPosition = element.dataset.position;
+        if (bgPosition) {
+            parent.style.backgroundPosition = bgPosition;
+        }
+        parent.style.backgroundImage = url;
+        parent.style.opacity = "1";
+    }
+    </script>
+</head>
+<body>
+    @include('partials._nav')
