@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 import './Header.scss';
 
+import {useSelector, useDispatch} from 'react-redux';
+import { login, logout} from '../actions';
+
 class Header extends Component {
     constructor(props){
         super(props);
@@ -11,7 +14,7 @@ class Header extends Component {
     render(){
         return(
             <nav className="navbar navbar-dark sticky-top bg-dark navbar-expand-md justify-content-between">
-                <a className='navbar-brand' href='/'>Hey, { window.name }</a>
+                <a className='navbar-brand' href='/'>Hey,</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSidebar" aria-controls="navbarSidebar" aria-expanded="false" aria-label="Toggle SidebarNavigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

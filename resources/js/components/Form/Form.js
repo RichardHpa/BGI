@@ -106,7 +106,7 @@ class Form extends Component {
                 }
                 { this.renderChildren() }
                 <button type="submit" className="btn btn-bgi">{this.props.btnText? this.props.btnText: 'Submit'}</button>
-                <button onClick={this.cancel} className="btn">Cancel</button>
+                { this.props.cancelForm && <button onClick={this.cancel} className="btn">Cancel</button> }
             </form>
         )
     }

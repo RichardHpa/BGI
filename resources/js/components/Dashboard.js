@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import allReducers from './reducers';
 
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
@@ -12,6 +15,8 @@ import Pages from './Pages/Pages';
 import AddPage from './Pages/AddPage';
 import EditPage from './Pages/EditPage';
 import Staff from './Staff/Staff';
+import Programmes from './Programmes/Programmes';
+import AddProgrammes from './Programmes/AddProgrammes';
 
 const pages = [
     { 'id': 1, 'name': 'Dashboard', 'url': '/admin','icon': 'chart-pie' },
@@ -63,6 +68,8 @@ class Dashboard extends Component {
                             <Route exact path='/admin/pages/add_page' component={AddPage} />
                             <Route exact path='/admin/pages/edit_page/:id' component={EditPage} />
                             <Route exact path='/admin/staff' component={Staff} />
+                            <Route exact path='/admin/programmes' component={Programmes} />
+                            <Route exact path='/admin/programmes/add' component={AddProgrammes} />
                         </Switch>
                         </main>
                     </div>
@@ -75,6 +82,16 @@ class Dashboard extends Component {
 
 export default Dashboard;
 
+const store = createStore(
+    allReducers,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 if (document.getElementById('reactApp')) {
-    ReactDOM.render(<Dashboard />, document.getElementById('reactApp'));
+    ReactDOM.render(
+        <Provider store={store}>
+            <Dashboard />
+        </Provider>,
+        document.getElementById('reactApp')
+    );
 }

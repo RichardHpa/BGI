@@ -13,6 +13,22 @@
             </div>
         </div>
         <div class="row">
+            @if($programmes)
+                @foreach($programmes as $programme)
+                    <div class="col-12 col-md-4">
+                        <div class="card text-center shadow-lg mb-5 h-100">
+                            <img src="images/uploads/thumbnails/{{$programme->image}}" alt="" class="img-fluid">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$programme->name}}</h5>
+                                <p class="card-text">{{$programme->tag_line}}</p>
+                                <a href="/programmes/{{$programme->clean_name}}" class="btn btn-bgi btn-block">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
+        </div>
+        <div class="row">
             <div class="col-12 col-md-4">
                 <div class="card text-center shadow-lg mb-5">
                     <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96" /><text x="50%" y="50%" fill="#dee2e6" dy=".3em" dominant-baseline="middle" text-anchor="middle">Image cap</text></svg>

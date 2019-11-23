@@ -36,15 +36,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/staff">Staff</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="#">History</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> --}}
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="#">Kallio Kunsthalle</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> --}}
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </div>

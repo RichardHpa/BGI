@@ -35,3 +35,6 @@ Route::post('pages/edit/{id}', 'PageController@update');
 Route::get('staff/single/{id}', 'StaffController@single');
 Route::get('staff', 'StaffController@index');
 Route::post('staff/add', 'StaffController@store');
+
+Route::get('programme', 'ProgrammesController@index');
+Route::post('programme/add', 'ProgrammesController@store');

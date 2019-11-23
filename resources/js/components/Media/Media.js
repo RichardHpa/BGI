@@ -9,11 +9,15 @@ class Media extends Component {
         }
     }
 
+    handleSelectedImage = (e) => {
+        console.log('view or remove images');
+    }
+
     render () {
         return (
             <div className="row">
                 <div className="col">
-                    <Gallery/>
+                    <Gallery selectedImage={this.handleSelectedImage}/>
                 </div>
             </div>
         )

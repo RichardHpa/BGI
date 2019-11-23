@@ -17,7 +17,7 @@ class BlockEditor extends Component {
     }
 
     componentDidMount () {
-        console.log(this.props);
+        // console.log(this.props);
         this.setState({
             currentBlocks: this.props.blocks,
             iterationNum: this.props.blocks.length + 1
